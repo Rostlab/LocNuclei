@@ -1,0 +1,14 @@
+class;fold;f1;C;tol;l;y;class_weights
+Cajal_Body;fold_3;0.164982497854;1.0;0.0001;4;7;auto
+Chromatin;fold_2;0.671214680624;2.0;0.0001;4;7;auto
+Kinetochore;fold_3;0.126081500561;1.0;0.0001;5;8;auto
+Nuclear_Envelope;fold_3;0.318054460485;2.0;0.1;4;7;auto
+Nuclear_Lamina;fold_5;0.290429089824;2.0;0.1;4;7;auto
+Nuclear_Pore_Complex;fold_4;0.205142017211;2.0;0.1;3;5;auto
+Nuclear_Speckle;fold_3;0.440243311892;2.0;0.1;3;5;auto
+Nuclear_matrix;fold_4;0.203653103653;1.0;0.0001;4;6;auto
+Nucleolus;fold_2;0.625631161421;2.0;0.0001;4;9;auto
+Nucleoplasm;fold_5;0.0534596607907;0.5;0.0001;3;7;auto
+PML_body;fold_1;0.202615782003;2.0;0.0001;4;8;auto
+Perinucleolar;fold_1;0.326444752658;2.0;0.0001;4;7;auto
+Spindle_apparatus;fold_1;0.0425453726425;1.0;0.0001;4;7;auto
