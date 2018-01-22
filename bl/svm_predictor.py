@@ -58,7 +58,7 @@ class SVMPredictor(object):
                     new_loc_prediction = class_results[result][0].replace('_', ' ')
                     r_index = str(class_results[result][1])                        
                     ri_prediction = all_query_proteins[result].reliability
-                    
+                    loc_prediction = all_query_proteins[result].location_prediction 
                     if not loc_prediction or loc_prediction.isspace():
                         loc_prediction = new_loc_prediction
                         loc_prediction += '.'

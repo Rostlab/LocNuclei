@@ -95,6 +95,7 @@ class BlastPredictor(object):
                         hit = predictions[1].strip()
                         hit_locations = self.all_lookup_proteins[hit]
                         seq_id = (float(predictions[2].strip())-self.BLAST_MIN)*100/(100-self.BLAST_MIN)
+                        seq_id = round(seq_id,2)
                         if query in all_query_proteins:
                             all_query_proteins[query].has_blast_hit = True
                             all_query_proteins[query].has_prediction = True
