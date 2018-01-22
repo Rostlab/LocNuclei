@@ -91,9 +91,9 @@ class LocNucleiPredictor(object):
 
                 return work_dir
 
-            def write_results_to_output_file(self, result_file, ri):
+            def write_results_to_output_file(self, result_file):
                 writer = ResultWriter(self.verbose)
-                writer.write_results_to_file(self.all_query_proteins, result_file, ri)
+                writer.write_results_to_file(self.all_query_proteins, result_file)
 
             def clean_up(self):
                 if self.verbose:
@@ -113,7 +113,7 @@ class LocNucleiPredictor(object):
                         print('Deleting {fl}'.format(fl=self.working_directory))
                     os.removedirs(self.working_directory)
 
-            def predict_given_files(self, fasta_folder, fasta_suffix, blast_folder, blast_suffix, tmp_folder, out_file, ri, only_blast):
+            def predict_given_files(self, fasta_folder, fasta_suffix, blast_folder, blast_suffix, tmp_folder, out_file, only_blast):
                 # 0) Read files and determine the workload
                 self.get_fasta_files(fasta_folder, fasta_suffix)
                 self.get_blast_files(blast_folder, blast_suffix)
@@ -126,10 +126,10 @@ class LocNucleiPredictor(object):
                 # 2) Run SVMs for proteins without an blast-hit
                 if only_blast == False:
                     profkernel_predictor = SVMPredictor(self.verbose, self.working_directory, self.file_manager)
-                    self.all_query_proteins = profkernel_predictor.predict_all_query_proteins_without_blast_hit(self.all_query_proteins, ri)
+                    self.all_query_proteins = profkernel_predictor.predict_all_query_proteins_without_blast_hit(self.all_query_proteins)
 
                 # 3) Write out results
-                self.write_results_to_output_file(out_file, ri)
+                self.write_results_to_output_file(out_file)
 
             def __init__(self, is_verbose, predict_traveller):
                 self.verbose = is_verbose

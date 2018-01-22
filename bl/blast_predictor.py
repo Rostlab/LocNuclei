@@ -9,6 +9,7 @@ from bl.helper import Helper
 class BlastPredictor(object):
     SUBNUCLEAR_EVALUE = -20
     TRAVELLER_EVALUE = -5
+    BLAST_MIN = 20.0
 
     def predict_all_query_proteins(self, all_query_proteins):
         if self.verbose:
@@ -93,7 +94,7 @@ class BlastPredictor(object):
                         query = predictions[0].strip()
                         hit = predictions[1].strip()
                         hit_locations = self.all_lookup_proteins[hit]
-                        seq_id = predictions[2].strip()
+                        seq_id = (float(predictions[2].strip())-self.BLAST_MIN)*100/(100-self.BLAST_MIN)
                         if query in all_query_proteins:
                             all_query_proteins[query].has_blast_hit = True
                             all_query_proteins[query].has_prediction = True

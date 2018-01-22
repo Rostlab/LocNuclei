@@ -13,6 +13,8 @@ class SVMPredictor(object):
 
     QUERY_IDS_FILENAME = 'query_ids.lst'
     QUERY_KERNEL_INPUT_FILE = 'query_kernel_input.psiBlastMat'
+    TRAVELLER_MAX = 1.51
+    SN_MAX = 2.58
 
     def __init__(self, is_verbose, working_directory, file_manager):
         self.verbose = is_verbose
@@ -20,7 +22,7 @@ class SVMPredictor(object):
         self.working_directory = working_directory
         self.fm = file_manager
 
-    def predict_all_query_proteins_without_blast_hit(self, all_query_proteins, ri):
+    def predict_all_query_proteins_without_blast_hit(self, all_query_proteins):
         if self.verbose:
             print('Starting to create SVM-Predictions for all query-proteins:')
 
@@ -48,19 +50,15 @@ class SVMPredictor(object):
             normalized_train_matrix = self.fm.normalized_matrix_file_for_params(max_kmer_length, max_sub_score)
             query_acs = numpy.asarray(test_id_list)
             class_results = self.predict_query_matrix(normalized_train_matrix, normalized_query_matrix,
-                                                      query_acs, class_name, class_params, ri)
+                                                      query_acs, class_name, class_params)
 
             for result in class_results:
                 if class_results[result][0]:
-                    print(class_results)
-                    if ri == True:
-                        new_loc_prediction = class_results[result][0].replace('_', ' ')
-                        r_index = str(class_results[result][1])                        
-                        ri_prediction = all_query_proteins[result].reliability
-                        print(r_index)
-                    else:
-                        new_loc_prediction = class_results[result].replace('_', ' ')
-                    loc_prediction = all_query_proteins[result].location_prediction
+                    # print(class_results)
+                    new_loc_prediction = class_results[result][0].replace('_', ' ')
+                    r_index = str(class_results[result][1])                        
+                    ri_prediction = all_query_proteins[result].reliability
+                    
                     if not loc_prediction or loc_prediction.isspace():
                         loc_prediction = new_loc_prediction
                         loc_prediction += '.'
@@ -69,15 +67,14 @@ class SVMPredictor(object):
                         loc_prediction += new_loc_prediction
                         loc_prediction += '.'
                         loc_prediction.strip()
-                    if ri == True:
-                        if not ri_prediction or ri_prediction.isspace():
-                            ri_prediction = r_index
-                            ri_prediction += '.'
-                        else:
-                            ri_prediction += ' '
-                            ri_prediction += r_index
-                            ri_prediction += '.'
-                            ri_prediction.strip()
+                    if not ri_prediction or ri_prediction.isspace():
+                        ri_prediction = r_index
+                        ri_prediction += '.'
+                    else:
+                        ri_prediction += ' '
+                        ri_prediction += r_index
+                        ri_prediction += '.'
+                        ri_prediction.strip()
                     all_query_proteins[result].location_prediction = loc_prediction
                     all_query_proteins[result].has_prediction = True
                     all_query_proteins[result].reliability = ri_prediction
@@ -307,7 +304,7 @@ class SVMPredictor(object):
 
         return diags
 
-    def predict_query_matrix(self, train_matrix, query_matrix, query_acs, class_name, class_params, ri):
+    def predict_query_matrix(self, train_matrix, query_matrix, query_acs, class_name, class_params):
         helper = Helper(self.verbose)
 
         # 1) Read fasta file:
@@ -335,11 +332,8 @@ class SVMPredictor(object):
         gram_test = numpy.asarray(query_matrix)
 
         # 6) Predict
-        results_for_class = None
-        if ri == True:
-            results_for_class = self.predict_with_reliability_index(classifier, gram_test, query_acs, class_name)
-        else:
-            results_for_class = self.predict_with_given_classifier(classifier, gram_test, query_acs, class_name)
+        results_for_class = self.predict_with_reliability_index(classifier, gram_test, query_acs, class_name)
+        
         return results_for_class
 
     def train_predictor(self, gram_train, y_train, c, tol, cw_auto):
@@ -394,17 +388,8 @@ class SVMPredictor(object):
             print('Got {nr} predictions'.format(nr=len(predictions)))
         results = defaultdict(list)
        
-        # predictions = numpy.array(predictions)
-        # pos_predictions = predictions[:1] 
-        # print(predictions)
-        # print(pos_predictions)
-
         for idx, p in enumerate(predictions):
             prediction_class = None
-            # if len(predictions) > 1 and prediction[0] > 0.0:
-                # prediction_class = class_name
-            # prediction = p[1]
-            # print(prediction)
             if p > 0.0:
                 prediction_class = class_name
             if self.verbose:
@@ -413,9 +398,12 @@ class SVMPredictor(object):
 
             # get reliability index ranging between 0 and 100
             prediction = proba_predictions[idx,1]
-            # print(prediction)
             prediction = prediction * 100
-            prediction = round(prediction,0)
+            if class_name == "Traveller":
+                prediction = prediction/self.TRAVELLER_MAX
+            else:
+                prediction = prediction/self.SN_MAX            
+            prediction = round(prediction,2)
             if prediction_class == None:
                 prediction = None
             results[query_acs[idx]].append(prediction_class)

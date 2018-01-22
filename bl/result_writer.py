@@ -7,14 +7,7 @@ import sys
 
 class ResultWriter(object):
 
-    HEADER1 = '# Sub-nuclear Localization Prediction using LocNuclei\n' \
-             '#\n' \
-             '# NOTATION Protein Id: Fasta sequences Id truncated by whitespace\n' \
-             '# NOTATION Localization: Predicted sub-nuclear localization class\n' \
-             '# NOTATION Source: s == svm, b == blast\n' \
-             '#\n' \
-             '# Protein Id\tLocalization\tSource\n'
-    HEADER2 = '# Sub-nuclear Localization Prediction using LocNuclei\n' \
+    HEADER = '# Sub-nuclear Localization Prediction using LocNuclei\n' \
              '#\n' \
              '# NOTATION Protein Id: Fasta sequences Id truncated by whitespace\n' \
              '# NOTATION Localization: Predicted sub-nuclear localization class\n' \
@@ -24,12 +17,10 @@ class ResultWriter(object):
              '# Protein Id\tLocalization\tSource\tRI\n'
 
 
-    def write_results_to_file(self, proteins, out_file,ri):
+    def write_results_to_file(self, proteins, out_file):
         with open(out_file, 'w') as target:
-            if ri == True:
-                target.write(self.HEADER2)
-            else:
-                target.write(self.HEADER)
+            target.write(self.HEADER)
+            
             for protein_name in proteins:
                 ac = protein_name
                 protein = proteins[ac]
@@ -39,18 +30,13 @@ class ResultWriter(object):
                         source = 'b'
                     else:
                         source = 's'
-                    if ri == True:
-                        reliability = protein.reliability
+                    reliability = protein.reliability
                 else:
                     loc = 'unknown'
                     source = 'NA'
                     reliability = 'NA'
 
-                result_line = ""
-                if ri == True:
-                    result_line = '{ac} \t {loc} \t {src} \t {r}\n'.format(ac=ac, loc=loc, src=source, r=reliability)
-                else:
-                    result_line = '{ac} \t {loc} \t {src}\n'.format(ac=ac, loc=loc, src=source)
+                result_line = '{ac} \t {loc} \t {src} \t {r}\n'.format(ac=ac, loc=loc, src=source, r=reliability)
                 target.write(result_line)
 
     def __init__(self, is_verbose):

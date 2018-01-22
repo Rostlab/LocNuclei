@@ -38,7 +38,6 @@ def main():
                              'i.e. no files will be deleted, that were created during prediction',
                         action='store_true')
     parser.add_argument('-v', '--verbose', help='Toggles verbose mode on', action='store_true')
-    parser.add_argument('-r', '--reliability', help='Include reliability index in prediction', action='store_true')
     parser.add_argument('-b', '--only_blast', help='Only run the blast search', action='store_true')
     args = parser.parse_args()
     print(args)
@@ -49,7 +48,7 @@ def main():
                                                                # no overwriting of existing files
                 with LocNucleiPredictor(args.verbose, args.debug, args.traveller) as loc_nuclei:
                     loc_nuclei.predict_given_files(args.fasta_folder, args.fasta_suffix, args.blast_folder,
-                                                   args.blast_suffix, args.temp_folder, args.output_file, args.reliability, 
+                                                   args.blast_suffix, args.temp_folder, args.output_file, 
                                                    args.only_blast)
 
 
