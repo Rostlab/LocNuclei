@@ -92,19 +92,18 @@ class BlastPredictor(object):
                     if len(predictions) > 1:
                         query = predictions[0].strip()
                         hit = predictions[1].strip()
-                        if hit != query:
-                            hit_locations = self.all_lookup_proteins[hit]
-                            seq_id = predictions[2].strip()
-                            if query in all_query_proteins:
-                                all_query_proteins[query].has_blast_hit = True
-                                all_query_proteins[query].has_prediction = True
-                                all_query_proteins[query].reliability = seq_id
-                                all_query_proteins[query].location_prediction = hit_locations.replace('\n', '').strip()
-                            else:
-                                error('We built a blast-query for {q} but it is not in the query-proteins - '
+                        hit_locations = self.all_lookup_proteins[hit]
+                        seq_id = predictions[2].strip()
+                        if query in all_query_proteins:
+                            all_query_proteins[query].has_blast_hit = True
+                            all_query_proteins[query].has_prediction = True
+                            all_query_proteins[query].reliability = seq_id
+                            all_query_proteins[query].location_prediction = hit_locations.replace('\n', '').strip()
+                        else:
+                            error('We built a blast-query for {q} but it is not in the query-proteins - '
                                   'This should not be possible'.format(q=query))
-                            if self.verbose:
-                                print('Found BLAST-HIT: -> {q} {h} {hl}'.format(q=query, h=hit, hl=hit_locations))
+                        if self.verbose:
+                            print('Found BLAST-HIT: -> {q} {h} {hl}'.format(q=query, h=hit, hl=hit_locations))
         
         return all_query_proteins
 
