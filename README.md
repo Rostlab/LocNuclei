@@ -19,7 +19,7 @@ One can use different parameters to modify the programs behavior.
 **-h, --help**: Shows a help message and explains the parameters
 **--fasta_suffix**: Suffix of files in given fasta-folder (default: "\*.fasta")
 **--blast_suffix**: Suffix of files in given BLAST folder (default:"\*.profile")
-**--temp_folder**: Folder to work in, will be automatically deleted afterwards. If not given, a temporary directory will b e created.
+**--temp_folder**: Folder to work in, will be automatically deleted afterwards. If not given, a temporary directory will be created.
 **-t, --traveller**: Predict nuclear travelling proteins instead of sub-nuclear localization
 **-b, --only_blast**: Run only homology based inference
 **-d, --debug**: Toggles clean up of temporary files off, i.e. no files will be deleted that were created during prediction
@@ -29,7 +29,7 @@ One can use different parameters to modify the programs behavior.
 The output of LocNuclei contains one line per protein and per line 4 columns. The 1st column is the protein Id, followed by all predicted location classes in the format "LocA. LocB.". The 3rd column contains the source (b = blast, s = svm) and the last columns contains the reliability index (RI). For homology based inference, there is one RI derived from the percentage pairwise sequence identity of the BLAST hit. For de novo prediction, there is one RI for every predicted subnuclear compartment.
 
 ## Example
-The folder **example/** contains three fasta and profiles files to try out LocNuclei. To run the example, a simple call inthe folder where **locnuclei.py** is located is sufficient:
+The folder **example/** contains three fasta and profiles files to try out LocNuclei. To run the example, a simple call in the folder where **locnuclei.py** is located is sufficient:
 
 `python locnuclei.py example/ example/ result.out -t` 
 
