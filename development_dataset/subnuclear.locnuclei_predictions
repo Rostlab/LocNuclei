@@ -1,0 +1,1942 @@
+# Sub-nuclear Localization Prediction using LocNuclei
+#
+# NOTATION Protein Id: Fasta sequences Id truncated by whitespace
+# NOTATION Localization: Predicted sub-nuclear localization class
+# NOTATION Source: s == svm, b == blast
+# NOTATION Reliability Index (RI) between 0 and 100
+#
+# Protein Id	Localization	Source	RI
+Q5W9E7 	 PML body. Nucleolus. 	 b 	 38.0
+P0CO03 	 Chromatin. 	 b 	 80.2
+D3ZBN0 	 Chromatin. 	 b 	 94.1
+Q57V41 	 PML body. Nucleolus. 	 b 	 41.3
+Q9FJF4 	 unknown 	 NA 	 NA
+E1BSW7 	 Chromatin. 	 s 	 54.0.
+Q9FJJ3 	 Nucleolus. 	 s 	 48.0.
+P0DI83 	 Nuclear Speckle. 	 s 	 26.0.
+D7UQM5 	 Cytoplasm. Chromatin. 	 b 	 63.9
+O80653 	 Nucleolus. Nuclear Speckle. 	 b 	 52.8
+Q9SEU4 	 Nuclear Speckle. 	 b 	 42.1
+P0DJH6 	 Nucleolus. 	 s 	 49.0.
+B2D6M2 	 Chromatin. 	 b 	 32.2
+Q21209 	 Nuclear Pore Complex. Nucleolus. PML body. 	 s 	 14.0. 54.0. 18.0.
+Q8L999 	 Nuclear Speckle. Nucleolus. Nucleoplasm. 	 s 	 37.0. 39.0. 1.0.
+P0DJH7 	 Chromatin. Nucleoplasm. 	 s 	 56.0. 1.0.
+D3Z3K2 	 unknown 	 NA 	 NA
+Q96E39 	 Nucleolus. 	 b 	 94.3
+Q9FHW2 	 Chromatin. Nucleoplasm. 	 s 	 69.0. 1.0.
+Q8RY59 	 Nucleolus. 	 s 	 57.0.
+O82265 	 Chromatin. 	 b 	 26.5
+Q564K3 	 Chromatin. Nucleolus. 	 b 	 32.4
+F1R5H6 	 Chromatin. 	 b 	 60.4
+F6TQD1 	 unknown 	 NA 	 NA
+Q9VPU8 	 Nucleolus. 	 b 	 63.6
+E9Q5F9 	 Cytoplasm. Nucleolus. 	 b 	 48.7
+F1NPG5 	 Chromatin. 	 b 	 43.1
+Q8IE95 	 Cytoplasm. Nucleolus. 	 b 	 39.1
+Q5DW34 	 Chromatin. Nucleolus. 	 b 	 42.3
+Q9LTJ1 	 Nuclear Speckle. 	 s 	 27.0.
+F4HRI2 	 PML body. 	 s 	 17.0.
+Q197W8 	 Chromatin. 	 s 	 96.0.
+Q8VYA5 	 Nuclear Speckle. 	 s 	 76.0.
+G3X967 	 Cytoplasm. Nucleolus. Golgi apparatus. 	 b 	 44.9
+Q8VWK4 	 unknown 	 NA 	 NA
+Q9LJN8 	 Kinetochore. Chromatin. Nucleolus. 	 b 	 55.1
+Q5ABZ2 	 Chromatin. 	 b 	 98.9
+Q22557 	 unknown 	 NA 	 NA
+O81126 	 Nuclear Speckle. Nucleoplasm. 	 s 	 88.0. 1.0.
+H2QDY5 	 unknown 	 NA 	 NA
+Q9LUR0 	 Chromatin. 	 s 	 72.0.
+Q9SEE9 	 Nuclear Speckle. 	 s 	 74.0.
+Q22663 	 Nucleoplasm. 	 s 	 1.0.
+P0CW71 	 unknown 	 NA 	 NA
+P0DH90 	 Nucleolus. 	 s 	 49.0.
+Q9LHF5 	 Nuclear Speckle. 	 b 	 42.4
+P62259	unknown	NA	NA
+Q15173	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	27.13. 34.11. 3.88. 27.13. 
+P63151	Cajal Body. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nucleolus. Spindle apparatus. 	s	21.32. 5.43. 15.12. 2.33. 13.57. 12.02. 
+A0MNN4	Nucleolus	b	13
+A0MNN5	Nucleolus	b	89.38
+A0PJJ1	Chromatin. Spindle apparatus. 	s	3.88. 15.5. 
+Q5YD48	Nuclear Speckle	b	53.62
+A1L358	Nucleolus	b	36
+A2AJ71	Nuclear Speckle	b	100
+A2ATN3	Nuclear Lamina	b	100
+A2AW40	Nuclear Speckle	b	100
+A2BFQ5	Chromatin	b	94.25
+A2RUM7	Nucleolus. Nuclear Speckle. 	b	97.88
+Q02084	Nucleolus	b	19.25
+A3F769	Nucleolus	b	93.5
+A3KMN0	Chromatin	b	27.87
+A3RJH1	Nucleolus. Nuclear Speckle. 	b	97
+A4D105	Nucleoplasm	s	0
+A4D275	Nucleolus	b	96.62
+A8K031	Chromatin	b	65.5
+A8K3X3	Chromatin. Kinetochore. PML body. Spindle apparatus. 	s	17.05. 8.91. 38.37. 24.03. 
+A8K4C8	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	44.57. 22.09. 15.12. 
+A8K517	Nucleolus	s	41.86
+A8K5X9	Nucleoplasm. Chromatin. Nucleolus. 	b	78.75
+A8K878	Nucleolus	b	96.5
+P58742	Cajal Body. Kinetochore. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	24.42. 28.68. 24.03. 9.69. 25.97. 25.19. 22.87. 
+Q9JKX4	Cajal Body. Chromatin. Nucleoplasm. 	s	1.16. 23.26. 23.64. 
+P05202	Chromatin. Nucleolus. Spindle apparatus. 	s	9.3. 22.09. 5.04. 
+P45844	unknown	NA	NA
+Q9QYL7	Nucleolus. Nucleoplasm. 	s	44.57. 0.39. 
+Q9JIX8	Nuclear Speckle. Nucleoplasm. 	s	36.82. 12.02. 
+Q9Z2N8	Chromatin	b	78.87
+O43184	unknown	NA	NA
+P35612	Chromatin	b	100
+P05141	Nucleolus	b	97.88
+Q9CZI9	Nucleolus	b	49.5
+O55112	Nucleoplasm. PML body. 	s	6.59. 15.12. 
+Q8K2K6	Nuclear Lamina. Nuclear Pore Complex. Spindle apparatus. 	s	1.55. 6.98. 5.04. 
+O74957	Nucleolus	s	22.48
+Q3U1U7	Nuclear Speckle. Nucleoplasm. PML body. Spindle apparatus. 	s	2.33. 30.62. 18.99. 35.27. 
+O08715	Cajal Body. Nucleolus. Spindle apparatus. 	s	31.01. 17.83. 4.65. 
+Q9WVC7	Nuclear Lamina	b	88.63
+Q9DBR0	Chromatin	b	24.38
+Q9URY2	Chromatin. Kinetochore. Nuclear Lamina. Nucleoplasm. PML body. Spindle apparatus. 	s	2.33. 5.04. 24.03. 10.08. 33.72. 32.17. 
+P38313	Chromatin. Nucleoplasm. Spindle apparatus. 	s	23.64. 29.84. 23.26. 
+Q9UKV5	unknown	NA	NA
+Q9URT4	Chromatin. Spindle apparatus. 	s	15.5. 3.88. 
+P97822	Nuclear matrix	b	59.62
+P15207	Nuclear matrix	b	38.5
+Q8K298	Cajal Body. Chromatin. Spindle apparatus. 	s	1.16. 5.81. 22.09. 
+Q9JIF0	Nucleoplasm. Spindle apparatus. 	s	0.78. 25.19. 
+P17153	Nuclear Lamina	b	43.38
+O76027	Nucleolus	b	26
+O75843	unknown	NA	NA
+O00189	unknown	NA	NA
+Q9H1A4	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	19.77. 35.27. 12.4. 0. 25.58. 
+Q8WW43	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	57.75. 55.43. 29.84. 15.12. 
+O35841	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	3.49. 4.26. 20.93. 24.42. 
+P51693	unknown	NA	NA
+Q9HDC9	Nuclear Envelope. Nuclear Lamina. Nucleolus. Spindle apparatus. 	s	6.2. 1.94. 25.19. 8.91. 
+Q7Z2E3	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	21.71. 34.88. 28.29. 9.3. 
+Q8CFQ3	Chromatin. Nucleoplasm. Spindle apparatus. 	s	2.33. 33.33. 26.36. 
+Q6UW56	Nuclear Envelope. Nuclear Lamina. Spindle apparatus. 	s	18.22. 29.46. 12.79. 
+Q9WV31	Nucleoplasm	s	13.18
+Q8TER5	unknown	NA	NA
+Q62431	Nuclear Speckle. Nucleoplasm. 	s	7.36. 22.48. 
+Q4LE39	Perinucleolar	b	58.25
+P40617	Nucleolus	b	27.38
+Q9Y689	Nucleolus	b	27.38
+Q8C6B9	Nucleolus. Nucleoplasm. 	s	32.56. 8.91. 
+P61161	Nucleolus	b	36.5
+P61158	Chromatin	b	26.62
+Q940Z2	Chromatin	b	19.12
+Q80US4	Nucleoplasm	b	19.12
+Q9JM76	Nucleoplasm	s	30.23
+Q8K0L0	Nuclear Pore Complex	b	15.5
+Q9VW15	Nucleolus	b	26.75
+Q91X20	Nuclear matrix. Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	6.2. 9.3. 32.56. 2.33. 5.81. 
+Q9P6S5	Chromatin. PML body. Spindle apparatus. 	s	22.87. 5.81. 39.53. 
+P35734	Chromatin. Nucleoplasm. Spindle apparatus. 	s	38.37. 19.38. 0.39. 
+O43681	Nucleolus. Nucleoplasm. 	s	11.24. 31.01. 
+Q8CJ27	Chromatin. Spindle apparatus. 	s	7.36. 17.83. 
+Q9V727	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	53.88. 23.64. 32.95. 17.44. 
+Q93084	Nucleolus. Spindle apparatus. 	s	5.81. 22.09. 
+Q4QY64	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	23.64. 8.53. 16.67. 5.43. 
+Q5T9A4	Nuclear Lamina	b	85.38
+P16951	Nucleoplasm. PML body. Spindle apparatus. 	s	0.78. 39.15. 15.12. 
+Q674R7	unknown	NA	NA
+O35143	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	47.29. 29.46. 3.49. 
+Q62388	Chromatin	b	12.25
+P38110	Nucleolus	b	19.63
+P56480	Cajal Body. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	4.65. 38.76. 21.71. 21.71. 
+Q8BMG1	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Spindle apparatus. 	s	34.5. 29.07. 10.08. 20.93. 
+Q61687	Kinetochore. Nucleolus. 	b	13.38
+Q9JKK8	Chromatin	b	15.62
+P54254	Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	36.05. 16.28. 43.02. 
+Q9CVD2	Nucleoplasm. PML body. 	s	25.97. 6.2. 
+Q8R4I1	PML body	s	20.93
+B0ZBD0	Nucleolus	b	99.12
+B1AHB0	Chromatin. Nucleolus. 	b	93.75
+B1AK19	Nuclear Envelope	b	100
+Q07440	Nucleoplasm. Spindle apparatus. 	s	31.78. 0.78. 
+B2RA10	unknown	NA	NA
+B2RAL6	unknown	NA	NA
+B2RDF2	Nucleoplasm. Chromatin. Nucleolus. 	b	86.88
+B2RDZ9	Nucleolus	b	94
+B3KMG0	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	9.69. 7.75. 27.52. 
+B3KMR5	Nucleolus	b	88.38
+B3KMX0	Chromatin. Nucleolus. 	b	93.75
+B3KN79	Nucleolus	b	99.75
+B3KN91	Nucleolus	b	99.62
+B3KPB2	Chromatin. Nuclear Speckle. Nucleoplasm. PML body. Spindle apparatus. 	s	0.39. 4.65. 12.79. 14.73. 16.67. 
+B3KRV8	unknown	NA	NA
+B3KXJ4	unknown	NA	NA
+B3KY12	Chromatin. Nucleolus. Nuclear Speckle. 	b	98.75
+B3V0L0	Nucleolus. Nuclear Speckle. 	b	79.88
+B4E2T4	Nucleolus. Nucleoplasm. 	s	14.34. 25.97. 
+B7Z3D6	Nucleolus	b	94.12
+B7Z7S9	Chromatin. Spindle apparatus. 	s	15.12. 14.34. 
+P97303	Chromatin. Nucleoplasm. Spindle apparatus. 	s	5.43. 29.07. 36.82. 
+Q9VLU0	Nuclear Lamina. Chromatin. Nucleolus. 	b	54
+Q9SRX9	Nucleoplasm. PML body. 	s	29.46. 2.71. 
+Q497V6	Nuclear Speckle. Nuclear matrix. Spindle apparatus. 	s	21.32. 11.63. 37.21. 
+Q9UQB8	unknown	NA	NA
+Q8VBU8	PML body. Spindle apparatus. 	s	17.05. 20.54. 
+Q9QZH2	Nuclear Pore Complex	b	24.63
+O88379	Nucleolus	b	14.25
+Q9Z277	Chromatin	b	13.88
+Q9UIF9	Chromatin	b	17.5
+Q99PV8	Chromatin. Nucleolus. 	b	54.25
+P41183	Chromatin. Nucleolus. 	b	25.62
+O74907	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	5.04. 13.18. 20.93. 9.3. 
+O14064	Cajal Body. Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	29.84. 49.22. 13.18. 3.88. 37.6. 
+O88700	PML body	b	28.25
+Q2VPD4	Nucleolus	b	13.38
+Q96IK1	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	13.18. 12.4. 8.14. 11.24. 
+P97452	Cajal Body. Kinetochore. Nuclear Pore Complex. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	34.88. 28.68. 22.09. 40.31. 0.78. 12.79. 
+Q4V7H8	Chromatin. Nucleoplasm. Spindle apparatus. 	s	52.33. 23.64. 10.08. 
+Q9VLD6	Chromatin	s	24.03
+Q8BHX3	Chromatin	b	28.62
+Q9US52	Nucleoplasm. Spindle apparatus. 	s	13.57. 2.71. 
+P48754	Cajal Body. Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	5.43. 25.19. 20.16. 38.76. 24.81. 
+P97929	Cajal Body. Chromatin. PML body. Spindle apparatus. 	s	13.95. 43.41. 17.44. 31.78. 
+Q9ESU6	Chromatin	b	50.12
+Q3U319	Nucleolus	b	50.62
+Q8CIF4	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	18.6. 38.37. 18.22. 18.99. 
+Q9Z1S0	Chromatin	b	20.62
+O08901	Chromatin	b	22.75
+O94751	Chromatin	b	22.75
+Q9WVA3	Chromatin	b	21.88
+O42860	Kinetochore. Chromatin. Nucleolus. 	b	22.5
+Q8R149	Nuclear Speckle. Spindle apparatus. 	s	32.17. 23.64. 
+P53323	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	10.85. 33.33. 37.6. 0.78. 
+O54825	Nucleolus. Spindle apparatus. 	s	17.05. 14.73. 
+Q91VK1	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	0.78. 12.79. 33.72. 24.81. 
+Q8CI33	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	22.87. 36.43. 34.11. 
+O35473	Nucleoplasm	s	25.19
+Q8K1A6	Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	25.19. 11.63. 12.02. 
+Q941Q3	Nuclear Speckle. Nuclear matrix. Nucleoplasm. 	s	35.27. 7.75. 23.26. 
+Q9WUF3	Chromatin. Spindle apparatus. 	s	17.44. 31.78. 
+Q8CIL4	Nucleolus. Nucleoplasm. 	s	56.2. 17.44. 
+Q86UP0	unknown	NA	NA
+Q9QWF0	Nucleolus. Nucleoplasm. 	s	13.57. 7.36. 
+Q9D0N7	Chromatin	b	16.75
+P27139	Nucleolus	b	20.25
+Q16790	Cajal Body	b	20.25
+P27824	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	3.88. 28.68. 27.52. 0.78. 
+P17655	Nuclear matrix. Nucleolus. Nucleoplasm. 	s	3.49. 23.26. 29.07. 
+Q8BI72	PML body. Spindle apparatus. 	s	18.22. 10.85. 
+Q8VHI4	Chromatin. Kinetochore. Nucleoplasm. PML body. Spindle apparatus. 	s	5.04. 3.1. 32.56. 15.5. 25.19. 
+P07858	Nucleolus. Spindle apparatus. 	s	21.32. 18.6. 
+Q95RV2	Cajal Body. Nucleoplasm. Spindle apparatus. 	s	11.24. 0. 3.88. 
+P49379	Chromatin	b	61.13
+P32504	Chromatin. PML body. Spindle apparatus. 	s	11.63. 20.93. 17.44. 
+P35203	Chromatin. Nucleoplasm. Spindle apparatus. 	s	3.1. 34.11. 14.73. 
+O14423	Chromatin	b	26.12
+P14384	unknown	NA	NA
+P45481	Chromatin. Nuclear Speckle. Nucleoplasm. PML body. 	s	12.4. 8.53. 15.5. 8.53. 
+O55187	Chromatin	b	60.38
+Q61686	PML body. Chromatin. Nucleolus. 	b	55.88
+Q9D1C2	Chromatin. Nucleoplasm. 	s	11.63. 28.29. 
+Q6NW34	Chromatin. PML body. Spindle apparatus. 	s	8.91. 2.71. 12.02. 
+Q6PK04	Nucleolus. Nucleoplasm. 	s	51.94. 18.6. 
+Q6GQT0	Nucleoplasm	s	5.43
+Q563C3	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	20.93. 14.34. 15.5. 12.79. 
+Q96A33	Nuclear Lamina	b	97.38
+Q9JJ89	Nuclear Speckle	s	29.84
+Q61456	Nucleolus	b	21.25
+P24860	Nuclear Speckle	b	21.25
+O88874	PML body. Nucleolus. Nuclear Speckle. 	b	18.25
+Q52KE7	Nuclear Speckle	b	99.25
+Q9QWV9	Nuclear Speckle	b	19.5
+P48509	unknown	NA	NA
+P51480	Nuclear Envelope. Nuclear Pore Complex. Nucleolus. Nucleoplasm. 	s	0.78. 34.11. 42.25. 23.64. 
+Q64364	Nuclear Lamina	s	5.43
+Q12834	Nucleolus	b	11.12
+P16522	Nuclear Speckle. Spindle apparatus. 	s	37.98. 2.71. 
+Q6A068	Chromatin. Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	5.04. 1.94. 24.81. 24.81. 
+O89033	Nuclear matrix	b	17.75
+P09119	Chromatin	b	18.25
+Q8JZM7	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	1.16. 11.24. 10.47. 
+Q9CPY3	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	27.13. 17.05. 0.78. 37.6. 
+Q69ZA1	Nuclear Speckle	b	34
+Q03147	Nucleolus	b	30.25
+P28033	Chromatin	b	24.12
+P53569	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	5.81. 41.09. 23.26. 8.91. 
+P34618	Cajal Body. Chromatin. Nucleolus. Spindle apparatus. 	s	25.97. 22.87. 38.37. 35.66. 
+Q9BXF3	Nuclear Speckle. Nuclear matrix. Nucleoplasm. 	s	35.27. 18.99. 15.12. 
+P28659	Nuclear Speckle	b	36.62
+O35216	Chromatin	b	77.5
+Q2N2K6	Chromatin	b	34
+P48988	Chromatin. Nucleolus. 	b	97.5
+Q9QYM8	Chromatin. Nucleoplasm. Spindle apparatus. 	s	10.08. 27.13. 23.26. 
+Q8AYS7	Kinetochore. Chromatin. 	b	40.88
+Q1T763	Chromatin	s	4.26
+Q8C4M7	Chromatin	b	30
+Q9CXS4	Nucleolus. Nucleoplasm. 	s	0.39. 28.29. 
+Q49MI3	Nucleolus. Spindle apparatus. 	s	20.93. 24.03. 
+Q9CXL3	Nucleolus. Nucleoplasm. 	s	38.37. 15.89. 
+Q8N0T1	Chromatin. Nucleolus. Nucleoplasm. 	s	9.69. 14.34. 8.14. 
+P61604	Nucleolus. Spindle apparatus. 	s	76.36. 3.49. 
+P63038	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	51.16. 39.15. 1.16. 
+Q9CRB9	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	10.85. 0.39. 27.52. 
+A2AJK6	Chromatin. Nucleolus. 	b	30.75
+Q8CGZ0	Nuclear Speckle. Spindle apparatus. 	s	51.16. 30.62. 
+Q810L3	PML body	b	77
+O35744	Nuclear Lamina. Nucleoplasm. 	s	1.16. 40.7. 
+P52757	unknown	NA	NA
+O35280	Nuclear Speckle	b	17.75
+P34208	Nuclear Speckle	b	15.5
+P38907	Chromatin. Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	2.71. 1.55. 26.36. 13.18. 1.16. 
+Q921W0	Spindle apparatus	s	11.63
+Q9JKP8	Chromatin. Nucleolus. Nucleoplasm. 	s	5.04. 24.42. 24.03. 
+Q9CY57	Cajal Body. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	21.71. 28.29. 3.49. 18.6. 13.18. 
+Q9V6Q2	Chromatin	s	15.5
+Q8R2N2	Cajal Body. Kinetochore. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	26.36. 31.4. 35.66. 7.36. 35.66. 26.74. 23.64. 
+Q9BQE6	Nucleoplasm. Spindle apparatus. 	s	6.2. 23.64. 
+Q8WUH6	Nucleoplasm	s	0.39
+Q3UY34	Kinetochore. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	5.81. 17.44. 18.22. 28.68. 
+P09496	unknown	NA	NA
+Q9UBD9	Nuclear Envelope. Nuclear Lamina. Spindle apparatus. 	s	24.42. 13.95. 21.71. 
+Q00610	Spindle apparatus	b	99.75
+P30622	Chromatin	b	7
+O35492	Nuclear Speckle	b	49.88
+O08785	Nucleolus	b	14.62
+O74808	Chromatin. Kinetochore. Nucleoplasm. PML body. Spindle apparatus. 	s	36.82. 1.16. 25.19. 11.63. 10.47. 
+O13881	Nucleolus. Nucleoplasm. 	s	4.26. 0. 
+Q9BQ75	Nucleolus	b	80
+Q9CQE8	Nucleolus	b	96.37
+Q8K2Z4	Chromatin	b	51
+Q06156	Chromatin	b	25.25
+Q8C156	Chromatin. Nucleolus. 	b	44.75
+Q9Y7R3	Chromatin	b	16
+P38170	Chromatin	b	18.25
+Q10429	Chromatin	b	16.38
+Q06680	Chromatin	b	18.38
+Q6ZQK0	Chromatin. Nuclear Pore Complex. Nucleoplasm. PML body. Spindle apparatus. 	s	18.99. 20.54. 25.19. 5.04. 17.83. 
+Q14028	Nuclear Speckle. Nuclear matrix. Spindle apparatus. 	s	16.67. 8.14. 10.47. 
+O13952	Chromatin. Spindle apparatus. 	s	8.91. 22.87. 
+P43618	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	27.91. 9.3. 20.93. 34.5. 
+Q9Y281	unknown	NA	NA
+Q03048	Nuclear matrix	b	52.25
+Q5SU73	Cajal Body	b	100
+Q24478	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	24.42. 23.64. 31.4. 4.26. 
+P22058	Chromatin. Nucleoplasm. Spindle apparatus. 	s	29.46. 5.43. 31.01. 
+P70166	PML body. Spindle apparatus. 	s	32.17. 0.39. 
+Q8WTY4	Nucleolus. Nucleoplasm. 	s	3.1. 22.87. 
+Q9EPU4	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	5.04. 15.5. 21.71. 22.48. 
+O35218	Nuclear Speckle	b	10
+Q9QXK7	Nuclear Speckle	b	10
+Q8BQZ5	Nuclear Speckle	s	16.28
+Q9CQF3	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	0.39. 28.68. 4.65. 
+Q6NVF9	Nucleolus	b	31.25
+P17886	Nuclear Speckle	b	62.5
+O45952	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	1.94. 13.95. 18.6. 
+Q60737	Nucleolus	b	79.38
+P67871	unknown	NA	NA
+Q06032	Nucleoplasm. PML body. 	s	15.5. 16.67. 
+Q99LI7	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	27.52. 6.59. 18.6. 5.04. 
+D0EL35	Nuclear Envelope. PML body. Spindle apparatus. 	s	27.13. 11.24. 27.91. 
+Q2NKJ3	Chromatin	b	61.75
+Q61164	Chromatin	b	22.63
+Q8BIW9	Chromatin. Nucleolus. Nucleoplasm. PML body. 	s	5.43. 7.75. 24.03. 4.65. 
+Q02732	Chromatin. Nucleoplasm. Spindle apparatus. 	s	4.26. 26.36. 9.69. 
+Q12748	Chromatin. Nuclear Envelope. Spindle apparatus. 	s	13.95. 27.91. 24.42. 
+Q62018	Nuclear Lamina. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	25.97. 8.53. 24.81. 24.03. 18.6. 
+Q8BG15	Chromatin. PML body. 	s	26.36. 13.95. 
+Q9V629	Nucleolus. Nucleoplasm. 	s	2.33. 31.78. 
+Q9JLV5	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	17.83. 1.94. 34.5. 11.24. 
+Q9D8X1	Nucleolus. Spindle apparatus. 	s	42.64. 9.69. 
+P39880-3	Nuclear Lamina	b	88
+Q9JHS9	Nuclear Speckle. Nucleolus. 	s	4.65. 18.99. 
+Q8C5N3	Nuclear Speckle. Nucleoplasm. 	s	12.02. 24.81. 
+Q3TKY6	Nuclear Speckle	b	35.37
+Q9H5V9	Nucleolus. Spindle apparatus. 	s	17.05. 6.59. 
+P36383	unknown	NA	NA
+Q9CWW7	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	12.4. 22.09. 15.5. 25.97. 
+Q6NUT2	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	8.14. 12.4. 0.39. 24.03. 
+P87297	Chromatin. Nucleoplasm. Spindle apparatus. 	s	30.23. 24.42. 16.67. 
+Q12248	Chromatin. Nucleoplasm. Spindle apparatus. 	s	29.46. 12.4. 31.78. 
+Q9UTG8	Chromatin. Spindle apparatus. 	s	14.73. 13.18. 
+P36162	Chromatin. Nucleoplasm. Spindle apparatus. 	s	26.74. 15.5. 3.88. 
+P69850	Chromatin. Nucleoplasm. 	s	26.74. 23.26. 
+P69851	Chromatin. Spindle apparatus. 	s	26.36. 12.02. 
+Q9HDZ6	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	4.65. 6.59. 11.63. 8.14. 
+P53267	Chromatin. Nucleoplasm. Spindle apparatus. 	s	27.52. 18.99. 31.4. 
+O35613	Chromatin. Kinetochore. Nuclear Speckle. PML body. Spindle apparatus. 	s	33.72. 1.55. 10.85. 5.43. 1.55. 
+Q6PAC3	Cajal Body. Kinetochore. Nuclear Pore Complex. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	43.8. 33.72. 32.95. 39.15. 26.36. 20.93. 
+O08788	Chromatin	b	97.62
+Q61655	Nucleolus	b	26.25
+Q3U1J4	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	13.18. 4.65. 39.92. 28.29. 
+Q99J79	Cajal Body. Kinetochore. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	28.68. 34.11. 36.82. 8.14. 41.09. 1.55. 13.18. 
+Q80Y44	Nucleolus	b	31.5
+Q9JJY4	Nucleolus	b	20.13
+Q9JIK5	Nucleolus. Nuclear Speckle. 	b	54.38
+Q9ESV0	Nucleolus	b	14.87
+Q91VN6	Nuclear Speckle	b	22.37
+Q569Z5	Nucleolus	b	26
+Q6P9R1	Nucleolus	b	19.25
+Q8K301	Nucleolus	b	92.38
+Q8K4L0	Nucleolus	b	23.5
+Q9D0R4	Nucleolus	b	19.5
+Q8QZV0	Nucleolus	b	89.62
+P35732	Chromatin. PML body. 	s	29.84. 0.39. 
+Q7TNV0	Nucleolus	s	53.88
+O70279	Chromatin. Nuclear matrix. Nucleoplasm. Spindle apparatus. 	s	16.28. 7.75. 20.93. 11.63. 
+Q9EQM6	Cajal Body. Nucleolus. Spindle apparatus. 	s	14.34. 20.54. 13.18. 
+P23743	unknown	NA	NA
+Q9Y394	Nucleolus. Nucleoplasm. 	s	29.84. 19.77. 
+O35286	Nucleolus. Nuclear Speckle. 	b	41.88
+O70133	Chromatin	b	41.38
+Q9UPY3	Nucleolus. Spindle apparatus. 	s	10.85. 25.58. 
+Q8C9B9	Nuclear Speckle	s	58.91
+Q8BTT6	Chromatin. Nucleoplasm. 	s	5.81. 28.29. 
+Q9UNQ2	Nucleolus	b	94.75
+Q5U458	Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	11.24. 43.41. 8.91. 
+Q91WT4	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	9.3. 31.01. 25.97. 19.38. 
+Q9ESX5	Nucleolus	b	80.38
+P70175	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	22.48. 27.91. 29.46. 9.69. 
+Q8K4R9	Cajal Body. Chromatin. Spindle apparatus. 	s	1.16. 4.26. 13.95. 
+Q9JI44	Chromatin. Nuclear Speckle. Nucleolus. 	s	4.26. 3.49. 6.98. 
+Q9URU2	Chromatin	b	20.5
+P38859	Chromatin	b	20.5
+P11936	Nuclear Envelope	b	76.88
+P17470	Cajal Body. Nucleolus. Spindle apparatus. 	s	3.88. 1.94. 19.38. 
+Q9QYJ0	Nucleolus	b	46.88
+Q9UBS3	Nuclear Speckle. Nuclear matrix. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	1.55. 20.16. 2.71. 35.27. 15.89. 
+Q6NZB0	Nuclear Speckle. Nucleolus. 	s	15.12. 18.99. 
+Q8BTF7	Nucleolus. Nucleoplasm. PML body. 	s	37.98. 31.4. 5.43. 
+O88509	Chromatin	b	44.38
+Q9CWR8	Chromatin	b	27.87
+P13864	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	36.43. 22.09. 24.42. 
+Q9JKP7	Nuclear Speckle. Nucleolus. 	s	0.78. 19.38. 
+P33609	Nuclear Speckle. Nucleolus. Nucleoplasm. PML body. 	s	6.59. 37.21. 28.29. 5.04. 
+Q8K409	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	33.33. 25.58. 19.77. 
+P48996	Chromatin	b	14.38
+P40568	Chromatin. Nucleoplasm. Spindle apparatus. 	s	10.08. 18.6. 8.53. 
+Q3TLR7	Cajal Body. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	29.07. 36.05. 11.24. 24.03. 9.3. 15.12. 33.33. 21.32. 
+P53168	Chromatin. Nucleoplasm. Spindle apparatus. 	s	41.09. 10.85. 15.12. 
+Q6NXK5	Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	7.75. 15.89. 21.32. 
+Q54T86	Nuclear Speckle. Nucleoplasm. 	s	6.2. 24.81. 
+Q9Z1N5	Nucleolus. Nuclear Speckle. 	b	88.87
+P51808	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	1.94. 21.71. 2.71. 
+P50570	unknown	NA	NA
+Q9Z2R9	Nucleolus	b	30.75
+O54917	Nucleoplasm. Spindle apparatus. 	s	27.52. 32.95. 
+Q9D4C5	Nuclear Speckle	b	47.13
+Q9HAF1-3	Nucleoplasm	s	14.73
+P12978	Nuclear Speckle. Nuclear matrix. Spindle apparatus. 	s	26.36. 33.72. 6.2. 
+P12977	Nuclear matrix	b	6.5
+Q8AZK7	Nuclear Envelope. Nuclear matrix. Nucleolus. Nucleoplasm. 	s	10.47. 2.71. 3.1. 17.05. 
+P03204	Nuclear matrix	b	6.38
+Q9D903	Nucleolus	b	82.38
+P39715	Chromatin. Nucleolus. Spindle apparatus. 	s	1.55. 9.3. 1.55. 
+Q5FW85	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	38.76. 36.05. 12.4. 25.19. 11.63. 
+Q9JMG1	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	15.5. 26.74. 19.38. 
+Q921E6	Cajal Body. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	39.53. 33.33. 19.38. 35.66. 25.58. 3.88. 13.57. 
+P62632	Nucleolus	b	90.75
+P24534	Nucleolus	b	94.5
+Q9D8N0	Nucleolus	b	97.75
+Q8BFR5	Nucleolus	b	21.62
+Q9BY44	Cajal Body. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nucleolus. Spindle apparatus. 	s	15.5. 19.77. 2.33. 8.91. 25.19. 7.36. 
+P60229	Chromatin. Nucleoplasm. Spindle apparatus. 	s	19.77. 31.4. 22.09. 
+P70372	Nuclear Speckle	b	16.88
+Q9Z2U4	Nucleolus	b	31
+O08856	Nucleoplasm. Spindle apparatus. 	s	19.77. 17.44. 
+Q8CB77	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	15.89. 1.55. 12.4. 
+Q7TT37	Nucleolus	b	88.75
+Q8CJF7	Chromatin. Nuclear Envelope. Nuclear Lamina. Spindle apparatus. 	s	8.53. 13.18. 5.04. 25.19. 
+Q32P44	Kinetochore. Nuclear Pore Complex. Nucleolus. Nucleoplasm. 	s	30.23. 35.27. 27.13. 13.57. 
+Q9CRD2	Nuclear Speckle. Nucleoplasm. 	s	17.83. 0.39. 
+Q63190	Nuclear Lamina. Chromatin. Nuclear Envelope. 	b	92.25
+Q96AY2	Cajal Body. Kinetochore. Spindle apparatus. 	s	3.49. 0.39. 12.4. 
+Q8C9X6	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	10.85. 17.83. 1.94. 35.27. 
+P21860	Nuclear Lamina	b	43.12
+Q2NKX8	Nuclear Speckle	b	27.75
+P07903	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	15.89. 29.46. 3.88. 12.02. 
+O08811	Nucleolus	b	13.12
+P62497	Nucleolus	b	100
+Q9UKR5	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	8.14. 0. 16.67. 7.75. 
+P84089	Chromatin	s	12.4
+Q8IV48	Nucleolus	b	80.38
+Q69Z69	Cajal Body. Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	21.71. 4.26. 21.71. 8.14. 3.88. 
+Q3V1V3	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	57.36. 23.26. 20.16. 
+P28322	Chromatin	b	51.12
+P14404	Chromatin. Nuclear matrix. 	b	25.25
+Q61545	Nuclear Speckle. Nuclear matrix. Nucleoplasm. 	s	46.51. 3.88. 21.71. 
+Q9DAA6	Cajal Body. Nucleolus. Spindle apparatus. 	s	22.48. 27.52. 1.16. 
+Q8VBV3	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	20.54. 29.07. 23.64. 
+Q7TQK4	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	23.64. 17.44. 2.71. 
+Q921I9	Nucleolus	s	32.17
+Q9CRA8	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	37.6. 39.53. 7.75. 
+Q8BTW3	Nucleolus. Nuclear Speckle. 	b	22.13
+Q9D753	Nucleolus	b	14.12
+Q9JHI7	Nucleolus	b	10.62
+P56960	Nucleolus. Nucleoplasm. 	s	27.13. 24.42. 
+O08575	Nuclear Speckle. Nucleoplasm. PML body. Spindle apparatus. 	s	18.99. 14.34. 0.78. 16.67. 
+Q61188	Chromatin. Nuclear Speckle. 	b	26.12
+Q6A0A9	Nuclear Speckle	b	100
+Q5BKY9	Nucleolus	b	86.75
+Q9CR98	Nucleoplasm. PML body. Spindle apparatus. 	s	29.46. 2.71. 9.3. 
+Q9Y6X4	PML body. Spindle apparatus. 	s	5.81. 23.64. 
+Q9BSJ6	Nucleolus	b	68.75
+Q5HYJ3	Nucleolus	b	68.5
+Q80VD1	Nucleolus	b	87.12
+P80020	Nucleolus. Nucleoplasm. 	s	36.43. 31.4. 
+Q80V62	Nuclear Envelope. Nuclear Pore Complex. Spindle apparatus. 	s	5.43. 10.08. 25.58. 
+O75844	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	26.36. 12.79. 32.56. 22.48. 
+Q922J9	Nuclear Lamina. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	11.63. 5.04. 28.68. 20.16. 
+Q9UNN5	unknown	NA	NA
+Q96CS3	Nuclear Lamina	b	97.25
+Q8IZU1	Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	12.02. 3.49. 18.6. 
+Q9JL70	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. PML body. Spindle apparatus. 	s	15.89. 1.16. 0. 17.83. 34.5. 
+P50652	Chromatin	b	89.25
+Q9EQR6	Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	20.16. 0.78. 20.93. 9.69. 
+Q6NZ36	Nuclear matrix. PML body. 	s	16.28. 6.98. 
+P35550	Cajal Body. Chromatin. Nucleolus. 	b	67.12
+Q86XK2	Nuclear Speckle. Nuclear matrix. 	s	5.43. 12.4. 
+Q969H0	Kinetochore	b	20.75
+O42861	Chromatin	b	40.88
+P15655	Nucleolus. Nucleoplasm. 	s	8.53. 18.6. 
+P11487	Nuclear Envelope. Nuclear matrix. Nucleolus. Spindle apparatus. 	s	6.98. 1.94. 2.71. 1.16. 
+Q04589	Nucleolus	b	23.88
+Q9Y613	unknown	NA	NA
+Q9D824	Cajal Body. Nuclear Speckle. 	s	1.16. 56.98. 
+Q9ZSZ8	Nuclear Speckle	b	19.5
+Q9ER69	Nuclear Speckle	b	19.38
+Q61572	Nuclear Speckle. Nucleoplasm. 	s	18.22. 12.02. 
+P97376	Nucleolus	s	44.57
+P25028	Chromatin. PML body. Spindle apparatus. 	s	20.93. 14.73. 11.63. 
+O36024	Nucleoplasm. Spindle apparatus. 	s	38.37. 29.84. 
+Q9US26	Chromatin. PML body. Spindle apparatus. 	s	13.95. 0.78. 9.69. 
+O94261	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	11.63. 28.68. 0.78. 6.59. 
+O94716	Chromatin. Nucleoplasm. Spindle apparatus. 	s	9.69. 20.54. 17.83. 
+Q9UTP3	Chromatin. Spindle apparatus. 	s	17.05. 12.02. 
+O74844	Chromatin. Nucleoplasm. Spindle apparatus. 	s	12.4. 29.07. 23.26. 
+Q9Z1T6	Nuclear matrix	b	14
+Q5RJY2	Nucleoplasm. Nucleolus. 	b	74.88
+Q9CY66	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	27.91. 36.82. 13.95. 
+P23772	Chromatin	b	70
+P63244	Kinetochore	b	18.12
+P18507	unknown	NA	NA
+Q91X44	Nucleolus. Spindle apparatus. 	s	29.07. 9.3. 
+Q01820	Spindle apparatus	s	0.39
+Q9CQQ4	Cajal Body	b	96.25
+Q8BX17	Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	32.56. 46.9. 37.98. 14.34. 0.78. 11.63. 
+Q9CX53	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	13.95. 35.27. 25.97. 
+Q9CWY4	Nucleoplasm	s	0
+O88513	Chromatin. Nucleoplasm. 	s	10.47. 19.77. 
+Q9UJY5	unknown	NA	NA
+Q80WJ1	Nucleolus	b	64.38
+Q99J23	Nuclear Envelope. Nuclear Lamina. Spindle apparatus. 	s	9.3. 26.36. 21.32. 
+Q8K3I9	Nucleoplasm. PML body. 	s	18.99. 34.11. 
+Q61602	Nuclear Speckle	b	29.5
+Q9NVN8	Nucleolus	b	85.25
+Q8CI11	Nucleolus	b	86.5
+Q9NQ84	unknown	NA	NA
+Q8N954	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	1.55. 30.23. 24.81. 
+Q3TFK5	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	20.54. 38.76. 12.02. 
+Q9UU96	Nucleoplasm. Spindle apparatus. 	s	31.01. 5.04. 
+P42262	unknown	NA	NA
+O43424	unknown	NA	NA
+Q9LX99	Chromatin	b	16.25
+P41594	Nuclear Envelope	b	100
+P38647	Nuclear Speckle	b	40.75
+Q9ESZ8	Nucleolus	b	96.13
+P26568	Chromatin	b	53.25
+P10771	Chromatin	b	45.5
+Q24704	Chromatin	b	93.5
+Q08864	Chromatin	b	50.5
+P15871	Chromatin. Nucleoplasm. Spindle apparatus. 	s	2.33. 5.04. 13.95. 
+Q99283	Chromatin	s	4.65
+P15872	Chromatin. Nucleoplasm. Spindle apparatus. 	s	17.44. 16.67. 3.88. 
+P84553	Spindle apparatus	s	9.3
+P82898	Chromatin	s	40.7
+P06895	Chromatin	b	78.63
+P15867	Chromatin	b	35.62
+P15870	Chromatin	b	28.5
+Q8CJI4	Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	17.44. 5.43. 18.6. 
+Q3HNG7	Chromatin	b	40.88
+P27203	Nucleoplasm	s	20.93
+P27204	Chromatin	s	29.46
+Q05831	Chromatin	b	93.5
+P22975	Chromatin. Nucleolus. Nucleoplasm. 	s	7.75. 3.49. 14.34. 
+P19376	Chromatin	s	15.5
+P54671	Chromatin. Nucleoplasm. Spindle apparatus. 	s	67.05. 2.71. 22.87. 
+P02257	Chromatin	b	60.62
+P32103	Chromatin. Nucleoplasm. 	s	25.19. 0.39. 
+P15868	Chromatin	b	83.25
+P40267	Chromatin. Spindle apparatus. 	s	34.88. 26.36. 
+P12305	Cajal Body. Chromatin. Nucleolus. 	s	17.05. 33.33. 8.91. 
+P27892	Chromatin	b	95.25
+P08992	Chromatin	b	72.38
+P55897	Nucleolus. Nucleoplasm. 	s	15.89. 8.91. 
+Q8SSG3	Chromatin. Nucleolus. Spindle apparatus. 	s	36.05. 31.78. 17.05. 
+P82897	Chromatin	b	79.5
+P81903	Chromatin	s	12.79
+P30755	Chromatin	b	88.38
+P81904	Chromatin	s	5.43
+P0C1H6	Chromatin	b	38.88
+P13281	Chromatin	s	30.23
+P13282	Chromatin	s	13.95
+P02280	Chromatin	b	57
+P83837	Chromatin	s	19.38
+P40284	Chromatin	b	43.38
+P27893	Chromatin	b	63.5
+Q3SZB8	Chromatin	b	67.75
+Q9MBF6	Chromatin	b	29.75
+Q9XG57	Chromatin. Nucleoplasm. 	s	22.09. 16.28. 
+Q76NW2	Chromatin. Nucleolus. 	b	74.75
+P62789	Nucleolus. Nucleoplasm. 	s	11.24. 6.98. 
+P06513	Chromatin	b	91.62
+P02260	Chromatin. Nucleoplasm. 	s	8.91. 5.04. 
+P18638	Chromatin	s	17.44
+Q9Z0R0	Chromatin	b	17.87
+O13924	Chromatin	b	23.12
+O94244	Chromatin. Nucleolus. 	b	42.25
+Q8BKT8	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	11.24. 29.84. 25.58. 27.52. 
+O00165	Nuclear matrix. Nucleoplasm. Spindle apparatus. 	s	3.49. 13.95. 22.09. 
+Q9FVL0	Nucleolus	s	15.5
+Q61425	Nucleolus. Nucleoplasm. 	s	36.05. 39.15. 
+Q61191	Chromatin. Spindle apparatus. 	s	7.75. 6.2. 
+P56519	Chromatin. Nucleolus. Nuclear Speckle. 	b	97.5
+Q9Z2V6	Chromatin	b	38.25
+Q03937	Chromatin. PML body. 	s	5.04. 3.49. 
+P38199	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	20.16. 8.91. 30.62. 
+Q15751	unknown	NA	NA
+Q61221	Nucleolus	b	88
+Q9QYL0	Chromatin. Nucleolus. Nucleoplasm. 	s	14.73. 2.71. 8.91. 
+Q8K1K9	Chromatin	b	17.25
+O88904	PML body	b	60.12
+P32479	Chromatin	b	15.62
+Q61666	Chromatin	b	20.5
+Q6PCN7	Nucleolus	b	72.88
+Q9Z104	Chromatin. Nucleoplasm. Spindle apparatus. 	s	31.4. 6.98. 27.52. 
+P12683	Nuclear Envelope	b	55
+Q24537	Chromatin	b	45.62
+Q23794	Chromatin. Nucleolus. 	s	0.78. 5.43. 
+P17095	Chromatin	b	97.62
+P52927	Chromatin. Nucleolus. Spindle apparatus. 	s	24.03. 9.69. 27.91. 
+P40626	Chromatin. Nucleolus. 	s	47.67. 9.69. 
+P11873	Chromatin	b	89.5
+Q05783	Chromatin	b	55.62
+P02313	Nucleolus	s	38.76
+Q9JL35	Cajal Body. Nuclear Envelope. Nuclear Lamina. Nuclear matrix. Nucleolus. Nucleoplasm. 	s	9.3. 5.43. 8.91. 13.18. 0.78. 16.28. 
+Q9Z130	Nucleolus. Nuclear Speckle. 	b	62.88
+O35737	Nucleolus. Nuclear Speckle. 	b	94.38
+Q8VDM6	Nuclear Speckle	b	50.25
+Q921F4	Nucleolus	b	92.25
+Q9Z204	Nuclear Speckle	b	46.75
+Q9D0E1	Nuclear matrix	b	98.5
+Q9WUB0	Nucleoplasm	s	32.56
+Q9P7P2	Chromatin. PML body. 	s	24.42. 25.19. 
+P20050	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	23.26. 26.36. 8.53. 5.81. 
+O35047	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	15.89. 20.54. 8.14. 
+Q86X24	Chromatin	b	47.87
+P11499	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	43.41. 32.56. 20.93. 
+P38533	PML body. Chromatin. 	b	27.87
+P69852	Spindle apparatus	s	10.85
+Q9GLP9	Chromatin	s	52.71
+P35302	Chromatin	s	39.53
+O18745	Chromatin	s	45.74
+P42129	Chromatin	s	45.35
+Q9GLQ0	Chromatin	s	48.06
+P42131	Chromatin	s	54.65
+P35304	Chromatin	s	51.16
+P15340	Chromatin	s	49.22
+P14402	Chromatin	s	48.06
+Q9GLQ6	Chromatin	s	49.22
+Q9GLQ4	Chromatin	s	51.16
+P42132	Chromatin	s	48.84
+P35303	Chromatin	s	46.51
+P15341	Chromatin	s	65.12
+Q9GLQ1	Chromatin	s	50.78
+Q9GLQ2	Chromatin	s	38.37
+P42137	Chromatin	s	50
+P42138	Chromatin	s	51.55
+Q9GLQ9	Chromatin	s	44.96
+P42142	Chromatin	s	47.67
+P67836	Chromatin	s	53.49
+P83211	Chromatin	s	26.74
+P67852	Chromatin	s	43.41
+P42143	Chromatin	s	48.06
+P83214	Chromatin	s	43.02
+Q9GLQ3	Chromatin	s	44.19
+P35307	Chromatin	s	25.19
+P42147	Chromatin	s	24.42
+Q9GLQ5	Chromatin	s	51.55
+Q9GLQ7	Chromatin	s	48.45
+P79990	Chromatin	s	43.41
+O18747	Chromatin	s	49.22
+P42148	Chromatin	s	52.33
+O18746	Chromatin	s	46.12
+O18748	Chromatin	s	48.84
+P35310	Chromatin	s	45.35
+Q9GLP8	Chromatin	s	43.41
+P42145	Chromatin	s	47.29
+P35311	Chromatin	s	44.96
+Q9GLQ8	Chromatin	s	47.67
+P42152	Chromatin	s	50.39
+P02518	Nuclear matrix	b	45
+P83212	Chromatin	s	39.92
+P15343	Chromatin	s	62.79
+P83213	Chromatin	s	30.62
+P83215	Chromatin	s	50
+P83216	Chromatin	s	25.19
+P83217	Chromatin	s	44.19
+P84588	Nucleoplasm	s	17.83
+P14602	Nuclear Speckle	b	39.88
+Q9UBY9	Nuclear Speckle. Nuclear matrix. Nucleoplasm. Spindle apparatus. 	s	1.94. 10.08. 28.29. 1.55. 
+P83183	Chromatin	s	28.29
+Q08GK9	Chromatin. Spindle apparatus. 	s	21.32. 17.05. 
+Q8RVQ9	Chromatin	b	40.88
+Q8BGC0	Chromatin. Nucleolus. Nucleoplasm. Perinucleolar. 	s	10.08. 39.15. 12.02. 6.98. 
+Q8BQY8	PML body	b	16.62
+P78955	PML body	b	16.62
+Q9CR41	Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	0.39. 41.86. 20.16. 
+Q55GF9	Chromatin. Kinetochore. Nucleoplasm. Spindle apparatus. 	s	29.84. 24.81. 16.67. 0. 
+Q6ZWX6	Nucleolus	b	98.75
+O88477	Nuclear Speckle. Nucleolus. Nucleoplasm. Perinucleolar. Spindle apparatus. 	s	36.05. 37.98. 37.6. 3.88. 22.48. 
+Q9Z0N2	Chromatin	b	73.5
+Q91VC3	Nucleolus	b	58.38
+P63074	Nucleoplasm. Spindle apparatus. 	s	15.89. 0.39. 
+P63242	Nucleolus	b	82.5
+O55135	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	10.85. 40.31. 4.26. 
+P15092	Nucleolus	s	21.32
+P09914	Nuclear Lamina. Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	21.71. 28.68. 32.95. 4.65. 
+Q60680	Nuclear Speckle	b	15
+P81183	Chromatin	b	46.75
+Q9CXY6	Chromatin. Nuclear Speckle. 	b	17.5
+Q9Z1X4	Nuclear Speckle	b	50.62
+O59809	Nuclear Lamina. Nuclear Pore Complex. 	b	14.25
+Q60960	Nuclear Lamina. Nuclear Pore Complex. Nucleolus. 	b	36.88
+P70168	Nuclear Envelope	b	99.25
+P40069	Nuclear Pore Complex	b	7.25
+P38265	Chromatin. Spindle apparatus. 	s	0. 3.88. 
+Q921Y2	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	24.03. 30.62. 1.55. 
+Q8VHZ7	Nucleolus	b	22.5
+Q99PT3	Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	4.65. 29.46. 25.19. 
+Q9WU62	Chromatin	b	39.63
+Q9ESK4	Chromatin. Nucleolus. 	b	54.38
+Q8C0D7	Chromatin. Nucleolus. 	b	25
+Q9BT40	unknown	NA	NA
+Q9NVH2	Chromatin. Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	4.65. 13.95. 10.47. 12.79. 22.48. 24.81. 
+Q92813	unknown	NA	NA
+Q10272	Cajal Body. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	33.33. 2.33. 28.68. 37.98. 12.02. 31.4. 3.88. 27.52. 
+P38991	Chromatin	b	35.37
+Q8K2V6	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	23.26. 9.3. 32.56. 31.78. 0.39. 
+Q8VI75	Nuclear Pore Complex	b	7
+Q8BKC5	Nuclear Pore Complex	b	6.12
+Q9EPL8	Nuclear Envelope	b	13.62
+Q8N0W5	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	8.14. 0.39. 10.47. 19.38. 
+Q64287	Cajal Body	b	36.5
+P63252	unknown	NA	NA
+P35570	Nuclear matrix. PML body. Spindle apparatus. 	s	5.81. 14.73. 43.02. 
+Q69ZQ2	Nuclear Speckle. Nucleolus. 	s	3.1. 33.72. 
+Q2HJE5	Nuclear Envelope. Nucleoplasm. Spindle apparatus. 	s	16.28. 39.15. 6.98. 
+Q60976	Chromatin. Nucleoplasm. 	s	29.46. 0.39. 
+P17325	Chromatin. Spindle apparatus. 	s	25.58. 41.09. 
+Q8BKS9	Chromatin. Nucleolus. 	s	10.47. 50.39. 
+O60268	unknown	NA	NA
+P13645	Nucleolus	b	62
+P05787	Nucleoplasm. Nuclear matrix. 	b	86.5
+P32767	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	6.59. 1.16. 18.99. 28.68. 24.42. 
+Q9Y3D8	Nucleolus. Spindle apparatus. 	s	28.68. 17.44. 
+P36132	Nuclear Lamina. Nuclear matrix. Nucleolus. Nucleoplasm. 	s	8.91. 0.39. 27.13. 21.32. 
+Q8BN78	Chromatin	b	60.38
+P12367	Nuclear Pore Complex. Nucleoplasm. PML body. Spindle apparatus. 	s	2.71. 34.5. 1.55. 12.79. 
+Q92831	Chromatin	b	33.75
+Q8BZ21	Chromatin	b	61.25
+O45406	Chromatin. Nucleolus. Nucleoplasm. 	s	1.55. 6.59. 27.13. 
+Q6P1G2	Nucleolus	b	52.62
+Q6ZPY7	Cajal Body. Nuclear Speckle. Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	5.43. 1.16. 0.39. 24.42. 36.82. 21.32. 
+Q8BW72	Chromatin	b	24.63
+Q62240	Chromatin	b	24.63
+Q13976	unknown	NA	NA
+Q60749	Nuclear Speckle. Perinucleolar. 	b	52.25
+Q6P9P6	Chromatin. Spindle apparatus. 	b	27.38
+Q3V300	Chromatin. Spindle apparatus. 	b	19.87
+P70096	Chromatin. Spindle apparatus. 	b	22.13
+Q8K339	Cajal Body. Nucleolus. Nucleoplasm. 	s	9.69. 70.93. 28.29. 
+Q9H0B6	unknown	NA	NA
+P34341	Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	13.18. 17.83. 5.81. 
+Q3UG20	Nuclear Speckle. Spindle apparatus. 	s	37.6. 10.85. 
+Q9Z2Q2	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	44.57. 14.34. 29.84. 
+O94806	unknown	NA	NA
+Q91YA2	unknown	NA	NA
+Q8VDQ9	Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	6.98. 61.24. 17.44. 
+Q8BGA5	Nucleolus. Nucleoplasm. 	s	75.58. 22.87. 
+Q9Z2B9	unknown	NA	NA
+Q23976	Nuclear Lamina. Chromatin. Nucleolus. Nuclear Speckle. 	b	9.25
+O94395	Nuclear Lamina. Chromatin. Nucleolus. Nuclear Speckle. 	b	12
+Q9HGM8	Chromatin. Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	16.67. 34.11. 23.64. 6.98. 
+Q8R1F0	Chromatin. Nucleolus. Nucleoplasm. 	s	0.39. 29.07. 17.05. 
+Q6P1M3	unknown	NA	NA
+Q9M0K4	PML body. Chromatin. 	b	24
+P42167	Chromatin. PML body. Spindle apparatus. 	s	33.72. 13.95. 19.38. 
+Q80TH2	Nuclear Envelope. Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	26.36. 0.78. 36.05. 32.56. 
+Q6PKG0	Nuclear Speckle. Nucleolus. PML body. Spindle apparatus. 	s	12.79. 5.81. 12.02. 13.57. 
+O42936	Nuclear Envelope. Nuclear Pore Complex. Nucleoplasm. PML body. Spindle apparatus. 	s	10.85. 10.85. 26.74. 12.4. 6.98. 
+P32067	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	23.26. 53.88. 19.77. 1.94. 
+P23913	Nuclear Lamina. Chromatin. 	b	56.62
+Q7TNC4	Nuclear Speckle	b	22.87
+Q5SUF2	Nucleolus	b	21
+P16045	Nuclear matrix	b	94.5
+P08699	Nuclear Speckle	b	84.62
+Q6DVA0	Spindle apparatus	s	7.36
+Q96BZ8	Nucleolus	b	77.88
+O95202	Nuclear Lamina	b	80
+Q9UBR4	Nucleoplasm. PML body. 	s	24.42. 36.43. 
+P43034	Kinetochore	b	99.75
+Q9D945	Nucleolus. Nucleoplasm. 	s	67.05. 11.63. 
+P48678	Nuclear Lamina. Perinucleolar. 	b	97.75
+Q9H9Z2	Nucleolus. Nucleoplasm. 	s	13.18. 22.87. 
+O61267	PML body	b	28.38
+P48999	Nucleoplasm	s	34.88
+Q643R3	unknown	NA	NA
+Q5T3J3	Chromatin. Kinetochore. PML body. Spindle apparatus. 	s	31.01. 10.47. 11.24. 17.83. 
+Q9VW97	Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	18.22. 0.39. 6.59. 
+Q9H089	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	54.26. 28.68. 20.93. 
+Q8QZX5	Cajal Body. Nuclear Speckle. Nucleolus. 	s	10.85. 14.34. 8.14. 
+P62310	Cajal Body. Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	9.69. 1.94. 54.26. 27.13. 
+Q9QXA5	Cajal Body. Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	26.74. 40.7. 32.17. 18.99. 
+P62312	Cajal Body. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	29.46. 12.4. 22.09. 30.23. 11.63. 
+Q6ZWM4	Nucleolus. Spindle apparatus. 	s	27.52. 20.54. 
+P03070	Nuclear matrix	b	68.38
+Q08288	Nucleolus. Nucleoplasm. 	s	63.18. 17.83. 
+Q07014	Nucleolus	b	29.12
+Q9Z1W6	Nucleolus	b	95.5
+Q80WQ8	Nucleolus	b	100
+Q9Y6R4	unknown	NA	NA
+O95819	unknown	NA	NA
+Q8IWC1	Nucleolus. Nucleoplasm. 	s	15.89. 0.78. 
+Q8N5G2	Chromatin. Kinetochore. Nuclear Envelope. Nuclear Lamina. Nucleoplasm. PML body. Spindle apparatus. 	s	3.1. 13.18. 18.6. 30.62. 22.09. 17.44. 2.33. 
+Q9LU93	Kinetochore. Chromatin. Nuclear Pore Complex. Spindle apparatus. 	b	34.12
+O59767	Kinetochore. Chromatin. 	b	25.25
+Q7L5Y9	Nuclear matrix	b	98.38
+Q9M7N6	Chromatin. Nuclear Lamina. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	2.33. 1.16. 3.1. 0.39. 32.95. 
+O54790	Chromatin. Nucleoplasm. PML body. 	s	18.6. 24.42. 10.08. 
+P43356	Nucleolus	b	19.38
+Q9CPR8	PML body	b	19.38
+Q8BGS0	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	11.63. 4.26. 18.6. 0.78. 
+Q10290	Chromatin. Nucleoplasm. Spindle apparatus. 	s	6.2. 32.17. 22.09. 
+Q6T264	Chromatin. PML body. Spindle apparatus. 	s	14.34. 26.74. 6.98. 
+P78559	unknown	NA	NA
+Q9NX47	Spindle apparatus	s	4.26
+P51949	Chromatin. Nuclear matrix. Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	2.71. 0.78. 11.24. 22.87. 3.88. 20.16. 
+Q8K310	Nuclear Speckle. Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	10.47. 17.44. 1.16. 0.78. 14.73. 
+Q9D9H3	Nucleolus	b	21.38
+Q7TPV4	Chromatin. Nucleolus. Nucleoplasm. 	s	22.87. 20.54. 12.4. 
+Q9Z2E2	Nucleolus. PML body. Spindle apparatus. 	s	4.26. 13.95. 9.69. 
+Q9Z2D8	Chromatin. Nucleolus. 	b	68.63
+Q99LQ1	Chromatin. Spindle apparatus. 	s	8.53. 27.91. 
+Q8C181	PML body	b	64
+Q6P1A2	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. 	s	46.51. 28.29. 0.39. 
+Q9C107	Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	32.95. 29.84. 34.5. 5.43. 24.81. 22.09. 25.19. 
+Q12262	Chromatin. Nucleoplasm. Spindle apparatus. 	s	15.5. 29.84. 24.42. 
+Q06675	Chromatin. Spindle apparatus. 	s	17.83. 26.36. 
+P47167	Chromatin. Nucleoplasm. Spindle apparatus. 	s	32.17. 27.52. 8.53. 
+P97310	Chromatin	b	21.38
+P25206	Chromatin. Nucleolus. 	b	21.25
+P97311	PML body. Chromatin. 	b	38.25
+Q7TT79	Cajal Body. Chromatin. PML body. Spindle apparatus. 	s	13.95. 25.19. 12.79. 36.05. 
+Q9WTX8	Chromatin. Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. 	s	18.6. 1.16. 24.03. 35.66. 21.32. 
+Q5PSV9	Nuclear matrix	b	19.63
+O43068	Chromatin. Kinetochore. PML body. 	s	36.43. 12.02. 26.36. 
+Q9P1T7	Nuclear matrix. Nucleoplasm. PML body. Spindle apparatus. 	s	8.14. 24.81. 45.74. 15.89. 
+P23804	Nucleoplasm. Nucleolus. 	b	87.88
+Q9Z2D6	Cajal Body. Nucleolus. Spindle apparatus. 	s	5.43. 25.58. 36.05. 
+Q9BTT4	Nucleolus	b	99.12
+P87310	Kinetochore. Nucleoplasm. PML body. 	s	3.1. 22.09. 4.26. 
+Q9VEC1	PML body. Spindle apparatus. 	s	7.75. 21.71. 
+Q9H944	Nucleolus	b	96.5
+Q9CQ39	Chromatin. Kinetochore. Spindle apparatus. 	s	1.94. 1.16. 24.42. 
+Q8BRM6	Chromatin. Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	13.57. 4.26. 2.33. 29.84. 26.36. 
+P29467	Chromatin. Nucleoplasm. Spindle apparatus. 	s	26.74. 28.68. 18.99. 
+Q9D513	Nucleolus. PML body. 	s	18.22. 17.44. 
+O88559	Chromatin. Nuclear matrix. 	b	100
+Q9NH52	Chromatin	b	19.25
+Q86XN8	unknown	NA	NA
+P40578	Nuclear matrix	b	31.25
+P24528	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	22.09. 35.27. 21.32. 
+P61327	Nucleolus	s	5.81
+P10620	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	31.78. 25.97. 16.67. 16.67. 
+Q3TPJ7	Nucleoplasm. PML body. Spindle apparatus. 	s	21.32. 32.56. 18.6. 
+P35201	Nucleoplasm. Spindle apparatus. 	s	17.83. 31.4. 
+Q8CD15	Nucleolus	b	20
+Q1T769	Chromatin	s	27.52
+Q9Y738	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	17.83. 31.01. 6.59. 23.26. 
+Q9P6M3	Chromatin. PML body. 	s	5.43. 10.08. 
+Q9C0W0	Chromatin. Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	8.53. 3.88. 28.68. 3.1. 13.95. 
+O94643	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	15.5. 4.65. 1.55. 0.39. 
+Q9P802	Nuclear Lamina	s	5.43
+Q09725	Chromatin. Nucleolus. 	b	6
+Q09591	Nucleolus	b	36.62
+Q91VE6	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	17.44. 43.02. 17.44. 22.48. 
+P21741	Nucleolus. Nucleoplasm. 	s	33.33. 23.26. 
+P40631	Cajal Body. Chromatin. 	s	12.02. 15.5. 
+Q5FW52	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	12.4. 27.52. 13.95. 16.28. 
+Q9D2Y4	Nucleolus	b	54.75
+Q99LX5	Nuclear Speckle. Spindle apparatus. 	s	29.46. 15.12. 
+Q8GYD2	Chromatin. Nucleolus. Nucleoplasm. 	s	3.49. 2.33. 24.42. 
+P60762	Nucleolus	s	7.36
+Q9UTI4	Chromatin. Nucleoplasm. Spindle apparatus. 	s	18.99. 28.68. 2.33. 
+P40484	Nucleoplasm. PML body. Spindle apparatus. 	s	8.53. 14.34. 10.08. 
+Q8BMD7	Chromatin. Nuclear Lamina. Nuclear Pore Complex. Spindle apparatus. 	s	11.24. 5.81. 12.4. 25.97. 
+Q9D1Q1	Nucleolus. Nucleoplasm. 	s	45.35. 15.89. 
+Q810V0	Nucleolus	b	76.5
+Q61216	PML body. Chromatin. 	b	93.63
+Q9D0I8	Nucleolus. Nucleoplasm. 	s	47.29. 23.64. 
+Q99MT2	Chromatin	b	14
+Q9QUM7	Chromatin	b	9.62
+P50535	Nucleoplasm. Spindle apparatus. 	s	7.36. 18.22. 
+P50534	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	30.23. 14.34. 16.28. 40.31. 
+P50536	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	1.94. 13.18. 5.43. 
+Q7TNB4	Nuclear Pore Complex. Spindle apparatus. 	s	12.79. 2.71. 
+Q8K4B0	Chromatin	b	67.88
+Q8C3P7	Chromatin	s	17.83
+O54972	Nuclear matrix	b	70.25
+Q6ZPE2	Nuclear Envelope	b	22
+Q96EF0	Nuclear Envelope	b	52.62
+Q9JLN9	PML body. Chromatin. Nucleolus. 	b	20
+Q23973	Spindle apparatus	s	17.83
+Q7SZL5	Chromatin. Kinetochore. Nucleoplasm. Spindle apparatus. 	s	22.87. 24.03. 13.18. 40.31. 
+P39731	Chromatin. Kinetochore. Spindle apparatus. 	s	29.84. 9.3. 1.94. 
+Q13505	unknown	NA	NA
+O94418	Nuclear Envelope	b	10.38
+Q91ZJ0	Nucleolus. Spindle apparatus. 	s	11.24. 6.98. 
+P09922	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	4.26. 37.98. 14.73. 
+P04197	Nuclear matrix	b	55.62
+Q8VIM5	Chromatin. Nuclear Speckle. Nuclear matrix. PML body. Spindle apparatus. 	s	0.78. 12.4. 5.81. 14.34. 2.33. 
+P01108	Nuclear matrix	b	65.38
+Q8VDD5	Nucleolus	b	25.37
+P11799	PML body. Chromatin. Nuclear Speckle. 	b	34.5
+Q99104	Nucleolus	b	16.5
+Q69ZN7	Nucleolus. Spindle apparatus. 	s	13.57. 24.03. 
+Q6A037	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	5.04. 20.54. 17.05. 13.18. 
+Q80Z64	Nuclear Speckle	s	13.95
+Q9CYQ7	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	43.8. 1.94. 3.49. 
+Q8K224	Nuclear Lamina. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	0.78. 18.6. 35.66. 15.89. 
+Q9DE07	PML body. Chromatin. 	b	42.13
+O43070	Nucleoplasm	s	19.38
+Q3UYV9	Chromatin. Nuclear Envelope. Nucleoplasm. PML body. Spindle apparatus. 	s	6.59. 9.3. 25.19. 15.12. 4.65. 
+Q9CQ49	Nuclear Speckle. Nucleolus. Nucleoplasm. Perinucleolar. 	s	43.02. 23.26. 4.65. 10.08. 
+Q969V3	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	34.5. 12.79. 38.76. 15.5. 
+Q61026	Chromatin. Nuclear Speckle. PML body. Spindle apparatus. 	s	15.89. 17.05. 25.97. 34.5. 
+Q9WU42	Chromatin	b	32.75
+Q8VCB1	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	47.67. 29.46. 14.73. 21.71. 
+Q17635	Kinetochore	b	9.5
+Q10198	Chromatin	b	7.75
+P40460	Chromatin	b	7
+Q60867	Nucleoplasm	s	19.77
+Q12366	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	9.69. 27.13. 3.88. 4.26. 
+Q9UN36	unknown	NA	NA
+Q96PU5	unknown	NA	NA
+Q8K4Q6	Nucleolus	s	64.34
+Q8C0Q4	Nucleolus	b	55.12
+O35942	Nucleolus	b	21.5
+Q86NP2	Chromatin. Nuclear matrix. Nucleoplasm. Spindle apparatus. 	s	32.56. 1.94. 16.67. 5.81. 
+Q9Y113	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	13.57. 24.81. 3.1. 10.85. 
+Q24134	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	0.39. 37.98. 16.67. 25.58. 
+P92204	Nuclear Speckle. Nucleolus. Nucleoplasm. Perinucleolar. 	s	36.05. 34.11. 1.55. 0.39. 
+O35130	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	39.92. 30.23. 6.98. 
+P97863	Nuclear matrix	b	56.13
+Q9DB96	Nucleolus	s	34.11
+Q7KRY6	Nucleolus	b	24.75
+Q9CRB2	Cajal Body. Nucleolus. Nuclear Speckle. 	b	29.5
+P11633	Chromatin	b	86.13
+Q9CXK8	Nucleolus. Nucleoplasm. 	s	14.34. 29.07. 
+Q6KCD5	Chromatin	b	4.87
+Q12493	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	20.16. 31.78. 12.79. 19.38. 
+Q06162	Chromatin. PML body. Spindle apparatus. 	s	39.15. 2.71. 23.64. 
+Q8VEJ4	Nucleoplasm. Nucleolus. 	b	12.75
+P47149	Chromatin. Nucleoplasm. PML body. 	s	14.73. 22.87. 13.95. 
+Q9NP64	Nucleolus	b	93.38
+Q9JJF3	Nucleolus	b	20
+Q8BW10	Nucleolus. Nucleoplasm. 	s	46.51. 0.39. 
+Q8VI84	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	31.4. 27.91. 23.64. 
+Q9BVI4	Nucleolus	b	73.87
+Q99P77	Chromatin. Nucleolus. 	b	91.88
+Q5RJG1	Cajal Body. Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	3.49. 5.81. 35.66. 23.64. 
+Q8BJW5	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Spindle apparatus. 	s	23.64. 1.94. 11.63. 31.4. 
+Q8BG17	Nucleolus. Nucleoplasm. 	s	39.92. 18.99. 
+Q9D1X0	Nucleolus	b	84.88
+O94818	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	6.59. 20.54. 36.43. 13.18. 
+Q8R5K4	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	10.08. 28.68. 23.26. 
+Q9D7Z3	Nucleolus. Spindle apparatus. 	s	35.27. 21.71. 
+Q3UHX0	Cajal Body. Nucleolus. 	s	19.77. 27.13. 
+Q3TZX8	Chromatin. Nucleolus. Nucleoplasm. 	s	3.49. 2.33. 24.42. 
+P41777	Cajal Body. Nucleolus. 	b	76.5
+Q3UFM5	Nucleolus. Spindle apparatus. 	s	36.43. 5.04. 
+Q9CQS2	Nucleoplasm	s	23.26
+Q8R3N1	Nucleolus. Spindle apparatus. 	s	24.03. 22.09. 
+Q9CPT5	Nucleolus. Nucleoplasm. 	s	19.38. 22.09. 
+Q922K7	Nucleolus	b	20.13
+Q9D6Z1	Chromatin. Nucleolus. 	b	25.88
+Q8BMC4	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	0.78. 36.05. 36.05. 4.26. 
+P29474	unknown	NA	NA
+Q9D6T0	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	37.6. 0.39. 24.03. 
+O60287	Chromatin. Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. PML body. Spindle apparatus. 	s	4.65. 23.26. 7.75. 26.36. 28.29. 9.69. 31.78. 
+Q9NZP6	Nuclear Speckle. Nuclear matrix. Nucleoplasm. 	s	29.46. 22.48. 0. 
+Q8BMA5	Chromatin. PML body. Spindle apparatus. 	s	14.34. 21.32. 18.99. 
+Q9CPP0	Chromatin. Nucleolus. 	b	31
+P07222	Nucleolus. Nuclear Speckle. 	b	58
+Q62227	Nuclear Envelope. Nuclear Pore Complex. Nucleoplasm. PML body. Spindle apparatus. 	s	14.34. 22.48. 32.17. 3.49. 10.85. 
+Q505F1	Nuclear matrix	b	50.62
+P45448	Nuclear Speckle	b	49.5
+Q80XB4	Nucleoplasm	s	24.42
+Q8VC65	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	66.28. 57.36. 12.02. 0.39. 24.03. 
+Q920Q8	Nucleolus. Nucleoplasm. 	s	6.98. 32.17. 
+Q9D720	Chromatin. Nucleoplasm. PML body. 	s	2.33. 24.42. 9.3. 
+Q96MF7	Chromatin. PML body. Spindle apparatus. 	s	18.99. 27.13. 8.14. 
+O94668	Chromatin. Nucleoplasm. Spindle apparatus. 	s	13.57. 33.72. 19.38. 
+O13688	Chromatin. PML body. Spindle apparatus. 	s	40.31. 9.3. 25.97. 
+Q12143	Nucleoplasm. PML body. 	s	20.93. 3.49. 
+Q6ZPR5	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	36.05. 13.18. 5.04. 0. 15.12. 
+Q9ET64	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	19.77. 10.85. 29.84. 21.32. 
+Q1HFZ0	Nucleolus. Spindle apparatus. 	s	43.8. 10.85. 
+Q8K4F6	Nucleolus	b	85.38
+Q8R2U4	Nuclear Speckle. Nucleolus. PML body. Spindle apparatus. 	s	6.98. 11.24. 3.1. 3.88. 
+Q8BH74	Chromatin	b	94.88
+Q9UTH0	Kinetochore. Nuclear Pore Complex. 	b	5.38
+Q8WUM0	Nuclear Lamina. Nuclear Pore Complex. 	b	79.12
+P36161	Nuclear Envelope	b	5.62
+P49791	Nuclear Pore Complex	b	92.5
+O75694	Nuclear Lamina. Nuclear Pore Complex. 	b	93.75
+Q9Z0W3	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	40.31. 15.12. 26.74. 22.87. 20.16. 
+Q5SRE5	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	48.45. 21.32. 47.29. 0. 27.52. 
+Q92621	Nuclear Pore Complex	b	92
+Q8BZN4	Chromatin	b	24.12
+P09405	Nucleolus	b	91.13
+P32336	Nuclear Lamina. Nuclear Pore Complex. Nuclear Speckle. Nucleoplasm. 	s	27.91. 26.36. 20.16. 19.38. 
+Q21952	Chromatin. Kinetochore. Nuclear Lamina. Spindle apparatus. 	s	46.9. 3.1. 23.64. 25.97. 
+Q76I90	Chromatin	b	33
+Q10173	Chromatin. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. PML body. Spindle apparatus. 	s	35.66. 8.53. 24.42. 25.58. 22.09. 19.77. 
+P33895	Chromatin. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. 	s	41.86. 31.4. 11.24. 25.97. 24.81. 
+Q9QXX8	Nuclear Speckle. Nuclear matrix. 	s	24.03. 6.59. 
+P20676	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Spindle apparatus. 	s	6.59. 20.93. 15.12. 3.49. 
+Q9CWU9	Cajal Body. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	23.26. 32.95. 24.42. 31.78. 8.91. 28.68. 38.76. 
+P59235	Nuclear Envelope	b	91.88
+Q9JIH2	Nuclear Lamina. Nuclear Pore Complex. 	b	48
+Q8R4R6	Nucleoplasm. PML body. 	s	0.78. 9.69. 
+Q7Z3B4	Nuclear Lamina. Nuclear Pore Complex. 	b	95.12
+Q63850	Nuclear Pore Complex	b	92.62
+Q9BW27	Chromatin. Nuclear Pore Complex. 	b	89.5
+Q9UUE5	Chromatin. Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Spindle apparatus. 	s	18.6. 10.47. 18.99. 39.53. 20.54. 
+Q8CEC0	Nuclear Envelope	b	87.5
+Q8N1F7	Nuclear Lamina. Nuclear Pore Complex. 	b	97.12
+O15504	Nuclear Lamina. Nuclear Pore Complex. 	b	72.25
+Q9ERH4	Chromatin. Nucleoplasm. 	s	11.24. 8.91. 
+Q99JX7	Nuclear Lamina	b	46.5
+O15513	unknown	NA	NA
+O35327	Nucleolus. Nucleoplasm. 	s	10.47. 23.26. 
+O57580	Nuclear Speckle. Nuclear matrix. 	s	27.52. 21.32. 
+O88720	Nuclear Speckle	b	26.25
+O89064	Nuclear Speckle	b	97
+O75147	Nuclear matrix	b	9.13
+A3KGV1	Chromatin. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. 	s	19.77. 37.21. 8.14. 36.05. 9.69. 
+O08760	Nucleolus. Nucleoplasm. 	s	14.73. 31.4. 
+Q8R4V5	unknown	NA	NA
+P53298	Chromatin. Nucleoplasm. Spindle apparatus. 	s	15.12. 24.42. 18.6. 
+O60175	Nucleoplasm. Spindle apparatus. 	s	0.39. 33.33. 
+Q96CV9	unknown	NA	NA
+O16810	Chromatin	b	27.75
+Q24168	Chromatin. Nucleoplasm. Spindle apparatus. 	s	32.17. 9.3. 6.59. 
+O88708	Nucleoplasm. Spindle apparatus. 	s	0. 8.91. 
+Q24434	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	10.47. 34.11. 1.16. 17.83. 
+Q8CCJ9	Chromatin. PML body. Spindle apparatus. 	s	16.67. 22.87. 34.88. 
+Q61194	Nuclear Speckle	b	100
+Q8CHY6	Nuclear Speckle. PML body. 	s	3.1. 13.57. 
+Q9JJP2	Nuclear matrix	b	37.13
+P91663	Chromatin. Nucleolus. 	b	13.38
+P50580	Nucleolus. Spindle apparatus. 	s	48.84. 20.54. 
+P29341	Nuclear Speckle	b	26.12
+Q86U42	Nuclear Speckle	b	96.37
+Q9CY58	Nuclear Speckle. Nucleolus. 	s	28.29. 34.5. 
+P34766	unknown	NA	NA
+Q68ED3	Nuclear Speckle. Nucleoplasm. PML body. Spindle apparatus. 	s	18.99. 20.16. 44.57. 4.65. 
+Q8TEW0	Nuclear Speckle. Nucleolus. Nucleoplasm. PML body. 	s	8.53. 9.3. 3.49. 12.02. 
+Q8VDG3	unknown	NA	NA
+P27008	Nuclear matrix	b	93.75
+P58501	Chromatin. Nucleolus. PML body. Spindle apparatus. 	s	3.88. 6.59. 13.95. 28.29. 
+Q6NZQ4	Chromatin	b	19.12
+P49023	Nuclear matrix	b	41.88
+Q8BSQ9	Chromatin. Nucleoplasm. Spindle apparatus. 	s	18.6. 3.88. 3.1. 
+Q99NE9	Chromatin. Nucleoplasm. Spindle apparatus. 	s	4.65. 27.52. 4.26. 
+P23798	Chromatin	b	60.88
+Q99NA9	Chromatin	b	27.38
+P38126	Nucleolus. Nucleoplasm. PML body. 	s	12.02. 25.19. 4.65. 
+Q24459	Chromatin	b	19.38
+P57761	Nuclear Lamina. Nucleolus. 	b	96.13
+Q8WUM4	unknown	NA	NA
+P09103	Nucleolus	b	34.5
+P30101	Nucleolus	b	39.88
+Q8BG81	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	18.99. 20.54. 0.78. 
+Q3TJD7	Nuclear matrix	b	20.75
+O59676	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	6.98. 9.69. 11.63. 5.43. 
+Q6A026	Nucleolus	b	94
+Q9HFF5	Nucleolus	b	7
+Q9DBD5	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleolus. Spindle apparatus. 	s	13.57. 29.07. 37.6. 27.13. 11.24. 
+P41073	Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	35.66. 29.07. 4.26. 
+P07202	Nuclear Envelope	b	99.88
+Q6ZPK0	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	14.34. 10.85. 15.89. 41.09. 
+O55022	Nuclear Envelope. Nuclear Lamina. Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	2.71. 5.81. 10.47. 5.04. 2.33. 
+Q8IZ21	unknown	NA	NA
+Q9JJT9	Nucleolus. Nucleoplasm. 	s	8.91. 23.26. 
+O35129	Nucleolus	b	43.25
+Q64028	Chromatin	b	25.37
+Q9Z1B8	Chromatin	b	20.25
+Q7RTV0	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	26.36. 0.39. 12.79. 
+Q9D4J7	Nuclear matrix. Nucleolus. Nucleoplasm. 	s	0.39. 18.22. 30.23. 
+P14309	Chromatin	s	29.84
+P35422	Chromatin	s	18.22
+Q04621	Chromatin	s	48.84
+P11860	Spindle apparatus	s	6.98
+Q8WV24	Nucleolus. Nucleoplasm. 	s	15.5. 17.05. 
+P14713	Nucleoplasm. Nuclear Speckle. 	b	41.88
+O88907	PML body. Nuclear Speckle. 	b	53.75
+Q9NRD5	unknown	NA	NA
+P26794	Chromatin	b	16.38
+O35691	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	5.81. 10.85. 2.71. 9.69. 
+Q9CZX5	Nucleolus. Spindle apparatus. 	s	57.75. 23.26. 
+O55176	Nucleoplasm. PML body. 	s	20.93. 37.21. 
+Q9DCE5	Cajal Body. Kinetochore. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	37.6. 35.66. 24.81. 22.48. 43.02. 21.71. 26.74. 
+Q13563	unknown	NA	NA
+P08F94	Spindle apparatus	s	15.12
+Q9CWV6	Nucleolus	b	89.75
+P14923	Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	12.4. 17.05. 0. 15.12. 
+Q9NRZ7	Nuclear Envelope. Nucleoplasm. Spindle apparatus. 	s	8.53. 33.72. 20.16. 
+Q9BRC7	Nucleolus. Nucleoplasm. PML body. 	s	4.65. 26.36. 22.87. 
+Q9NUQ2	Nuclear Envelope. Nuclear Lamina. 	s	45.74. 10.08. 
+P16885	unknown	NA	NA
+Q13393	unknown	NA	NA
+P34331	Nucleolus	b	28.12
+O00444	Nucleolus	b	21.12
+Q922V4	Nucleoplasm. Nucleolus. 	b	13.12
+Q61233	Nucleolus. Nucleoplasm. 	s	26.74. 30.62. 
+Q6P1K2	Chromatin. Nucleoplasm. PML body. 	s	23.26. 24.81. 2.71. 
+Q8TBY8	Chromatin. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	17.05. 33.72. 13.57. 41.47. 19.77. 24.03. 
+Q60953	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	0.39. 10.47. 23.26. 25.58. 
+Q8TF01	Nuclear Speckle	b	91.13
+Q9JLV6	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	10.08. 36.82. 36.05. 
+Q8ND90	Nucleolus	b	37.87
+Q9NRX1	Nucleolus	b	90.88
+Q8TEM1	Nuclear Pore Complex	b	81.13
+P20263	Nuclear Speckle	s	22.48
+Q04636	Chromatin. Nucleolus. 	b	18.5
+Q9W123	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	20.54. 8.14. 0.78. 6.59. 
+Q6R3M4	Nucleoplasm. Spindle apparatus. 	s	22.48. 32.17. 
+Q9DB28	Nucleolus	b	91.5
+Q9DCH2	Chromatin. Nucleoplasm. 	s	30.23. 15.12. 
+Q9HBU9	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	10.85. 4.26. 37.98. 29.07. 
+P62597	PML body. Spindle apparatus. 	s	1.55. 16.28. 
+O13852	Chromatin. Nucleoplasm. Spindle apparatus. 	s	18.99. 32.17. 13.95. 
+P62137	Chromatin	b	91.88
+Q8R3G1	Nucleolus	s	5.43
+Q91WB2	Nucleoplasm. Spindle apparatus. 	s	37.6. 26.36. 
+Q08752	Nucleolus	b	53.5
+Q9UD71	unknown	NA	NA
+Q91VJ5	Nucleoplasm	s	16.67
+Q9R1C7	Nuclear matrix	b	91.25
+Q9Y520	Nucleolus	b	84
+Q00LT1	unknown	NA	NA
+Q3UTQ7	Chromatin	b	16.62
+P99029	Nucleolus. Spindle apparatus. 	s	19.77. 6.2. 
+O70343	Kinetochore. Nuclear Speckle. PML body. Spindle apparatus. 	s	0.39. 12.02. 22.09. 23.64. 
+P97313	PML body. Chromatin. Nucleolus. 	b	13.75
+P35312	Chromatin. Nucleoplasm. 	s	15.89. 7.36. 
+P19782	Chromatin	s	34.11
+P15342	Chromatin	s	52.71
+P07978	Chromatin	s	34.5
+Q62100	Nuclear matrix. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	0.39. 20.54. 27.52. 21.32. 
+P62962	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	19.77. 18.22. 2.71. 
+Q9DC48	Nucleolus	b	10.13
+Q99KP6	Nucleolus	b	10
+Q8CCF0	Chromatin. Nucleolus. 	b	10.87
+Q61136	Nuclear Speckle	b	18.12
+Q9DAW6	Nucleoplasm. Nucleolus. 	b	11.12
+Q91YR7	Nuclear Speckle	b	7.25
+Q99PV0	Chromatin. Nucleoplasm. Spindle apparatus. 	s	5.04. 24.42. 13.95. 
+Q922U1	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	27.91. 22.09. 5.04. 
+Q9BWN1	Chromatin. Nuclear Speckle. Nuclear matrix. Nucleoplasm. Spindle apparatus. 	s	5.81. 27.91. 16.28. 11.63. 9.69. 
+P08145	Chromatin	s	51.16
+P08146	Chromatin	s	53.1
+P08147	Chromatin	s	57.75
+P12819	Chromatin	s	47.29
+P02332	Chromatin	s	42.25
+P24641	Chromatin	s	53.1
+P02325	Chromatin	s	42.64
+P69014	Chromatin	s	51.16
+P83264	Chromatin	s	70.54
+P80001	Chromatin	s	66.67
+P12817	Chromatin	s	50.39
+P02334	Chromatin	s	56.59
+P02330	Chromatin	s	49.61
+P83265	Chromatin	s	50.78
+P80002	Chromatin	s	54.26
+P83266	Chromatin	s	9.3
+P12818	Chromatin	s	51.94
+P02333	Chromatin	s	45.74
+P02324	Chromatin	s	52.71
+P69007	Chromatin	s	54.65
+P08130	Chromatin	s	39.92
+P02331	Chromatin	s	58.14
+P02328	Chromatin	s	53.1
+P02326	Chromatin	s	48.84
+P30259	Chromatin	s	1.55
+P69012	Chromatin	s	46.12
+P69009	Chromatin	s	58.91
+P02321	Chromatin	s	44.96
+P25327	Chromatin	s	59.3
+P08433	Chromatin	s	30.62
+P06841	Chromatin	s	25.58
+P30258	Chromatin	s	44.96
+P69011	Chromatin	s	40.7
+P02322	Chromatin	s	57.75
+P17502	Chromatin. Nucleoplasm. Spindle apparatus. 	s	22.48. 0.39. 7.75. 
+Q9PS27	Chromatin	s	50
+Q91185	Chromatin	s	36.43
+P29629	Chromatin	s	54.65
+Q9IB84	Nuclear matrix	b	99
+Q99JF8	Chromatin	b	90.38
+P61290	Nucleolus	b	19.5
+Q92530	Nuclear Envelope. Nuclear Lamina. Nuclear Speckle. Nucleoplasm. 	s	0.78. 18.22. 19.38. 0. 
+P49768	Kinetochore. Nuclear Envelope. 	b	64.62
+P17225	Nucleolus	b	83.87
+P60483	PML body	b	99.75
+P26350	Cajal Body. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	0.39. 29.07. 12.02. 2.71. 
+Q9Y2R2	unknown	NA	NA
+Q3UEB3	Nuclear Speckle	b	12.75
+Q99LL5	Cajal Body. Kinetochore. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	38.76. 33.72. 26.74. 13.95. 31.4. 36.43. 13.18. 
+Q8BU03	Kinetochore	b	6
+P04871	Nuclear matrix	b	82.62
+Q05CG6	Nucleolus	b	99.62
+Q05D65	Chromatin	b	100
+Q0P682	Nucleolus	b	99
+Q0VGB8	Nuclear Lamina. Nuclear Envelope. 	b	92.88
+Q1RMF9	unknown	NA	NA
+Q2NKM7	Nucleolus	b	12.25
+Q2TAZ1	Nucleolus	b	100
+Q3SYK8	Nucleolus	b	99.5
+Q3TA68	Cajal Body. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	24.03. 28.68. 22.87. 39.15. 31.4. 39.15. 27.52. 
+Q3TIQ4	Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	21.32. 2.33. 15.12. 
+Q3TLT4	Nucleolus	b	25.75
+Q3TPE2	Nucleoplasm. Spindle apparatus. 	s	25.58. 21.71. 
+Q3TR16	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	13.57. 1.94. 27.13. 
+Q3TVE3	Nucleolus. Nucleoplasm. 	s	49.22. 28.68. 
+Q3UJ04	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	0.78. 24.03. 3.1. 18.6. 
+Q3UJE5	Nuclear Pore Complex	b	99.62
+Q3ULL6	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	11.63. 23.64. 8.53. 19.38. 
+Q3URX8	Nuclear Speckle	b	99.88
+Q3USL3	Nucleolus. Nucleoplasm. 	s	29.07. 16.67. 
+Q3UT39	Chromatin	b	64.5
+Q4FZ45	Nucleolus	s	46.51
+Q4LE60	Nucleoplasm	b	100
+Q53FC3	Nuclear Speckle. Nuclear matrix. Nucleolus. 	s	15.89. 15.12. 18.22. 
+Q53FM2	Chromatin. Nucleoplasm. 	s	3.88. 24.03. 
+Q53GA5	PML body. Chromatin. Nucleolus. Cajal Body. Nuclear matrix. 	b	78.63
+Q53R19	Nucleolus. Spindle apparatus. 	s	6.2. 11.24. 
+Q53SS8	Nucleolus. Nuclear Speckle. 	b	17.25
+Q53T99	Nucleolus	b	92.38
+Q53XY9	Chromatin. Nucleoplasm. 	s	3.88. 24.03. 
+Q53Y97	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	16.28. 24.42. 6.59. 
+Q53Z07	Nucleolus	s	58.53
+Q58EY4	Chromatin	b	95.12
+Q59EC0	Nuclear Speckle	b	75.5
+Q59F09	PML body. Nucleolus. 	b	67.12
+Q59FR3	unknown	NA	NA
+Q59HE3	unknown	NA	NA
+Q59HH7	Nucleolus	b	99.38
+Q5J7U2	Nucleolus. Nucleoplasm. 	s	68.99. 15.5. 
+Q5JR94	Nuclear Speckle	b	100
+Q5T081	Chromatin. Nucleolus. 	b	92.25
+Q5T0F3	Nucleolus	b	82.12
+Q5TAL4	Nuclear Speckle. Nucleolus. 	b	99.25
+Q5TDG3	Nucleolus	b	89
+Q5TZP7	Nucleolus	b	93.25
+Q5VVD0	Nucleolus	s	43.8
+Q61769	Chromatin. Nucleolus. 	b	98.5
+Q68DB7	unknown	NA	NA
+Q68DS7	Nucleoplasm	b	99.38
+Q69ZG5	Chromatin. Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	6.59. 22.48. 3.1. 8.14. 
+Q6FGH9	unknown	NA	NA
+Q6FHM6	Cajal Body. Nucleolus. 	b	21.88
+Q6FHX6	Nucleolus	b	95
+Q6IAU5	Chromatin	b	91
+Q6IAX2	Cajal Body. Nucleolus. Nucleoplasm. 	s	1.94. 66.28. 26.74. 
+Q6IB64	Nucleoplasm	b	93.87
+Q6IBA2	Nucleolus	b	92.12
+Q6IBE5	unknown	NA	NA
+Q6IBN1	Nucleolus. Nuclear Speckle. 	b	99.75
+Q6IBR8	Nucleolus	s	67.05
+Q6MZP3	Chromatin	b	98.63
+Q6NSG7	Cajal Body. Nucleolus. 	s	19.38. 37.98. 
+Q6NZL1	Nuclear Speckle	b	21.38
+Q6P4S7	Chromatin. PML body. Spindle apparatus. 	s	4.26. 0.39. 32.17. 
+Q6P9L3	Nucleolus	b	35.62
+Q6PEF4	Kinetochore. PML body. Spindle apparatus. 	s	6.59. 10.85. 11.24. 
+Q6PIR0	Cajal Body. Chromatin. Spindle apparatus. 	s	23.26. 33.33. 5.81. 
+Q6PJ06	Kinetochore. Nucleolus. Nucleoplasm. 	b	100
+Q6XAR6	Chromatin. Nucleoplasm. Spindle apparatus. 	s	23.26. 21.32. 31.78. 
+Q6ZWF5	Chromatin	b	83.12
+Q7M739	Nuclear Pore Complex	b	100
+Q7TQL1	Nucleolus	b	98.12
+Q7Z538	Nuclear Envelope. Nuclear Lamina. Nuclear matrix. Nucleoplasm. Spindle apparatus. 	s	8.91. 6.98. 6.2. 16.28. 17.44. 
+Q7Z6D0	Nucleolus. PML body. Spindle apparatus. 	s	0. 8.53. 10.85. 
+Q7Z727	unknown	NA	NA
+Q80ZM5	Chromatin. Spindle apparatus. 	s	46.12. 22.09. 
+Q86SZ7	PML body	b	20.13
+Q86TH5	unknown	NA	NA
+Q86VG2	Nuclear Speckle. Perinucleolar. 	b	97.88
+Q86X17	Nucleolus	b	86.37
+Q8AZ04	Spindle apparatus	s	24.42
+Q8BIL1	Chromatin	b	98.87
+Q8BK42	Nuclear Speckle	b	100
+Q8BL32	Nuclear Speckle	b	100
+Q8BVY0	Nucleolus	b	99.62
+Q8BXW1	Chromatin. Spindle apparatus. 	s	9.3. 26.36. 
+Q8BYI4	Nuclear Speckle	b	100
+Q8C4I8	Nucleolus. PML body. 	s	17.83. 6.59. 
+Q8C851	Chromatin	b	100
+Q8CJ76	Chromatin. PML body. Spindle apparatus. 	s	13.95. 27.52. 38.37. 
+Q8IW76	Cajal Body. Nucleolus. 	b	50.75
+Q8IYH0	Nucleolus	b	100
+Q8K1G7	Nuclear Speckle	b	100
+Q8K205	Nucleolus	b	72.25
+Q8K403	Nucleolus. Spindle apparatus. 	s	51.94. 22.87. 
+Q8N5A0	Nucleolus	b	88.63
+Q8R407	Nucleolus. Nucleoplasm. 	s	13.18. 0.78. 
+Q8TB76	Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	8.14. 23.26. 14.34. 
+Q8VBX2	Nucleolus	b	42.5
+Q8VE87	Nuclear Speckle	b	100
+Q8WTY5	Chromatin. Nucleolus. 	b	27.25
+Q921N8	Nuclear Speckle	s	18.6
+Q96C61	Nucleolus	b	96.37
+Q96G78	Chromatin. Nucleoplasm. 	s	7.75. 14.73. 
+Q96HT3	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	0. 24.03. 15.5. 6.98. 
+Q96IF9	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	29.46. 1.94. 6.98. 
+Q96QL0	Nucleolus	b	98.63
+Q99777	unknown	NA	NA
+Q99K87	Nucleolus	b	94.12
+Q9BWJ1	Chromatin. Nucleoplasm. Spindle apparatus. 	s	3.1. 32.95. 8.14. 
+Q9D007	Nuclear Speckle	b	100
+Q9DAC5	Chromatin	b	31.88
+Q9DFS5	Nucleoplasm. PML body. 	s	32.95. 1.94. 
+Q9EQC8	Nuclear Speckle	b	100
+Q9H836	Nucleoplasm. Spindle apparatus. 	s	27.13. 15.12. 
+Q9NGX6	Chromatin. Nucleolus. Nuclear Speckle. 	b	9.75
+Q9NT12	PML body. Chromatin. Nuclear matrix. 	b	24.25
+Q9NUK2	Chromatin	b	96.37
+Q9NVY6	Nucleolus	b	91.75
+Q9R1J3	unknown	NA	NA
+Q9R205	Nuclear Speckle. Nuclear matrix. 	b	100
+Q9SLR6	Nuclear matrix. Nucleolus. Spindle apparatus. 	s	23.64. 8.91. 37.21. 
+Q9U8Q0	Nuclear Pore Complex. Nuclear Speckle. Nuclear matrix. Nucleoplasm. PML body. Spindle apparatus. 	s	5.43. 3.1. 8.53. 20.16. 4.26. 1.94. 
+Q9UNL7	Nucleolus	b	100
+Q9UPD8	Nucleoplasm	s	8.14
+Q9UPG3	Nucleolus	b	100
+Q9UQL5	Nucleolus	b	99.25
+O55230	Nucleolus. Nucleoplasm. 	s	38.37. 37.98. 
+Q6NXW6	unknown	NA	NA
+Q9QWZ1	Nucleoplasm. PML body. Spindle apparatus. 	s	29.84. 23.64. 14.73. 
+Q61550	Chromatin	b	83.63
+P40352	Chromatin	b	32.87
+Q9W252	PML body. Nucleolus. 	b	13.88
+P70388	Chromatin	b	94.88
+Q9UTJ8	PML body. Chromatin. Nucleolus. 	b	18.88
+P12753	Chromatin	b	15.88
+P25454	PML body	b	59.38
+P43352	Nucleoplasm	b	65.5
+Q9Z0F6	Chromatin. PML body. 	s	1.55. 32.95. 
+Q8C570	Kinetochore. Chromatin. Nucleolus. 	b	21.38
+P24386	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	0.39. 16.67. 19.77. 17.83. 
+P46061	Nuclear Envelope. Nuclear Lamina. Spindle apparatus. 	s	11.63. 4.65. 28.29. 
+P41917	Chromatin	b	76.5
+P34022	Nuclear Lamina. Chromatin. Nuclear Pore Complex. 	b	54.5
+Q96TL7	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	18.6. 17.44. 28.29. 17.44. 
+Q9NS23	Nuclear Speckle. Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	1.55. 3.1. 29.07. 17.83. 15.5. 
+P01112	unknown	NA	NA
+Q9CW46	Perinucleolar	b	39.63
+Q8BX09	Chromatin	b	17.87
+P97868	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	31.78. 27.52. 11.63. 35.27. 
+Q00312	Chromatin. Nucleoplasm. Spindle apparatus. 	s	9.69. 1.94. 23.26. 
+Q64700	PML body. Perinucleolar. 	b	11.5
+Q99KG3	Nuclear Speckle	b	49.38
+Q8C2Q3	Nucleolus	b	31.25
+Q9NW64	Nuclear Speckle. Nucleoplasm. 	s	29.84. 23.26. 
+B2RY56	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	6.2. 13.95. 19.77. 
+Q5SFM8	Nuclear Speckle	b	42
+Q8CGC6	Nuclear Speckle. Nucleolus. Nucleoplasm. Perinucleolar. 	s	30.23. 66.67. 24.03. 21.32. 
+Q8C5L7	Nuclear Speckle. Nucleolus. Nucleoplasm. Perinucleolar. 	s	24.03. 48.84. 3.49. 6.2. 
+Q8VH51	Nuclear Speckle	b	99.75
+Q91V81	Nuclear Speckle. Spindle apparatus. 	s	28.68. 33.72. 
+Q9CQT2	Nuclear Speckle. Nucleoplasm. Perinucleolar. 	s	48.84. 6.59. 12.79. 
+Q9CWZ3	Cajal Body. Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	12.79. 55.81. 17.05. 22.48. 
+Q8R0F5	Nuclear Speckle. Nucleoplasm. Perinucleolar. 	s	75.19. 6.2. 3.88. 
+Q9WV02	Nucleolus	b	42.62
+P62878	Nucleoplasm. Spindle apparatus. 	s	16.28. 24.42. 
+P13405	Perinucleolar	b	9.87
+Q8BK67	Nucleolus	b	14.75
+Q9JJT0	Nuclear Lamina. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	32.17. 31.78. 0. 12.4. 
+Q6PGA0	Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	47.67. 18.22. 6.2. 
+Q4R856	Nucleolus. Cajal Body. PML body. 	b	68
+O14227	Nucleolus. Spindle apparatus. 	s	1.94. 7.75. 
+P21651	Chromatin. Nucleoplasm. 	s	35.66. 27.13. 
+P32841	Chromatin. Spindle apparatus. 	s	34.88. 11.63. 
+Q6AYJ4	Chromatin	b	88.75
+Q12188	Chromatin. Nucleoplasm. PML body. 	s	3.1. 15.5. 4.65. 
+Q9Z129	Nucleoplasm	b	25
+Q75NR7	PML body. Chromatin. Nucleolus. 	b	22.87
+Q9Z1M8	Nuclear Speckle. Nucleolus. 	s	14.34. 39.53. 
+Q8VIG1	Chromatin	b	25.25
+P19548	Chromatin. Nucleoplasm. Spindle apparatus. 	s	8.91. 23.26. 3.1. 
+Q6PAQ4	Nucleolus	b	29.88
+Q8VEE4	Nucleolus. Spindle apparatus. 	s	12.4. 0.39. 
+Q23697	Nucleoplasm	s	36.05
+P35601	Chromatin. Nucleolus. 	s	16.67. 47.67. 
+P53033	Nucleolus	b	85.88
+Q8R323	Nucleolus	b	14.87
+Q99J62	Nucleolus	b	28.12
+Q8WZ73	unknown	NA	NA
+Q8BP71	Nuclear Speckle. Nucleoplasm. Perinucleolar. 	s	63.95. 25.19. 20.16. 
+P49758	Chromatin. PML body. Spindle apparatus. 	s	12.02. 16.28. 0. 
+Q921J2	Nuclear Envelope. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	17.83. 41.09. 29.84. 6.59. 
+P98171	unknown	NA	NA
+Q9BSD3	PML body. Spindle apparatus. 	s	15.12. 31.4. 
+Q6PR54	Chromatin. Kinetochore. Nuclear Pore Complex. Nucleoplasm. PML body. Spindle apparatus. 	s	41.47. 2.33. 10.47. 6.2. 12.4. 31.4. 
+Q96UP3	Chromatin. Nuclear Envelope. Nuclear Pore Complex. Nucleoplasm. PML body. Spindle apparatus. 	s	25.58. 17.05. 6.2. 28.29. 15.89. 27.13. 
+P29539	Chromatin. Nuclear Envelope. Spindle apparatus. 	s	50.78. 3.1. 13.57. 
+Q9VB08	Chromatin	b	66.5
+Q9CWY9	Chromatin. Nucleoplasm. Spindle apparatus. 	s	1.16. 28.29. 15.12. 
+P87243	Chromatin. Nuclear Envelope. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	4.26. 18.22. 28.68. 1.55. 38.37. 
+P62907	Chromatin. Nucleolus. Nucleoplasm. 	s	0. 42.25. 32.17. 
+P35979	Cajal Body. Nucleolus. 	s	7.36. 43.8. 
+P19253	Nucleolus. Nucleoplasm. 	s	68.99. 27.13. 
+Q9CR57	Nucleolus. Nucleoplasm. 	s	23.26. 1.16. 
+P61314	Nucleolus. Spindle apparatus. 	s	25.97. 9.3. 
+P35980	Nucleolus. Nucleoplasm. 	s	44.19. 28.68. 
+P84098	Nucleolus	s	55.43
+P67984	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	37.6. 15.89. 18.6. 
+P62752	Nucleolus. Nucleoplasm. 	s	32.95. 23.64. 
+P62829	Nucleolus	s	49.61
+Q8BP67	Nucleolus	s	40.31
+P61254	Nucleolus. Nucleoplasm. 	s	56.2. 24.81. 
+P61355	Nucleolus. Nucleoplasm. 	s	56.2. 18.6. 
+P62889	Nucleolus. Spindle apparatus. 	s	24.81. 19.77. 
+P62899	Nucleolus. Nucleoplasm. 	s	31.01. 25.58. 
+O55142	Cajal Body. Nucleolus. 	s	8.14. 50.39. 
+Q9JJI8	Nucleolus. Nucleoplasm. 	s	27.13. 20.54. 
+Q96EH5	Nucleoplasm	s	13.18
+Q9D8E6	Nucleolus. Spindle apparatus. 	s	68.22. 15.5. 
+P21533	Nucleolus	b	89.88
+P62425	Nucleolus. Spindle apparatus. 	s	55.04. 16.67. 
+Q9D8M4	Nucleolus. Nucleoplasm. 	s	52.33. 25.58. 
+P62918	Nucleolus. Nucleoplasm. 	s	43.8. 25.97. 
+Q99L28	Nucleolus. Spindle apparatus. 	s	45.74. 12.02. 
+P09001	Nucleolus. Nucleoplasm. 	s	55.81. 32.17. 
+Q80XJ2	Chromatin. PML body. 	s	19.38. 9.69. 
+Q3U827	Nucleoplasm. PML body. Spindle apparatus. 	s	22.48. 3.88. 8.53. 
+Q9NV58	unknown	NA	NA
+Q68DV7	Nuclear Lamina. Nuclear Speckle. Nucleoplasm. PML body. Spindle apparatus. 	s	5.81. 10.08. 4.26. 18.99. 15.5. 
+Q9QZS2	Nucleoplasm. PML body. 	b	95.5
+Q9DBU5	Nucleoplasm. PML body. 	s	21.32. 36.43. 
+O14188	Nucleolus. PML body. Spindle apparatus. 	s	7.36. 3.49. 3.49. 
+Q04740	Nucleolus. Nucleoplasm. 	s	36.82. 30.23. 
+Q99M28	Nuclear Speckle. Nucleoplasm. 	s	65.5. 1.55. 
+O88569	Nuclear Speckle	b	69.88
+Q9GZN7	Nucleoplasm. PML body. Spindle apparatus. 	s	20.54. 0.78. 23.64. 
+P56715	Cajal Body. Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	12.79. 34.11. 11.24. 31.78. 33.72. 
+P97762	Nucleolus. Nucleoplasm. 	s	32.17. 15.12. 
+O35134	Nucleolus	b	80.38
+P70700	Nucleolus	b	84.75
+Q76KJ5	Nucleolus. Spindle apparatus. 	s	48.84. 34.11. 
+Q78WZ7	Cajal Body. Nucleolus. Nucleoplasm. 	s	3.88. 19.38. 23.26. 
+Q8K202	Nucleolus	s	21.71
+Q80UW8	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	23.64. 30.23. 5.04. 
+Q923G2	Nucleoplasm. Spindle apparatus. 	s	25.58. 6.2. 
+P97304	Nucleolus. Spindle apparatus. 	s	10.08. 23.64. 
+P08775	Nuclear matrix	b	67.75
+Q8CFI7	Nucleolus	b	17.75
+Q7TND5	Nucleolus	b	22.5
+Q9JJ80	Nucleolus. Nucleoplasm. 	s	30.62. 22.87. 
+Q8WZA2	unknown	NA	NA
+Q92834	Chromatin. Nucleolus. 	b	20.13
+Q9CQH8	Nucleoplasm. Spindle apparatus. 	s	0. 2.71. 
+Q9H633	Nucleoplasm	s	0.39
+Q91WE3	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	18.6. 22.09. 0.39. 
+Q9CR08	Nucleolus. Nucleoplasm. 	s	22.87. 20.54. 
+O88796	Nucleolus. Spindle apparatus. 	s	26.36. 25.19. 
+Q8R1F9	Nuclear Lamina. Nucleoplasm. PML body. Spindle apparatus. 	s	4.26. 35.66. 10.47. 5.81. 
+Q8N122	Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	27.13. 3.1. 31.4. 
+Q3UH06	Chromatin. Nucleoplasm. PML body. 	s	40.31. 28.68. 20.54. 
+Q96E11	Nucleolus	b	81.37
+P38766	Nucleoplasm. Spindle apparatus. 	s	1.16. 30.62. 
+Q9UI43	Nucleolus	b	18.38
+P56183	Nucleolus. Spindle apparatus. 	s	23.64. 24.42. 
+Q3UFY0	Nucleolus. Nucleoplasm. 	s	37.21. 11.24. 
+Q9CSH3	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	38.76. 0. 20.54. 
+Q6NS46	Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	6.2. 69.38. 1.16. 
+Q9D1C9	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	37.98. 22.48. 22.87. 
+Q9DB85	Nucleolus	s	37.6
+Q9CYH6	Nucleolus	s	50.39
+P63325	Nuclear matrix. Nucleolus. Nucleoplasm. 	s	0.78. 38.37. 26.74. 
+P62281	Nucleolus. Nucleoplasm. 	s	65.5. 0. 
+P63323	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	60.08. 29.07. 19.77. 
+P62301	Nucleolus. Nucleoplasm. 	s	26.74. 21.71. 
+P62264	Nucleolus	s	56.2
+P62244	Nucleolus. Nucleoplasm. 	s	34.88. 33.33. 
+P14131	Nucleolus	s	43.02
+P63276	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	12.4. 24.03. 19.77. 
+P62271	Nucleolus. Nucleoplasm. 	s	36.05. 29.07. 
+P62853	Nucleolus. Nucleoplasm. 	s	41.47. 20.93. 
+P97351	Nucleolus	b	99
+P62908	Nucleolus	s	78.29
+P62701	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	64.73. 30.62. 16.28. 
+P97461	Nucleolus. Nucleoplasm. 	s	30.23. 18.99. 
+P62754	Nucleolus	s	46.9
+P62082	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	7.36. 29.07. 30.62. 5.04. 
+Q6ZWN5	Chromatin. Nucleolus. Nucleoplasm. 	s	2.33. 37.21. 0.39. 
+Q6T310	Nuclear Envelope. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	6.59. 5.43. 26.36. 24.42. 
+P27048	Nuclear Speckle. Nuclear matrix. 	s	41.09. 29.84. 
+Q9DBU6	Nuclear Speckle	s	46.12
+P38983	Nuclear matrix. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	17.44. 20.54. 31.4. 8.91. 
+P40161	Chromatin. Nucleolus. 	s	10.47. 24.81. 
+Q9Y3I0	Nucleolus. Nucleoplasm. 	s	63.95. 38.37. 
+Q9W261	Nucleolus	b	35.37
+Q62376	Nuclear Speckle. Nucleoplasm. 	s	53.1. 4.65. 
+P57784	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. 	s	17.05. 16.67. 12.02. 32.56. 
+Q03347	Nuclear Speckle. Nucleoplasm. PML body. Spindle apparatus. 	s	14.34. 13.57. 8.91. 16.28. 
+Q8BG26	Nuclear Speckle. Nuclear matrix. PML body. Spindle apparatus. 	s	1.94. 8.91. 20.16. 23.64. 
+Q9WTM5	Nucleolus	b	30.25
+P62309	Cajal Body. Nuclear Speckle. Nucleolus. 	s	20.54. 11.24. 32.17. 
+Q8N488	Chromatin	b	98.87
+P07091	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	29.84. 35.27. 12.02. 
+P97352	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	28.68. 30.23. 8.14. 
+Q14542	Nucleolus	b	97
+O74889	Nuclear Envelope	b	18.88
+P46674	Nuclear Envelope	b	14.87
+Q9ER74	Chromatin. Nucleoplasm. PML body. 	s	36.05. 27.91. 24.42. 
+Q9Y512	Nucleolus. Nucleoplasm. 	s	5.43. 24.03. 
+O88574	Nucleoplasm. Spindle apparatus. 	s	1.16. 24.03. 
+Q9D1J3	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	1.55. 28.29. 13.57. 
+Q9JLI8	Nuclear Speckle. Nucleoplasm. Perinucleolar. 	s	22.87. 4.26. 6.2. 
+Q9JI13	Chromatin. Nucleolus. 	s	10.08. 34.11. 
+P21673	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	0.39. 12.79. 27.91. 
+Q60611	Nuclear Lamina	b	56.75
+Q9VWF2	Cajal Body. Chromatin. Nucleoplasm. PML body. 	s	25.97. 10.85. 14.34. 8.91. 
+P70122	Nucleolus. Nucleoplasm. 	s	32.56. 0. 
+Q9BY50	Nuclear Envelope. Nuclear Lamina. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	23.64. 12.02. 12.4. 31.4. 8.53. 
+P60059	unknown	NA	NA
+Q6DID3	Nuclear Speckle. Spindle apparatus. 	s	52.33. 1.55. 
+Q6AZY7	Nuclear Envelope. Nuclear Lamina. Nuclear matrix. Spindle apparatus. 	s	13.57. 3.49. 21.71. 24.03. 
+Q6ZMJ2	Nuclear Envelope. Nuclear matrix. Nucleolus. Nucleoplasm. 	s	18.6. 8.14. 5.81. 38.76. 
+Q12158	Chromatin. Spindle apparatus. 	s	36.05. 10.85. 
+O13816	Chromatin	b	9.75
+P40541	Chromatin	b	9.38
+Q8K214	Chromatin	b	28.38
+Q8K136	Chromatin. Nuclear Speckle. Nucleoplasm. 	s	3.88. 5.43. 10.08. 
+Q6P3W7	unknown	NA	NA
+Q80UZ2	Nucleolus. Spindle apparatus. 	s	36.43. 1.16. 
+Q8VHN8	Nuclear Lamina. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	5.81. 15.5. 28.29. 20.54. 
+Q8BR65	Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	6.59. 3.49. 22.87. 
+P55735	Nuclear Lamina. Nuclear Pore Complex. 	b	96.13
+Q6P7W5	Nucleolus	s	0.78
+Q8BMZ5	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	23.64. 28.29. 10.08. 
+Q8C2A2	Nucleoplasm. PML body. Spindle apparatus. 	s	13.95. 5.81. 14.73. 
+Q91ZX6	PML body. Nuclear Pore Complex. 	b	95.75
+Q96HI0	Nucleolus	b	78.5
+Q9BQF6	Cajal Body. Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	3.49. 22.48. 0.39. 32.17. 35.66. 
+O55131	Nucleolus	b	94.62
+P84101	Nucleolus. Nucleoplasm. 	s	27.91. 8.53. 
+P19324	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Spindle apparatus. 	s	31.4. 32.95. 0.39. 29.46. 
+O88974	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	1.16. 13.18. 29.46. 1.94. 
+Q9VFK6	Chromatin	s	39.53
+Q9EQU5	Nucleolus	b	28.12
+Q8K4Z5	Nuclear Speckle. Nuclear matrix. Spindle apparatus. 	s	29.07. 14.34. 6.98. 
+Q62203	Nuclear Speckle. Nuclear matrix. Spindle apparatus. 	s	39.15. 10.47. 33.72. 
+Q99NB9	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	18.99. 32.95. 1.94. 
+Q8QZY9	Nuclear Speckle	b	25.88
+P59708	Nuclear Speckle. Nucleolus. Nucleoplasm. Perinucleolar. Spindle apparatus. 	s	48.45. 30.23. 23.26. 0.39. 4.65. 
+Q9UST7	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	16.67. 14.34. 8.53. 17.05. 
+Q99720	Nuclear Envelope	b	100
+Q24141	Chromatin. Nucleoplasm. Spindle apparatus. 	s	33.33. 10.47. 15.12. 
+Q4QSC8	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	1.55. 0.78. 1.16. 27.91. 
+Q9P7A0	Chromatin. Nucleoplasm. 	s	36.43. 8.91. 
+Q08490	Cajal Body. Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	11.63. 83.33. 12.4. 15.5. 2.33. 
+O13734	Chromatin. Kinetochore. Spindle apparatus. 	s	40.31. 19.77. 18.6. 
+Q4KLP8	Chromatin	b	34.75
+P36068	Chromatin. Spindle apparatus. 	s	16.67. 6.2. 
+Q6P549	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	21.32. 10.08. 23.64. 
+O94494	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	7.75. 23.64. 6.2. 23.26. 
+Q60520	Chromatin	b	46.12
+Q923E4	Chromatin	b	32
+P21691	Chromatin. PML body. Spindle apparatus. 	s	9.3. 6.2. 8.53. 
+Q62231	Nucleoplasm	s	20.93
+Q680Q4	Nucleoplasm. PML body. Spindle apparatus. 	s	6.2. 19.77. 12.02. 
+Q9CZU3	Nucleolus	b	24.75
+Q96BD8	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	14.34. 7.36. 29.84. 15.12. 
+Q8WVK7	Spindle apparatus	s	25.58
+Q8IX90	Chromatin. Nucleoplasm. Spindle apparatus. 	s	1.16. 22.87. 3.88. 
+Q9Y448	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	1.55. 22.87. 8.14. 0.78. 
+Q9GPJ1	Chromatin. Nucleolus. 	b	99.5
+Q02793	Kinetochore. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	32.56. 27.91. 6.98. 29.46. 38.76. 18.99. 
+Q15477	Nucleolus	b	100
+P52286	Nucleolus	b	43.75
+P38283	Cajal Body. Chromatin. PML body. 	s	12.79. 5.81. 22.09. 
+Q8CH25	Nuclear Speckle	b	29.63
+Q8BHJ9	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	17.44. 48.06. 18.22. 
+Q920F6	Chromatin	b	41
+O94383	Chromatin	b	20.62
+P32908	Chromatin	b	19.63
+Q8CG48	Nucleolus	b	94.25
+P41003	Nucleolus	b	41.5
+O97594	Chromatin. Nucleolus. 	b	98.25
+P47037	Chromatin	b	18.75
+Q20060	Chromatin	b	15.37
+Q8CG47	Chromatin	b	21.38
+Q12267	Chromatin	b	29.75
+O13710	Nucleolus	b	8.12
+Q924W5	Chromatin	b	15
+P53692	Nucleolus	b	15.13
+Q12749	Chromatin	b	10.13
+O54941	Chromatin. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	17.83. 1.16. 8.91. 17.44. 31.4. 
+P62315	Cajal Body. Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	29.84. 17.05. 18.22. 19.77. 
+P62320	Cajal Body. Nuclear Speckle. Nucleolus. 	s	25.19. 32.56. 34.5. 
+Q6P5D8	Nucleolus	b	83.87
+P97801	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	15.12. 10.47. 0.39. 
+Q99JR8	Chromatin	b	67.25
+Q8NCR6	unknown	NA	NA
+Q12306	Cajal Body. Nuclear Lamina. Nuclear Speckle. Nucleolus. Nucleoplasm. PML body. 	s	26.36. 14.34. 2.33. 32.56. 27.13. 33.33. 
+Q8BIZ6	Nuclear Speckle	s	36.82
+Q8K194	Nuclear Speckle. Nucleoplasm. 	s	26.74. 4.26. 
+Q62189	Nuclear Speckle	b	60.38
+Q9Z315	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	5.04. 39.53. 21.71. 18.6. 
+Q3TIX9	Nucleoplasm	s	18.6
+Q9CSN1	Nuclear Speckle. Nucleolus. 	s	16.28. 4.65. 
+Q9NRS6	unknown	NA	NA
+P57768	unknown	NA	NA
+Q9Y5X1	unknown	NA	NA
+Q00910	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	15.12. 29.07. 40.31. 12.79. 
+P40645	Nucleolus	b	46.88
+O35892	PML body	b	26.75
+Q8BIH0	Nuclear Pore Complex. Nuclear Speckle. 	s	1.94. 17.44. 
+O70494	Nuclear matrix	b	97.25
+Q9SYX2	Nuclear Speckle	b	28.75
+Q9DBE9	Nucleolus	b	26.62
+Q03954	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	9.3. 28.68. 8.53. 20.93. 
+Q9UST6	Chromatin. Nucleoplasm. Spindle apparatus. 	s	37.98. 25.19. 17.44. 
+Q6NRW3	Kinetochore. Nucleoplasm. Spindle apparatus. 	s	17.05. 22.87. 22.09. 
+Q04477	Chromatin	s	25.19
+Q9V3V7	Chromatin. Nucleoplasm. 	s	15.12. 27.52. 
+Q10430	Chromatin. Kinetochore. Nuclear Pore Complex. PML body. Spindle apparatus. 	s	28.29. 7.36. 4.65. 16.67. 22.87. 
+Q6SKR5	Chromatin. Nucleoplasm. Spindle apparatus. 	s	15.5. 25.58. 9.69. 
+P40014	Chromatin. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	6.2. 0.39. 26.36. 18.99. 
+O14285	Chromatin. Spindle apparatus. 	s	24.42. 8.14. 
+P36131	Chromatin. Nucleoplasm. 	s	29.46. 31.01. 
+O59757	Chromatin. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. PML body. Spindle apparatus. 	s	18.6. 15.12. 8.91. 15.12. 41.47. 26.36. 
+Q8BGT7	Nucleolus. Nucleoplasm. 	s	27.91. 23.64. 
+Q8JZX4	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	50. 10.85. 3.1. 28.29. 
+Q9Y5K1	Chromatin	b	78.25
+Q6ZWS8	unknown	NA	NA
+P36377	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	13.57. 0. 19.77. 10.85. 
+Q91WJ7	Nucleoplasm. PML body. Spindle apparatus. 	s	16.67. 8.91. 15.5. 
+O82491	Chromatin	b	22.63
+Q8IRG6	Chromatin	b	51.5
+P32558	Chromatin. Nucleolus. 	b	21.38
+Q5SV06	Nucleoplasm. PML body. Spindle apparatus. 	s	0. 12.79. 12.02. 
+Q68D10	Nucleolus	b	75.88
+P32914	Nuclear matrix. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	10.47. 11.63. 27.52. 18.99. 
+Q9V460	Nuclear Speckle. Nucleolus. 	s	37.21. 20.54. 
+Q96JI7	Nuclear Envelope. Nucleoplasm. PML body. Spindle apparatus. 	s	22.09. 36.82. 8.53. 29.84. 
+P16086	Nucleolus	b	11.88
+Q6NV83	Nuclear Speckle. Nucleoplasm. 	s	29.46. 16.28. 
+Q9WTN3	Nuclear Pore Complex. PML body. Spindle apparatus. 	s	8.14. 3.1. 25.58. 
+Q8BZX4	Nuclear Speckle. Nucleoplasm. 	s	66.67. 0.39. 
+Q9CZ91	Nucleolus. Nucleoplasm. 	s	48.84. 9.3. 
+P49962	Nucleoplasm. Spindle apparatus. 	s	25.97. 6.2. 
+Q9D7A6	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	0.39. 54.26. 7.75. 21.71. 
+P61011	Nucleolus	s	46.9
+Q9UHB9	Nucleolus	b	98
+Q52KI8	Nuclear Speckle. Spindle apparatus. 	s	31.78. 15.5. 
+Q8BTI8	Nuclear Speckle. Nucleoplasm. PML body. Spindle apparatus. 	s	41.09. 2.71. 4.26. 8.53. 
+Q99MR6	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	67.83. 38.76. 13.57. 19.77. 
+Q9R0U0	Nuclear Speckle	s	72.87
+Q62093	Nucleolus	b	78.25
+Q8VE97	Nuclear Speckle	b	76.75
+Q8BL97	Nucleolus. Nuclear Speckle. 	b	67.62
+Q9LEF5	Chromatin	b	58.38
+Q08943	Chromatin	b	37.38
+P13275	Chromatin	s	46.12
+P11020	Nucleoplasm	s	0
+Q62280	Nuclear Speckle. Nucleoplasm. 	s	8.14. 12.02. 
+Q68SB1	Nucleolus	b	95.12
+Q80ZW0	Chromatin. Kinetochore. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	22.87. 1.94. 37.6. 12.02. 2.71. 19.38. 
+Q9LMK5	Cajal Body. Nucleolus. Nucleoplasm. 	s	21.32. 15.89. 34.88. 
+Q8K2X3	Chromatin	b	63.63
+Q0E7J7	Chromatin. Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	11.24. 1.94. 29.07. 17.83. 19.77. 
+Q8BZ60	Nuclear Speckle. PML body. Spindle apparatus. 	s	27.52. 3.1. 43.41. 
+P17305	Chromatin	s	7.36
+P29258	Chromatin	b	55.5
+Q7M2P1	unknown	NA	NA
+O97965	Chromatin	s	27.13
+Q09821	Chromatin	s	29.84
+Q9H6E5	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	12.79. 18.6. 26.74. 
+P46977	Nuclear Envelope. Nuclear Lamina. Spindle apparatus. 	s	49.22. 45.35. 13.95. 
+P38198	Chromatin. Nuclear Envelope. Nucleoplasm. Spindle apparatus. 	s	35.27. 5.81. 30.62. 16.28. 
+O08599	Nucleolus. PML body. Spindle apparatus. 	s	1.94. 3.1. 14.73. 
+Q8CH02	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	3.88. 28.29. 22.87. 
+Q8CH09	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	8.14. 30.23. 2.71. 29.07. 
+P08970	Nuclear Speckle	b	28.25
+P63166	PML body	b	38.88
+P61957	PML body	b	97.25
+Q8TAQ9	Nuclear Lamina. Chromatin. Nucleolus. Nuclear Envelope. 	b	33.12
+P70279	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	42.64. 8.91. 17.44. 
+Q9VTE2	Chromatin. PML body. Spindle apparatus. 	s	35.27. 25.58. 6.98. 
+Q9EQQ0	Chromatin. Nucleolus. 	b	49
+Q9FF80	Chromatin	b	52.88
+Q8GZB6	Chromatin	b	24.87
+P12297	Nuclear Speckle	b	32
+Q80U70	Nucleoplasm. PML body. Spindle apparatus. 	s	1.94. 10.47. 4.65. 
+Q3U8K7	Chromatin	b	54.25
+P39706	Chromatin	b	17.25
+P36104	Cajal Body. Kinetochore. Nuclear Pore Complex. Nucleolus. Nucleoplasm. 	s	24.81. 33.33. 37.21. 42.64. 27.52. 
+Q9NX95	unknown	NA	NA
+Q8N0S2	Chromatin	b	92
+Q03410	Chromatin	b	82.88
+O70608	Cajal Body. Chromatin. Nucleoplasm. 	s	5.43. 24.81. 15.5. 
+Q9DCD2	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	27.52. 24.81. 0.39. 1.94. 
+Q9WUA2	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	27.13. 32.17. 12.4. 
+O95363	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	29.07. 32.95. 19.77. 
+Q6ZMZ3	Chromatin. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. 	s	6.59. 32.17. 38.76. 23.64. 
+Q8N205	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. PML body. Spindle apparatus. 	s	1.94. 26.36. 20.54. 8.53. 9.3. 
+Q9BXJ8	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	32.17. 22.87. 37.21. 23.64. 
+Q9H061	Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	9.69. 0. 14.34. 
+Q9NX61	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	49.61. 41.47. 0.39. 29.84. 28.29. 
+Q6ZQE4	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	35.27. 44.96. 2.71. 23.64. 20.54. 
+Q3THK3	Nuclear Speckle. Nucleolus. 	s	10.08. 44.19. 
+Q8R0A0	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	17.44. 27.91. 6.2. 
+Q9QXE4	Chromatin. PML body. Spindle apparatus. 	s	0. 20.93. 14.73. 
+Q9JJ11	Nucleolus	b	35.37
+Q8CHV6	Chromatin. Nucleolus. Nucleoplasm. 	s	5.81. 18.6. 24.03. 
+Q921F2	Nuclear Speckle	b	16.25
+P97358	Nuclear Envelope. Nucleoplasm. Spindle apparatus. 	s	4.26. 31.4. 15.5. 
+Q6PDZ2	PML body. Spindle apparatus. 	s	21.71. 23.26. 
+Q80UV9	Chromatin. Nuclear Speckle. Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	0.39. 5.43. 3.88. 24.03. 16.67. 14.34. 
+Q62311	Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	29.46. 15.5. 38.37. 
+Q8T0D4	Cajal Body. Chromatin. 	s	0.39. 13.57. 
+Q9P031	Nucleolus	b	63.38
+Q8R1G1	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	37.98. 0.78. 6.98. 
+P19552	Chromatin. Nucleoplasm. Spindle apparatus. 	s	3.49. 13.95. 24.03. 
+P79005	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	1.16. 12.4. 16.28. 15.12. 
+P68369	Nucleolus	b	27.75
+Q02457	Chromatin. Nucleoplasm. Spindle apparatus. 	s	7.36. 25.97. 19.38. 
+P23258	Nucleolus	b	19.5
+Q9QXE7	Chromatin	b	16.5
+Q9R099	Cajal Body. Kinetochore. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	25.97. 32.95. 37.21. 7.36. 35.66. 21.71. 15.5. 
+Q8C4J7	Nucleolus	b	12
+P62340	Chromatin. Nucleolus. 	b	28.38
+P29037	Chromatin. Nucleolus. 	b	28.38
+Q9HEQ9	Nuclear Speckle. Nucleolus. Nucleoplasm. Perinucleolar. Spindle apparatus. 	s	31.78. 43.8. 24.81. 21.32. 3.1. 
+O08784	Nucleoplasm. Spindle apparatus. 	s	1.55. 43.02. 
+P80314	Nucleolus	b	18
+P80315	Nucleolus	b	18.62
+P49368	Nucleolus	b	99.75
+P80313	Nucleolus	b	96.25
+Q8CGF7	Nuclear Speckle. Nuclear matrix. Nucleoplasm. Spindle apparatus. 	s	40.7. 25.19. 18.99. 31.01. 
+P43347	Nucleolus	b	84.75
+P56581	Nuclear Lamina	s	2.71
+Q8R2M2	Cajal Body. Chromatin. Nucleoplasm. Spindle apparatus. 	s	50.78. 1.16. 10.47. 5.81. 
+Q91VL8	Chromatin	b	33
+P29549	Chromatin	b	75.12
+P29548	Chromatin	b	68.87
+Q06184	Chromatin	b	21.75
+Q7K4M4	Chromatin	s	38.76
+P28281	Nucleoplasm. Spindle apparatus. 	s	0.78. 5.81. 
+Q9D7K2	Chromatin	b	55.5
+P0C5Y7	Nuclear Envelope. Nucleoplasm. Spindle apparatus. 	s	0.39. 18.99. 5.43. 
+P70371	PML body. Chromatin. 	b	17.13
+O35144	PML body. Chromatin. Spindle apparatus. 	b	17.5
+P03269	Chromatin. Spindle apparatus. 	s	6.2. 17.05. 
+O70372	Chromatin	b	4.62
+O76332	PML body. Chromatin. Nucleolus. 	b	4.87
+Q06163	Chromatin. Spindle apparatus. 	s	20.54. 11.63. 
+Q3URK3	Cajal Body. Chromatin. Nucleoplasm. PML body. 	s	4.65. 10.47. 19.77. 1.55. 
+Q14AT2	Nuclear Lamina. Nuclear Pore Complex. Spindle apparatus. 	s	1.55. 10.85. 24.03. 
+P62915	Nucleolus. Nucleoplasm. 	s	16.67. 34.11. 
+Q9DBA9	Chromatin. PML body. Spindle apparatus. 	s	9.69. 16.67. 15.12. 
+Q9JIB4	Nucleolus. Nucleoplasm. 	s	6.2. 28.68. 
+Q9ERA6	PML body. Spindle apparatus. 	s	0.39. 10.47. 
+Q923W1	Nuclear Speckle. Nucleoplasm. PML body. Spindle apparatus. 	s	3.1. 27.91. 31.01. 14.34. 
+Q8CHW1	Nucleolus	b	26.75
+Q9H0W7	Nucleolus	b	86.62
+Q8VCZ3	Nucleoplasm	s	20.16
+Q8IFW4	Nucleolus. Spindle apparatus. 	s	17.83. 9.3. 
+Q8R3N6	Nucleoplasm. PML body. Spindle apparatus. 	s	28.29. 3.88. 25.58. 
+B1AZI6	Nuclear Speckle	b	100
+O08583	Nuclear Speckle. Nucleolus. Nucleoplasm. Perinucleolar. 	s	48.84. 13.57. 6.98. 12.4. 
+Q5U4D9	Cajal Body. Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	28.29. 29.07. 14.73. 27.91. 36.05. 39.53. 20.16. 
+Q08231	Nuclear Envelope. Spindle apparatus. 	s	22.48. 15.89. 
+Q91YJ3	Cajal Body. Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	2.33. 6.98. 7.36. 19.38. 2.33. 
+Q64127	Chromatin. Nucleolus. 	b	25.62
+Q9QXG9	PML body. Spindle apparatus. 	s	12.02. 21.71. 
+Q9BVC6	Nuclear Envelope. Nuclear Lamina. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	30.62. 44.96. 7.75. 39.15. 27.91. 
+Q8N511	Nuclear Envelope. Nuclear Lamina. Spindle apparatus. 	s	6.59. 10.47. 22.48. 
+Q5SNT2	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	15.5. 3.1. 20.54. 1.16. 
+Q96SK2	Nuclear Envelope. Nuclear Pore Complex. Nucleoplasm. PML body. Spindle apparatus. 	s	1.55. 0.39. 5.43. 0.78. 22.09. 
+Q9H6F2	Nuclear Envelope. Nuclear Lamina. Spindle apparatus. 	s	2.33. 6.59. 25.97. 
+Q96HV5	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	65.89. 71.32. 39.92. 12.79. 
+Q96EY4	Nucleolus	s	24.42
+Q9DBS1	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	34.11. 54.26. 28.68. 17.83. 
+Q6P2H8	Nucleoplasm. Spindle apparatus. 	s	16.28. 3.1. 
+Q6PFX9	PML body	b	17.75
+Q6P2B1	Nuclear Envelope. Nuclear Lamina. Nuclear Pore Complex. Spindle apparatus. 	s	2.71. 9.69. 17.83. 4.26. 
+Q61471	Nucleoplasm. PML body. 	s	29.46. 16.67. 
+Q9D2E2	Spindle apparatus	s	11.24
+Q5PQX1	Nuclear Lamina	b	52.88
+Q9H0E2	Nucleolus	s	22.09
+Q04750	Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	2.71. 70.54. 12.02. 7.36. 
+Q01320	Kinetochore. Nucleolus. 	b	27
+O70157	Nucleolus	b	83.75
+Q6ZQF0	Nucleolus	b	87
+Q9V8P9	PML body. Spindle apparatus. 	s	22.09. 12.4. 
+Q80Z37	Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	26.74. 7.36. 27.91. 
+Q93096	unknown	NA	NA
+P70399	Cajal Body. Chromatin. Nucleolus. Spindle apparatus. 	s	28.29. 3.88. 1.55. 5.81. 
+P09493	unknown	NA	NA
+Q9BX59	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. 	s	11.63. 30.23. 22.87. 
+O14246	Cajal Body. Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	6.98. 13.18. 7.36. 38.76. 18.6. 
+Q9UI30	PML body. Spindle apparatus. 	s	0. 14.73. 
+Q569Z6	Nuclear Lamina. PML body. 	b	22.37
+P62996	Nuclear Speckle. Nucleoplasm. 	s	60.47. 11.24. 
+Q3U0V2	Nucleoplasm. PML body. Spindle apparatus. 	s	29.84. 14.34. 3.49. 
+Q13114	Nuclear Envelope	b	100
+P02788	Nucleolus. PML body. Spindle apparatus. 	s	7.36. 4.65. 13.95. 
+Q05024	Chromatin. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	12.02. 12.4. 23.26. 21.71. 
+Q62158	Nucleolus	b	23.75
+O43715	unknown	NA	NA
+A2RSY6	Nucleolus. Nucleoplasm. 	s	34.5. 29.46. 
+Q9UJA5	Nucleolus	b	82.12
+Q9HCX4	Nuclear Envelope. Nuclear Pore Complex. Spindle apparatus. 	s	0. 13.95. 17.05. 
+Q9JJH7	Nuclear Envelope. Nucleoplasm. PML body. Spindle apparatus. 	s	9.3. 37.98. 1.16. 24.42. 
+P11596	Nuclear Speckle	s	37.98
+Q9WU56	Nuclear Speckle. Nucleolus. Nucleoplasm. 	s	5.04. 42.64. 28.68. 
+P20659	Chromatin. Nuclear Speckle. 	b	43.12
+Q61187	Nucleoplasm. Spindle apparatus. 	s	0.39. 14.73. 
+P49815	unknown	NA	NA
+Q6NY15	Chromatin. Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	6.59. 2.71. 15.12. 10.08. 24.81. 
+Q5DTH5	Cajal Body. Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	12.4. 37.21. 3.49. 20.16. 36.82. 
+Q5SWD9	Nucleolus	s	43.41
+Q9BXA6	unknown	NA	NA
+Q7TQI8	Nucleolus	b	46.62
+Q62187	Cajal Body. Chromatin. Nucleolus. 	s	6.59. 32.95. 16.67. 
+P33981	PML body	b	12.75
+A4Q9E5	Nucleoplasm. Spindle apparatus. 	s	15.12. 12.02. 
+Q9BSA4	unknown	NA	NA
+O00294	Nucleolus	b	64.88
+P83877	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	20.16. 36.82. 16.67. 
+Q9JJX7	Nuclear matrix. Spindle apparatus. 	s	8.14. 0.39. 
+Q9D883	Nucleoplasm	b	98.87
+P26369	Cajal Body. Nuclear Speckle. Nucleoplasm. 	s	5.81. 52.71. 15.89. 
+Q62377	Nucleolus. Nuclear Speckle. 	b	25.25
+Q91WM3	Nucleoplasm. Nucleolus. 	b	13.12
+Q6P4T2	Nucleolus. Nuclear Speckle. 	b	100
+O08810	Nucleolus	b	98.75
+P61077	unknown	NA	NA
+P63281	Nucleoplasm	s	18.6
+P0CG50	Nucleolus	b	100
+P25976	Nucleolus	b	99.62
+P35544	Nucleolus. Nuclear Speckle. 	b	94.88
+Q9P275-2	Nucleolus	b	80
+Q3V0C5	PML body	b	15.37
+Q6A4J8	PML body	b	15.37
+Q92575	Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	1.55. 24.03. 31.01. 
+Q8VDF2	Chromatin	b	19.5
+Q96QD9	Chromatin. Nucleoplasm. 	s	4.26. 3.49. 
+Q08926	Nucleoplasm. Spindle apparatus. 	s	17.83. 9.3. 
+P10215	PML body. Spindle apparatus. 	s	20.54. 10.08. 
+Q2PS26	Chromatin. Spindle apparatus. 	s	1.16. 30.23. 
+Q20745	Nuclear Lamina. Chromatin. Nucleolus. Nuclear Envelope. 	b	34.12
+P13051	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	2.71. 28.29. 11.24. 
+P13292	Nuclear matrix. Nucleolus. Spindle apparatus. 	s	27.52. 3.49. 5.81. 
+Q9CZJ1	Nucleolus. Nucleoplasm. 	s	40.31. 24.42. 
+Q8C7V3	Nucleoplasm. Nucleolus. 	b	8.88
+Q5SSI6	Cajal Body. Kinetochore. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Spindle apparatus. 	s	21.71. 27.91. 37.21. 15.89. 43.41. 25.19. 
+Q9BRU9	Nucleolus	b	84.38
+Q8VCY6	unknown	NA	NA
+Q2YD98	Nuclear Speckle. Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	0.39. 10.08. 25.58. 7.36. 8.91. 
+Q9NNX9	Cajal Body. Chromatin. Nuclear Lamina. Nuclear matrix. 	s	10.08. 3.1. 14.34. 23.64. 
+P03127	Nuclear matrix. PML body. Spindle apparatus. 	s	31.01. 0.39. 15.5. 
+P03126	Nuclear matrix. Nucleoplasm. 	s	30.23. 34.88. 
+P03129	Chromatin. PML body. 	s	22.48. 17.05. 
+P20152	Nucleoplasm. Nuclear matrix. 	b	22.5
+Q9FIE3	Nucleoplasm. PML body. Spindle apparatus. 	s	25.97. 29.07. 17.05. 
+Q96AW1	unknown	NA	NA
+P24848	Cajal Body. Spindle apparatus. 	s	11.24. 9.69. 
+O75351	unknown	NA	NA
+Q62481	Nucleolus. Nucleoplasm. Spindle apparatus. 	s	17.83. 14.34. 22.87. 
+Q61412	Chromatin	s	13.95
+Q924H7	Nuclear Speckle. Nucleoplasm. PML body. Spindle apparatus. 	s	0.39. 5.43. 24.42. 18.22. 
+Q8VC51	Kinetochore. Nuclear Lamina. Nuclear Pore Complex. Nucleolus. Nucleoplasm. 	s	35.27. 27.52. 34.5. 29.07. 15.89. 
+Q7Z5K2	Cajal Body. Chromatin. Nuclear Envelope. Nuclear Lamina. PML body. Spindle apparatus. 	s	14.34. 7.75. 8.91. 8.53. 2.71. 40.7. 
+O94364	Chromatin. Nuclear Envelope. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	16.67. 19.38. 10.08. 32.95. 18.99. 
+Q91YD9	Nuclear Speckle	s	35.66
+Q923D5	Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	51.94. 16.67. 3.1. 
+Q6ICG8	Nuclear Speckle. Nuclear matrix. 	s	20.54. 7.75. 
+Q61048	Cajal Body. Nucleolus. Spindle apparatus. 	s	7.75. 16.67. 32.95. 
+Q9CY21	Nucleolus	s	43.8
+Q4VBE8	Kinetochore. Nuclear Pore Complex. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	31.4. 29.84. 34.88. 22.48. 21.32. 
+Q15061	Nucleolus	b	82.62
+Q9Z0H1	Nucleolus	b	82.5
+Q9CX97	Nucleolus	b	85
+P61965	Nuclear Speckle	b	17.63
+Q8VCG3	Cajal Body. Kinetochore. Nuclear Pore Complex. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	29.46. 26.36. 19.38. 46.9. 5.04. 17.44. 
+Q8IWA0	Nucleolus	b	81.25
+Q9DAJ4	Nucleolus	b	17.75
+Q9D0R9	Cajal Body. Kinetochore. Nuclear Pore Complex. Nuclear Speckle. Nucleolus. Nucleoplasm. Spindle apparatus. 	s	22.87. 1.16. 37.21. 1.16. 36.82. 4.26. 12.4. 
+O76024	Nuclear Envelope. Nuclear Lamina. Nucleoplasm. Spindle apparatus. 	s	44.96. 37.6. 37.6. 25.58. 
+Q3LHL9	Nuclear Speckle. Nuclear matrix. 	s	11.24. 36.43. 
+Q8GXA4	Nuclear Envelope	b	44.12
+Q94AV5	Nuclear Envelope	b	24.75
+Q8L7E5	Chromatin. Nuclear Lamina. Nuclear Pore Complex. Spindle apparatus. 	s	1.16. 14.73. 32.95. 25.19. 
+Q6P5F9	Kinetochore. Nucleolus. 	b	97.25
+P27641	Chromatin. Nucleolus. Nuclear Speckle. 	b	9.75
+O93257	Nucleolus	b	62.5
+Q9DBR1	Nucleolus. Nucleoplasm. PML body. 	s	10.08. 18.22. 8.14. 
+Q9JKB3	Nuclear Speckle	b	51.75
+Q12457	Nuclear Speckle. Nucleoplasm. 	s	3.49. 18.99. 
+P25992	Chromatin. Kinetochore. 	s	14.73. 8.53. 
+Q9CR11	Nucleolus. Spindle apparatus. 	s	32.17. 5.81. 
+Q9HGK9	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	16.67. 19.38. 12.02. 1.55. 
+Q9R0I7	Nuclear Speckle. Nuclear matrix. Spindle apparatus. 	s	47.29. 27.52. 38.37. 
+Q9Y820	Nuclear Envelope. Spindle apparatus. 	s	13.57. 12.4. 
+Q96NS1	Nucleolus	b	81.25
+Q96PM9	Nuclear matrix. Nucleoplasm. Spindle apparatus. 	s	2.71. 0. 3.49. 
+D2EAC2	Nucleolus. Nucleoplasm. PML body. Spindle apparatus. 	s	1.55. 25.19. 19.38. 0.39. 
+Q9WUK6	Chromatin	b	27.62
+O88939	Nuclear Speckle	b	26
+Q9Y2K1	Cajal Body	b	14.25
+O60293	Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	5.81. 21.32. 31.78. 
+Q8BJ05	PML body	s	8.91
+Q6PEW1	PML body	b	68.75
+Q9CYA6	Cajal Body. Nuclear Speckle. Nucleoplasm. Spindle apparatus. 	s	15.5. 9.69. 18.6. 37.6. 
+Q8R1J3	Nucleolus. Nucleoplasm. 	s	33.33. 13.18. 
+Q9CZ96	Nuclear Speckle. Nucleolus. Nucleoplasm. Perinucleolar. 	s	33.33. 5.81. 5.43. 4.26. 
+Q8C6P8	Chromatin	b	11.88
+Q9HBF4	unknown	NA	NA
+P70121	Nucleoplasm. PML body. Spindle apparatus. 	s	0.39. 12.79. 2.71. 
+P31111	Chromatin. Nuclear Lamina. Nuclear Pore Complex. Nucleoplasm. Spindle apparatus. 	s	20.16. 25.58. 32.56. 20.16. 24.81. 
+P53061	Chromatin. Nucleoplasm. Spindle apparatus. 	s	32.95. 21.71. 8.53. 
+Q9CPW7	Nucleolus	s	43.41
+O54836	Nucleolus	b	97.88
+Q6P1E1	Nuclear Speckle. Nuclear matrix. Nucleoplasm. PML body. Spindle apparatus. 	s	12.4. 13.95. 0.39. 6.59. 11.24. 
+Q9CU65	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	20.54. 24.81. 29.84. 31.78. 
+O88466	Nucleoplasm. Nucleolus. 	b	7.25
+O88291	Chromatin. Nuclear Speckle. Nuclear matrix. 	b	19.87
+Q922H9	Nucleoplasm. PML body. 	s	30.23. 2.33. 
+Q9R0B7	Nucleolus. PML body. 	s	9.3. 17.83. 
+Q8C0P7	Chromatin. Nucleoplasm. PML body. Spindle apparatus. 	s	37.21. 29.84. 36.82. 20.93. 
+Q91VY9	Nucleolus. Nucleoplasm. 	s	15.12. 20.16. 
+Q61464	Nuclear Speckle. Nucleolus. 	s	20.16. 15.89. 
+Q9Y5V0	Nucleolus. Nucleoplasm. 	s	21.71. 16.67. 
+Q8R1N0	Nucleolus. Spindle apparatus. 	s	15.5. 1.94. 
+Q8R331	Chromatin. Nucleoplasm. Spindle apparatus. 	s	5.04. 21.32. 19.77. 
+O75312	Cajal Body	b	88
+Q9R020	Nuclear Speckle	s	34.88
+Q80VJ6	Chromatin	b	25
+Q9W4X9	Kinetochore. Chromatin. 	b	9.75
+O43264	Chromatin	b	9.5

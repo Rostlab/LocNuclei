@@ -1,0 +1,1106 @@
+# Sub-nuclear Localization Prediction using LocNuclei
+#
+# NOTATION Protein Id: Fasta sequences Id truncated by whitespace
+# NOTATION Localization: Predicted sub-nuclear localization class
+# NOTATION Source: s == svm, b == blast
+# NOTATION Reliability Index (RI) between 0 and 100
+#
+# Protein Id	Localization	Source	RI
+Q8GVZ6 	Traveller. 	 s 	 27.62.
+Q9SZU7 	Traveller. 	 s 	 54.62.
+Q9XGP7 	Traveller. 	 s 	 53.53.
+Q9LUA3 	Traveller. 	 s 	 35.0.
+P94077 	Traveller. 	 s 	 44.45.
+Q6DBA5 	Traveller. 	 s 	 30.57.
+P0DJI6 	Traveller. 	 s 	 38.95.
+Q5AJ71 	Traveller. 	 b 	 24.87
+O81851 	Traveller. 	 s 	 32.15.
+Q9LZS0 	NOT Traveller. 	 b 	 18.12
+Q38CE9 	NOT Traveller. 	 b 	 19.25
+Q6EPW7 	Traveller. 	 s 	 37.4.
+A1L4W5 	NOT Traveller. 	 b 	 15.88
+Q8CJ26 	Traveller. 	 s 	 47.78.
+A7UL74 	NOT Traveller. 	 b 	 16.12
+P0CY14 	Traveller. 	 s 	 25.94.
+Q8H151 	Traveller. 	 b 	 11.63
+P0CY16 	NOT Traveller. 	 b 	 20.25
+O82656 	Traveller. 	 b 	 21.88
+Q9SLB9 	Traveller. 	 s 	 41.78.
+Q8H1D6 	Traveller. 	 b 	 12.37
+Q9M1J2 	NOT Traveller. 	 b 	 17.75
+P0CY09 	NOT Traveller. 	 s 	 18.49.
+Q9VS05 	NOT Traveller. 	 b 	 36.12
+Q0J235 	NOT Traveller. 	 b 	 35.75
+C8VP82 	NOT Traveller. 	 b 	 15.13
+Q9FHW2 	Traveller. 	 b 	 34.88
+P0CY11 	NOT Traveller. 	 b 	 25.0
+Q944A6 	Traveller. 	 b 	 17.5
+G2TRL1 	NOT Traveller. 	 s 	 18.63.
+Q9FGQ6 	Traveller. 	 b 	 25.37
+Q09LL3 	Traveller. 	 s 	 46.08.
+Q9SD40 	Traveller. 	 s 	 34.7.
+Q6NQH4 	NOT Traveller. 	 b 	 20.0
+Q9LGE3 	Traveller. 	 s 	 46.44.
+Q19LA2 	Traveller. 	 s 	 41.73.
+P86981 	NOT Traveller. 	 s 	 24.26.
+Q9FNZ5 	NOT Traveller. 	 s 	 19.92.
+Q9LTJ1 	NOT Traveller. 	 b 	 41.88
+O48533 	NOT Traveller. 	 s 	 20.25.
+Q7TN79 	Traveller. 	 s 	 37.82.
+Q38FI2 	NOT Traveller. 	 s 	 23.67.
+Q8VWK4 	NOT Traveller. 	 b 	 27.75
+O04211 	Traveller. 	 s 	 36.19.
+Q8L627 	Traveller. 	 s 	 46.52.
+B3H615 	NOT Traveller. 	 b 	 23.75
+Q9FPF0 	Traveller. 	 b 	 20.5
+Q9LG97 	NOT Traveller. 	 s 	 23.75.
+F4JEP5 	Traveller. 	 b 	 15.88
+Q9M9S3 	Traveller. 	 s 	 42.63.
+Q5AP95 	NOT Traveller. 	 b 	 23.38
+Q9LUR0 	Traveller. 	 s 	 38.59.
+Q22663 	Traveller. 	 s 	 43.66.
+G5EFS4 	Traveller. 	 b 	 17.87
+Q8GUC3 	Traveller. 	 s 	 29.99.
+Q9LPP4 	NOT Traveller. 	 s 	 16.17.
+Q9SKI4 	NOT Traveller. 	 b 	 20.75
+A2XFC1 	NOT Traveller. 	 b 	 21.5
+A2XA73 	Traveller. 	 s 	 27.82.
+Q9SGE2 	NOT Traveller. 	 s 	 12.32.
+Q8LA53 	NOT Traveller. 	 b 	 18.12
+P47096	Traveller	s	60.26
+Q13541	Traveller	b	49.38
+A1YLA2	NOT Traveller	s	0
+A1Z5I9	Traveller	s	4.64
+A2AJ71	NOT Traveller	b	100
+A2AW40	NOT Traveller	b	100
+A2JGV3	Traveller	s	6.62
+A4D105	Traveller	s	64.9
+A4FUW6	NOT Traveller	b	34.38
+A6NMQ3	NOT Traveller	b	100
+A7UKX9	Traveller	b	97.62
+A8K4C8	NOT Traveller	s	0
+A8K517	NOT Traveller	s	0
+Q9Y235	Traveller	b	20.37
+Q9Y7Z3	NOT Traveller	b	23.38
+O00767	Traveller	s	61.59
+P14621	Traveller	s	53.64
+P05552	NOT Traveller	s	0
+Q2V2Q1	NOT Traveller	s	0
+Q15847	Traveller	s	28.48
+Q9FJK3	NOT Traveller	b	33.62
+P25649	Traveller	s	34.44
+Q8L9T7	Traveller	b	64.88
+O00170	Traveller	b	12
+Q53H80	NOT Traveller	b	87.5
+P20292	Traveller	s	80.79
+P47019	NOT Traveller	s	0
+Q96Q83	NOT Traveller	b	23.75
+Q3KRA9	Traveller	s	56.29
+Q9P7N2	Traveller	s	65.56
+P53068	NOT Traveller	b	21
+Q9SAK5	NOT Traveller	b	26.38
+Q6UW56	Traveller	s	80.13
+Q9BVC5	NOT Traveller	s	0
+Q08655	Traveller	s	0
+O43035	Traveller	s	60.26
+O35143	NOT Traveller	s	0
+O00244	Traveller	b	20.88
+O74735	Traveller	b	20.88
+Q92843	Traveller	b	46.12
+B2LYG3	NOT Traveller	b	99.25
+B2R7Q3	Traveller	s	47.68
+B3KNH2	Traveller	s	43.71
+B3KPJ1	NOT Traveller	b	76.5
+B3KQL5	Traveller	b	44.25
+B3KS07	Traveller	b	100
+B4DFR5	Traveller	b	100
+B4E0X6	Traveller	b	94.75
+B4E2T4	NOT Traveller	b	99.12
+B7Z3D6	NOT Traveller	b	94.12
+Q9H503	NOT Traveller	b	26.12
+Q8IXM2	Traveller	s	8.61
+O35284	NOT Traveller	b	94.12
+P38772	Traveller	s	55.63
+P55924	NOT Traveller	b	69.12
+O60756	Traveller	s	37.09
+Q3MKQ1	Traveller	b	88.25
+Q9CA64	Traveller	s	11.92
+Q13323	Traveller	s	65.56
+Q96LW7	Traveller	s	47.02
+O55102	Traveller	s	26.49
+Q96IK1	Traveller	b	56.5
+Q99177	Traveller	s	47.68
+P41223	NOT Traveller	s	0
+P53323	Traveller	s	48.34
+Q13901	NOT Traveller	b	88.38
+Q8IYL3	Traveller	s	1.99
+Q9NS85	Traveller	b	16.5
+P53615	Traveller	s	70.86
+P25229	Traveller	s	66.23
+Q9D1C2	Traveller	s	21.19
+Q64364	Traveller	s	5.3
+P28907	Traveller	s	78.15
+P07766	Traveller	s	37.75
+P32320	Traveller	s	60.93
+O14519	Traveller	s	16.56
+Q16667	Traveller	s	56.95
+Q9UKY7	NOT Traveller	s	0
+Q9QYM8	Traveller	s	7.28
+Q1T763	Traveller	s	9.27
+Q9CXS4	NOT Traveller	s	0
+Q8N0T1	NOT Traveller	s	0
+P61604	Traveller	s	69.54
+P87305	Traveller	s	50.33
+Q9CRB9	NOT Traveller	s	0
+Q921W0	Traveller	b	11.88
+Q96BS2	Traveller	b	21.38
+Q9CY57	NOT Traveller	b	99
+Q10239	Traveller	s	34.44
+P40019	Traveller	s	7.28
+Q9V6Q2	NOT Traveller	b	24.25
+Q22197	NOT Traveller	s	0
+Q8WUH6	Traveller	s	37.75
+Q9SUA6	Traveller	b	37.5
+Q9NSA3	Traveller	b	96.88
+O13952	Traveller	s	40.4
+Q3E846	NOT Traveller	s	0
+P41046	Traveller	s	1.99
+P10606	Traveller	s	42.38
+P10176	Traveller	s	31.79
+O22059	NOT Traveller	b	56.25
+P22058	NOT Traveller	s	0
+P84087	NOT Traveller	s	0
+Q9CQF3	Traveller	s	44.37
+Q32M00	NOT Traveller	b	95.75
+O43008	Traveller	s	60.93
+O45952	Traveller	s	23.84
+Q63430	Traveller	b	97.5
+P67871	Traveller	s	58.94
+P68353	NOT Traveller	s	0
+P68358	Traveller	b	93.63
+P68359	Traveller	s	50.99
+P68354	Traveller	s	41.72
+P68396	Traveller	s	31.79
+Q99627	Traveller	s	58.94
+Q9H112	Traveller	s	70.2
+O15194	Traveller	b	58.12
+P0CG11	NOT Traveller	b	92.75
+P38877	Traveller	s	47.68
+Q9JHS9	NOT Traveller	s	0
+Q84Y18	Traveller	b	46
+Q9CXW3	Traveller	s	13.91
+Q12248	Traveller	s	21.19
+Q9UTG8	Traveller	s	38.41
+P69850	Traveller	s	48.34
+Q9HDZ6	Traveller	s	21.19
+P51397	NOT Traveller	s	0
+Q12084	Traveller	b	13.88
+Q96PH6	Traveller	s	52.98
+P35639	NOT Traveller	b	85.88
+Q99321	Traveller	s	36.42
+P60981	Traveller	b	62.12
+A8CVF3	Traveller	s	15.89
+Q06819	NOT Traveller	b	57.38
+O13577	NOT Traveller	s	0
+O74741	Traveller	s	59.6
+O43598	Traveller	s	44.37
+Q8WZ79	NOT Traveller	b	100
+P27344	NOT Traveller	b	48.38
+Q04603	NOT Traveller	b	15.13
+Q3E840	Traveller	s	65.56
+O74865	Traveller	b	11.25
+Q8QZY3	Traveller	s	3.97
+Q10661	Traveller	b	50.5
+O14140	Traveller	s	13.91
+O75505	NOT Traveller	b	64.75
+P00374	Traveller	s	80.13
+P43003	Traveller	b	100
+P47128	Traveller	s	3.31
+Q8AZK7	Traveller	b	22.5
+C6Y4C5	NOT Traveller	b	31.12
+P39715	NOT Traveller	s	0
+P40023	NOT Traveller	s	0
+O60739	Traveller	s	29.8
+Q15370	Traveller	s	43.05
+Q15369	Traveller	b	36.12
+P27205	NOT Traveller	s	0
+O43402	Traveller	s	72.85
+Q9NPA8	Traveller	s	29.14
+Q9UKR5	Traveller	s	72.19
+P84089	Traveller	s	49.01
+P29773	NOT Traveller	b	88.5
+Q9DAA6	Traveller	s	70.86
+Q61160	Traveller	s	43.71
+Q8IZU1	Traveller	b	57.12
+O59834	Traveller	s	54.97
+Q9USJ6	Traveller	b	37.87
+P53082	Traveller	s	52.32
+P97376	NOT Traveller	s	0
+P37261	Traveller	b	48.12
+P36088	Traveller	s	80.79
+Q9UTP3	NOT Traveller	s	0
+Q9BWH2	Traveller	s	45.7
+O75293	NOT Traveller	b	46.38
+Q04739	Traveller	s	13.91
+P22466	Traveller	s	59.6
+Q9CWY4	Traveller	s	40.4
+O88513	Traveller	s	1.32
+Q02643	Traveller	b	13.25
+Q7XAK4	NOT Traveller	b	27.87
+Q9Y7N3	Traveller	b	20.62
+P30713	Traveller	b	89.75
+Q99283	Traveller	s	0.66
+P84553	NOT Traveller	s	0
+Q8CJI4	NOT Traveller	b	10.75
+P22975	Traveller	s	19.87
+P19376	NOT Traveller	s	0
+P32103	NOT Traveller	s	0
+P12305	NOT Traveller	b	58.87
+P55897	NOT Traveller	b	94.75
+P81903	NOT Traveller	s	0
+P13282	NOT Traveller	s	0
+P83837	NOT Traveller	s	0
+P27893	NOT Traveller	b	61.75
+Q9XG57	NOT Traveller	b	53.25
+Q76NW2	NOT Traveller	b	74.75
+P62789	Traveller	s	2.65
+P18638	NOT Traveller	s	0
+P13434	NOT Traveller	b	70.25
+O00165	Traveller	s	25.17
+Q8SWA6	NOT Traveller	b	27.13
+Q8SVD3	NOT Traveller	b	33.75
+Q8SVT6	NOT Traveller	b	26.12
+Q7SI91	NOT Traveller	b	19
+Q6WQI6	Traveller	s	52.98
+Q9NQE9	NOT Traveller	b	16.62
+Q9QXP3	NOT Traveller	b	97.62
+O49597	Traveller	b	50
+P40626	NOT Traveller	b	22.75
+P12274	NOT Traveller	b	61
+Q8R1H0	NOT Traveller	b	27.87
+P39979	Traveller	s	57.62
+Q9UL19	Traveller	b	39.5
+P83581	Traveller	s	39.07
+P69852	Traveller	s	25.83
+P35302	NOT Traveller	s	0
+O18745	NOT Traveller	s	0
+P42129	NOT Traveller	b	98
+Q9GLQ0	NOT Traveller	s	0
+P42131	NOT Traveller	s	0
+P15340	NOT Traveller	s	0
+P14402	NOT Traveller	s	0
+Q9GLQ6	NOT Traveller	s	0
+Q9GLQ4	NOT Traveller	b	98
+P15341	NOT Traveller	s	0
+Q9GLQ2	NOT Traveller	s	0
+P42137	NOT Traveller	b	98
+P42138	NOT Traveller	b	98
+P42142	NOT Traveller	b	97.88
+P83211	NOT Traveller	s	0
+P67852	NOT Traveller	b	98
+P42143	NOT Traveller	s	0
+P83214	NOT Traveller	s	0
+Q9GLQ3	NOT Traveller	s	0
+P42147	NOT Traveller	s	0
+Q9GLQ5	NOT Traveller	s	0
+P79990	NOT Traveller	s	0
+O18747	NOT Traveller	s	0
+O18746	NOT Traveller	s	0
+O18748	NOT Traveller	s	0
+Q9GLP8	NOT Traveller	s	0
+P42145	NOT Traveller	s	0
+P35311	NOT Traveller	s	0
+Q9GLQ8	NOT Traveller	b	98
+P83212	NOT Traveller	s	0
+P15343	NOT Traveller	s	0
+P83213	NOT Traveller	s	0
+P83216	NOT Traveller	s	0
+P83217	NOT Traveller	s	0
+P84588	Traveller	s	16.56
+Q9UBY9	Traveller	b	24.75
+P83183	NOT Traveller	s	0
+O94650	Traveller	s	46.36
+P31256	NOT Traveller	b	87.5
+P23681	NOT Traveller	b	94.88
+Q8W191	NOT Traveller	b	42.62
+Q9NX55	NOT Traveller	b	99
+P24593	Traveller	b	45.25
+Q10132	Traveller	s	68.21
+O94704	Traveller	s	0.66
+Q08561	NOT Traveller	s	0
+P40060	Traveller	s	39.07
+P47813	Traveller	s	21.19
+P63074	Traveller	b	97.12
+Q9UST4	NOT Traveller	b	58.38
+P01579	Traveller	s	24.5
+Q9NZH6	Traveller	s	51.66
+P05113	Traveller	s	56.95
+P83891	Traveller	s	31.79
+Q9UTB8	NOT Traveller	b	63.12
+P41236	Traveller	b	100
+Q03036	Traveller	s	35.1
+Q9H1K1	Traveller	s	50.99
+P58062	Traveller	s	64.9
+O94290	Traveller	b	44.12
+O14713	Traveller	s	35.1
+Q9I7K0	Traveller	s	9.27
+O45406	Traveller	s	23.84
+P15700	Traveller	b	41.5
+O60256	Traveller	s	85.43
+P34253	Traveller	b	28.12
+Q8R1F0	NOT Traveller	s	0
+O74443	NOT Traveller	s	0
+Q14657	Traveller	s	46.36
+P00709	Traveller	s	74.83
+P38210	Traveller	s	14.57
+Q8QGU6	NOT Traveller	b	33.88
+P16045	NOT Traveller	b	94.5
+Q9Y5L5	Traveller	s	47.68
+Q04005	Traveller	s	18.54
+O60952	Traveller	b	30.25
+Q99732	NOT Traveller	s	0
+Q9D945	NOT Traveller	s	0
+Q7KRI2	NOT Traveller	b	50.88
+Q8QZX5	Traveller	b	16.12
+P38828	Traveller	s	56.29
+Q9Y333	NOT Traveller	b	23.12
+P40070	Traveller	b	30.25
+P47093	Traveller	b	15
+O43504	Traveller	s	62.91
+O43325	NOT Traveller	s	0
+Q9HD34	Traveller	s	20.53
+Q9NPA3	Traveller	b	87.62
+Q7TQJ1	Traveller	s	87.42
+P40065	Traveller	s	26.49
+Q9NX47	Traveller	s	59.6
+Q6ZN01	NOT Traveller	b	72.12
+Q9D9H3	NOT Traveller	b	21.38
+O14467	NOT Traveller	b	34.88
+P41968	Traveller	s	84.77
+Q08601	Traveller	b	43.12
+O43324	Traveller	b	85.62
+Q8NI22	Traveller	s	74.17
+O60200	Traveller	b	29.5
+Q9P6Q0	Traveller	s	37.75
+Q99278	Traveller	s	50.99
+A0JLT2	NOT Traveller	s	0
+P25046	Traveller	s	19.21
+P32570	Traveller	s	54.3
+Q9H204	Traveller	s	28.48
+Q96HR3	Traveller	s	37.75
+P38633	Traveller	s	39.07
+P33308	Traveller	s	19.87
+Q5JSS6	Traveller	s	5.96
+O14172	Traveller	s	58.94
+O14220	Traveller	s	31.79
+P40081	Traveller	b	27.25
+Q96A72	Traveller	b	98.25
+P10620	Traveller	s	87.42
+Q06630	Traveller	s	23.18
+A9UHW6	Traveller	s	54.97
+Q9Y3D0	Traveller	s	63.58
+Q1T769	Traveller	s	47.02
+Q9P802	Traveller	s	43.05
+Q91VE6	NOT Traveller	b	16.62
+P21741	Traveller	s	5.3
+P47123	NOT Traveller	b	17.63
+Q9Y3D2	Traveller	b	28.75
+Q24437	NOT Traveller	s	0
+Q80XX4	NOT Traveller	s	0
+P25713	NOT Traveller	s	0
+P34232	NOT Traveller	b	23.5
+O42662	Traveller	s	18.54
+Q10262	NOT Traveller	s	0
+O94328	NOT Traveller	s	0
+O74461	Traveller	s	25.17
+Q09902	Traveller	s	46.36
+O74848	Traveller	s	58.94
+O94428	Traveller	s	39.74
+Q9P5M9	Traveller	b	11.63
+Q9HGN4	Traveller	s	46.36
+O13978	Traveller	s	52.98
+O14336	Traveller	s	3.97
+Q9M8K6	NOT Traveller	b	32.25
+Q6P8Z1	Traveller	b	55.62
+Q9NP98	NOT Traveller	s	0
+O13713	NOT Traveller	b	19
+Q02642	Traveller	s	15.89
+P60324	NOT Traveller	s	0
+O74457	Traveller	b	49.88
+Q9USR6	Traveller	s	63.58
+P40096	NOT Traveller	b	28
+Q92317	Traveller	b	39.88
+Q06568	Traveller	s	3.31
+O00217	Traveller	b	98.75
+Q93725	NOT Traveller	b	86.88
+P29188	Traveller	s	33.11
+Q86UQ8	Traveller	s	29.8
+Q9DB96	NOT Traveller	b	13.75
+Q03435	NOT Traveller	b	23.5
+Q9CRB2	NOT Traveller	b	29.5
+Q06162	Traveller	s	41.06
+Q27415	NOT Traveller	b	22.87
+Q9NP64	NOT Traveller	b	93.38
+Q9D1X0	Traveller	b	84.88
+P61581	NOT Traveller	s	0
+P0C0P6	Traveller	s	38.41
+Q16612	Traveller	s	27.15
+Q62792	NOT Traveller	b	100
+P53718	NOT Traveller	s	0
+Q8VC65	Traveller	s	85.43
+O60178	Traveller	b	13.75
+Q80WB5	Traveller	s	59.6
+P38302	Traveller	s	31.79
+Q9EPJ0	NOT Traveller	s	0
+O60166	Traveller	s	39.74
+O15513	Traveller	s	16.56
+O35327	NOT Traveller	s	0
+O89064	NOT Traveller	b	97
+Q9Y530	Traveller	s	62.25
+Q64693	NOT Traveller	s	0
+Q9NX40	Traveller	s	5.3
+P0CE71	Traveller	b	36.5
+O08760	NOT Traveller	b	28.88
+O94626	Traveller	s	64.9
+P70449	Traveller	b	94.75
+O42951	Traveller	s	72.85
+Q15004	NOT Traveller	s	0
+Q9BTK6	Traveller	s	11.26
+Q99497	Traveller	s	77.48
+O73622	Traveller	s	29.14
+P15399	Traveller	s	69.54
+Q07362	NOT Traveller	s	0
+Q9VLJ0	Traveller	s	52.32
+P01127	Traveller	s	32.45
+Q96S96	Traveller	b	25.75
+Q9UBM1	Traveller	s	91.39
+Q9NQP4	Traveller	s	31.13
+Q99471	Traveller	s	29.8
+P14309	NOT Traveller	s	0
+P35422	NOT Traveller	s	0
+P11860	NOT Traveller	s	0
+P20052	Traveller	b	20.62
+P20941	Traveller	s	29.8
+P61458	Traveller	b	98.75
+O74448	Traveller	b	42.62
+Q9P7A1	Traveller	b	7.37
+Q9CWV6	Traveller	b	89.75
+Q9NRY7	Traveller	s	64.9
+P40999	NOT Traveller	b	30.88
+P53184	Traveller	s	78.15
+Q9UTG1	Traveller	s	78.15
+Q28466	Traveller	s	9.27
+P55968	NOT Traveller	b	100
+Q9Y244	Traveller	b	14
+P53833	Traveller	s	29.8
+P53218	Traveller	s	53.64
+P38291	Traveller	s	15.89
+P38208	Traveller	s	61.59
+O13852	Traveller	s	54.3
+Q96MI6	NOT Traveller	b	88.63
+Q9UD71	NOT Traveller	s	0
+Q00LT1	Traveller	s	21.19
+Q13162	Traveller	b	50.75
+P04156	Traveller	s	26.49
+P19782	NOT Traveller	b	75
+P15342	NOT Traveller	s	0
+Q62100	Traveller	s	4.64
+P32524	NOT Traveller	b	8.75
+Q9UUD2	NOT Traveller	b	32.38
+P08145	NOT Traveller	s	0
+P08146	NOT Traveller	s	0
+P08147	NOT Traveller	s	0
+P02332	NOT Traveller	s	0
+P24641	NOT Traveller	s	0
+P02325	NOT Traveller	s	0
+P69014	NOT Traveller	s	0
+P83264	NOT Traveller	s	0
+P12817	NOT Traveller	s	0
+P02334	NOT Traveller	s	0
+P02330	NOT Traveller	s	0
+P83266	NOT Traveller	s	0
+P12818	NOT Traveller	s	0
+P02333	NOT Traveller	s	0
+P02324	NOT Traveller	s	0
+P69007	NOT Traveller	s	0
+P02331	NOT Traveller	s	0
+P02328	NOT Traveller	s	0
+P02326	NOT Traveller	s	0
+P69012	NOT Traveller	s	0
+P69009	NOT Traveller	s	0
+P02321	NOT Traveller	s	0
+P08433	NOT Traveller	s	0
+P06841	NOT Traveller	s	0
+P69011	NOT Traveller	s	0
+P02322	NOT Traveller	s	0
+P17502	NOT Traveller	s	0
+Q9PS27	NOT Traveller	s	0
+P29629	NOT Traveller	s	0
+O94561	NOT Traveller	b	9.5
+P21243	Traveller	b	46.75
+Q12488	Traveller	b	31.75
+Q12146	Traveller	b	20
+O60127	Traveller	s	31.79
+P26350	NOT Traveller	b	95.5
+P20962	NOT Traveller	s	0
+Q03393	Traveller	s	80.79
+P53801	Traveller	s	22.52
+Q9FLB1	Traveller	b	41.5
+Q05BV8	NOT Traveller	b	98.75
+Q05CA6	NOT Traveller	b	84.62
+Q05DL5	Traveller	s	32.45
+Q0VGM3	Traveller	s	44.37
+Q16089	NOT Traveller	b	48.62
+Q16406	Traveller	s	41.06
+Q3MHC9	NOT Traveller	b	75.75
+Q3MN80	NOT Traveller	s	0
+Q3SWU9	NOT Traveller	b	19.5
+Q3TMY1	NOT Traveller	b	80
+Q3TVE3	NOT Traveller	b	19.87
+Q3USL3	NOT Traveller	s	0
+Q3UWW7	NOT Traveller	b	100
+Q49AF1	Traveller	s	50.99
+Q4JDK3	Traveller	s	36.42
+Q4ZG82	NOT Traveller	b	88.63
+Q53F48	NOT Traveller	b	58.5
+Q53XY9	NOT Traveller	s	0
+Q53Y97	NOT Traveller	b	56
+Q53Z07	Traveller	s	49.67
+Q54A51	Traveller	b	100
+Q569J5	Traveller	b	100
+Q59FJ6	NOT Traveller	b	91
+Q5J7U2	Traveller	s	4.64
+Q5U0N0	Traveller	s	69.54
+Q5VVD0	Traveller	b	64.5
+Q659G9	NOT Traveller	b	100
+Q68CU0	Traveller	s	29.8
+Q6FGH9	Traveller	s	56.95
+Q6FGL7	NOT Traveller	b	25.62
+Q6FI39	Traveller	b	20.25
+Q6IAM1	NOT Traveller	s	0
+Q6IBA2	NOT Traveller	b	92.12
+Q6IBV1	Traveller	s	25.17
+Q6NXT7	Traveller	s	51.66
+Q6P534	Traveller	b	100
+Q6P5W1	Traveller	s	58.94
+Q6XYB1	Traveller	s	26.49
+Q6ZWF5	NOT Traveller	b	83.12
+Q7Z641	NOT Traveller	b	100
+Q7Z6J5	NOT Traveller	b	93.5
+Q7Z763	NOT Traveller	s	0
+Q80ZM5	NOT Traveller	b	32.25
+Q86TD3	Traveller	s	64.24
+Q86VL0	NOT Traveller	b	93.87
+Q86W71	Traveller	b	100
+Q86X17	NOT Traveller	b	86.37
+Q8BK42	NOT Traveller	b	100
+Q8BXW1	NOT Traveller	b	50.37
+Q8BYI4	NOT Traveller	b	100
+Q8CCY8	NOT Traveller	b	100
+Q8IWJ1	NOT Traveller	b	90.5
+Q8K403	NOT Traveller	s	0
+Q8TB76	Traveller	s	19.21
+Q8WYR3	NOT Traveller	b	98.5
+Q96DE8	Traveller	b	100
+Q96FA2	NOT Traveller	s	0
+Q96FF1	Traveller	s	39.74
+Q96FU2	Traveller	s	37.09
+Q96HT3	NOT Traveller	b	14.38
+Q96JY2	NOT Traveller	b	100
+Q96P81	Traveller	b	100
+Q99JG4	NOT Traveller	b	46.5
+Q99KH6	NOT Traveller	b	100
+Q9BRL8	NOT Traveller	b	97.5
+Q9BVT0	Traveller	b	100
+Q9BVU3	Traveller	b	14
+Q9BWJ1	Traveller	b	95.75
+Q9CT44	NOT Traveller	b	100
+Q9DAD9	NOT Traveller	b	94.25
+Q9H256	Traveller	s	23.18
+Q9H376	Traveller	s	41.72
+Q9H4N4	NOT Traveller	b	78.75
+Q9H5M2	Traveller	s	29.14
+Q9H835	Traveller	s	39.74
+Q9H9H3	NOT Traveller	b	4.25
+Q9NPQ0	NOT Traveller	b	95.25
+Q9NT12	Traveller	b	100
+Q9P084	NOT Traveller	s	0
+Q9P0T0	Traveller	s	52.32
+Q9UFN7	Traveller	b	100
+Q9UG98	NOT Traveller	b	92.62
+Q9UPD8	Traveller	s	15.89
+Q9UPG3	Traveller	b	100
+Q9QWZ1	Traveller	s	72.19
+Q9BTL3	Traveller	s	1.99
+P38543	NOT Traveller	b	42.25
+Q9NHX0	NOT Traveller	b	63.5
+O13800	Traveller	s	68.87
+Q09094	Traveller	s	9.27
+Q9USR4	Traveller	s	14.57
+Q0E7J8	NOT Traveller	b	9.25
+P19548	Traveller	s	5.96
+Q69IL4	NOT Traveller	b	54.12
+Q92374	Traveller	s	84.11
+P26755	Traveller	s	65.56
+Q12192	NOT Traveller	s	0
+P62907	Traveller	s	24.5
+P35979	Traveller	s	44.37
+P19253	NOT Traveller	s	0
+P35980	Traveller	s	19.87
+P84098	NOT Traveller	s	0
+P62752	NOT Traveller	s	0
+P62829	Traveller	s	20.53
+P62889	Traveller	s	16.56
+P62899	Traveller	s	15.23
+O55142	Traveller	s	18.54
+Q9JJI8	NOT Traveller	s	0
+Q96EH5	NOT Traveller	s	0
+P05386	Traveller	s	55.63
+Q02685	Traveller	s	50.33
+P40993	NOT Traveller	s	0
+Q12338	Traveller	s	54.97
+P25367	NOT Traveller	s	0
+Q9P1U0	Traveller	s	35.76
+P53803	Traveller	s	5.3
+P97304	NOT Traveller	b	20.75
+P38902	NOT Traveller	b	39.88
+P20433	NOT Traveller	b	23.75
+O74635	NOT Traveller	b	39.75
+P47076	Traveller	s	52.98
+O13563	Traveller	s	53.64
+Q9CQH8	Traveller	s	66.89
+Q91WE3	Traveller	s	4.64
+Q9CR08	Traveller	s	14.57
+Q3UFY0	NOT Traveller	s	0
+Q9D1C9	NOT Traveller	s	0
+P63323	Traveller	s	47.68
+P14131	NOT Traveller	s	0
+P63276	Traveller	s	30.46
+P62271	Traveller	s	21.19
+P62853	NOT Traveller	s	0
+P97461	Traveller	s	17.22
+P62082	Traveller	s	34.44
+Q18409	NOT Traveller	b	52
+Q9Z132	Traveller	s	23.84
+P53330	Traveller	s	23.18
+Q05543	NOT Traveller	b	12.88
+Q9Y2R5	NOT Traveller	s	0
+O94355	Traveller	s	41.06
+Q08963	Traveller	b	17.87
+O59734	NOT Traveller	b	63
+P40204	NOT Traveller	b	46.38
+P31151	Traveller	b	11.12
+P97352	Traveller	b	26.88
+Q02614	Traveller	s	5.3
+Q96QD8	Traveller	s	92.05
+Q8N8I0	NOT Traveller	b	98.38
+Q9VEX9	Traveller	s	40.4
+P38429	NOT Traveller	s	0
+P21673	Traveller	s	49.01
+O75845	Traveller	s	52.98
+Q12334	Traveller	s	13.25
+Q9BWG6	NOT Traveller	b	78.75
+P38804	Traveller	b	22.63
+O94407	NOT Traveller	s	0
+O14085	Traveller	b	18.88
+Q04675	Traveller	s	58.28
+Q22795	NOT Traveller	b	24.5
+Q03067	Traveller	s	46.36
+Q99720	Traveller	b	100
+Q9UUI2	NOT Traveller	s	0
+Q10321	Traveller	s	37.09
+Q55DB0	NOT Traveller	b	10.87
+O15304	Traveller	s	29.8
+Q03406	NOT Traveller	b	22.13
+Q08457	Traveller	s	41.72
+O14036	NOT Traveller	b	45.75
+Q04964	Traveller	s	35.1
+Q9UHP9	Traveller	s	1.32
+Q08143	NOT Traveller	b	27.13
+Q9P7S6	Traveller	s	21.85
+Q9WU12	Traveller	s	1.32
+Q9BQ15	NOT Traveller	b	54.5
+Q15506	Traveller	b	28.88
+Q03954	Traveller	s	20.53
+P40014	Traveller	s	12.58
+P36131	Traveller	s	27.81
+Q10585	Traveller	s	9.27
+P80304	NOT Traveller	s	0
+Q15513	Traveller	s	58.28
+Q9NS25	NOT Traveller	b	80
+Q8C624	NOT Traveller	s	0
+O13472	NOT Traveller	b	38.75
+P63271	NOT Traveller	b	32.75
+P09007	NOT Traveller	s	0
+P49962	Traveller	s	33.11
+Q9D7A6	NOT Traveller	s	0
+O18776	NOT Traveller	s	0
+P36077	Traveller	b	37.5
+Q95202	NOT Traveller	b	92.62
+P43307	Traveller	s	55.63
+P11020	NOT Traveller	s	0
+Q16384	NOT Traveller	b	88.63
+P02808	Traveller	s	25.83
+Q8IWL8	Traveller	s	43.05
+P39015	NOT Traveller	s	0
+Q0E7J7	Traveller	s	50.33
+P11378	NOT Traveller	b	86.88
+Q7M2P1	NOT Traveller	s	0
+Q09821	NOT Traveller	b	31.62
+P53032	NOT Traveller	b	29
+P38326	NOT Traveller	s	0
+O14350	NOT Traveller	b	10.87
+Q8K3D3	Traveller	s	54.97
+Q08553	NOT Traveller	b	32
+P53277	NOT Traveller	s	0
+P37379	Traveller	b	60.62
+P32774	Traveller	b	48.5
+P29540	NOT Traveller	s	0
+Q9QXE4	Traveller	s	12.58
+Q04226	Traveller	b	27.5
+P11747	NOT Traveller	b	8.25
+P19552	NOT Traveller	s	0
+Q5JR98	Traveller	s	17.22
+O95988	Traveller	b	15.37
+O82277	Traveller	b	59.62
+Q15185	Traveller	s	41.06
+Q9D7K2	NOT Traveller	b	55.5
+P0C5Y7	Traveller	s	68.21
+Q9DAG4	Traveller	s	35.76
+Q8IUE0	NOT Traveller	b	86.5
+Q969F1	Traveller	s	40.4
+Q3E7C1	Traveller	s	45.03
+Q8TBB0	NOT Traveller	b	20.62
+Q9PUA8	NOT Traveller	b	96.5
+Q9P2T0	NOT Traveller	b	62.75
+P40998	Traveller	b	55.38
+O13927	Traveller	s	21.85
+Q8LBM2	Traveller	s	3.97
+P97273	NOT Traveller	b	97.75
+Q9BVC6	Traveller	s	74.17
+A5PLL7	Traveller	s	86.09
+Q9BU79	Traveller	s	75.5
+Q9H6F2	Traveller	s	71.52
+Q08687	NOT Traveller	s	0
+Q12513	Traveller	s	43.05
+Q3E764	NOT Traveller	s	0
+Q6P2H8	Traveller	s	66.89
+Q61471	Traveller	b	59
+O43399	Traveller	b	100
+O94811	Traveller	b	91.37
+P53738	Traveller	b	37
+Q9P7V3	Traveller	s	43.71
+Q06672	Traveller	b	16.88
+Q2TAM9	Traveller	s	3.97
+P63313	NOT Traveller	s	0
+Q8WU68	NOT Traveller	b	92.62
+O74503	Traveller	b	19.63
+Q15819	Traveller	b	27.5
+P63072	Traveller	b	63.75
+Q5VVX9	NOT Traveller	b	18.75
+P35544	NOT Traveller	b	94.88
+P05048	NOT Traveller	b	93.38
+P61960	Traveller	s	45.03
+Q53HI1	Traveller	s	82.78
+Q96BW1	Traveller	b	16.5
+Q04179	Traveller	b	16.88
+P40554	Traveller	s	80.79
+P13292	Traveller	s	44.37
+P03129	Traveller	s	56.95
+Q14135	Traveller	b	100
+Q9BRG1	Traveller	s	64.9
+Q9UTI5	Traveller	s	79.47
+P53853	Traveller	s	25.17
+Q12416	NOT Traveller	s	0
+P82804	NOT Traveller	s	0
+Q0WQ91	Traveller	b	38.25
+Q9SB92	NOT Traveller	b	55.38
+Q9HD64	NOT Traveller	s	0
+Q9P7J2	Traveller	s	43.71
+O75695	Traveller	s	47.68
+P47118	Traveller	s	59.6
+Q10148	NOT Traveller	s	0
+O43137	Traveller	s	45.03
+Q9C0X2	Traveller	s	51.66
+Q9C0X3	Traveller	s	50.99
+P58557	Traveller	s	64.9
+O59716	Traveller	s	29.14
+O42889	Traveller	s	52.98
+P87242	Traveller	s	34.44
+O94475	Traveller	s	17.22
+O94721	Traveller	s	29.8
+Q9P7Z9	Traveller	s	15.89
+O74519	Traveller	s	63.58
+O13996	Traveller	s	100
+O14034	Traveller	s	62.91
+P40057	Traveller	s	12.58
+O14043	Traveller	s	26.49
+O14297	Traveller	s	52.98
+O94455	Traveller	b	32
+O42847	NOT Traveller	b	44.12
+O14262	Traveller	s	68.21
+O42883	Traveller	s	25.83
+Q9US38	NOT Traveller	b	16.25
+P53287	Traveller	s	11.26
+P53307	Traveller	s	77.48
+O60056	NOT Traveller	s	0
+P40326	Traveller	s	50.99
+O43067	Traveller	b	29.63
+Q9Y7K0	Traveller	s	64.24
+Q7Z995	Traveller	s	19.21
+O74342	Traveller	s	44.37
+Q9UUA8	Traveller	s	45.03
+Q9UUA7	Traveller	s	61.59
+Q9HDV0	Traveller	s	60.26
+Q9P6I6	Traveller	s	21.19
+Q9HGL0	Traveller	s	31.79
+P38809	Traveller	b	29.63
+O59727	Traveller	s	53.64
+Q9URZ2	Traveller	s	3.97
+Q9US01	Traveller	s	63.58
+Q9P7I0	NOT Traveller	b	26.25
+O74914	Traveller	s	62.25
+P47174	Traveller	s	32.45
+Q9P7K2	Traveller	s	41.06
+Q9P7J0	Traveller	s	54.3
+O59799	Traveller	s	1.99
+O74989	Traveller	s	47.02
+Q9HE01	NOT Traveller	s	0
+Q9UTA6	Traveller	b	31.88
+Q9UTP4	Traveller	b	17.75
+Q9UT12	Traveller	s	65.56
+Q9HGQ0	Traveller	s	76.82
+Q9HGP9	Traveller	s	38.41
+Q3E7A8	Traveller	s	27.15
+O59743	Traveller	s	68.87
+Q9UUF3	Traveller	s	66.89
+Q08465	NOT Traveller	b	42.5
+O60150	Traveller	s	50.33
+Q9UUE3	Traveller	s	73.51
+Q9USS4	Traveller	s	10.6
+Q9P7D3	Traveller	s	64.24
+A6X982	NOT Traveller	b	8.25
+Q9Y7J3	Traveller	s	59.6
+Q9P7Z8	Traveller	s	23.84
+Q02864	Traveller	s	32.45
+Q07688	Traveller	s	51.66
+O94733	Traveller	s	35.76
+Q9Y7Q1	Traveller	s	63.58
+O74469	NOT Traveller	b	13.62
+O74896	Traveller	s	51.66
+O94405	Traveller	s	32.45
+P36036	NOT Traveller	s	0
+Q9JII7	Traveller	b	71.37
+O08781	NOT Traveller	b	97.88
+Q9H609	NOT Traveller	b	15.13
+Q9Y5V0	NOT Traveller	s	0
+Q15649	Traveller	s	16.56
+Q19AV6	Traveller	s	72.19
+Q9UTC0	NOT Traveller	s	0
+A4D1U3	Traveller	s	40.4
+Q10343	Traveller	b	40
+Q0VDE8	Traveller	s	56.95
+P55008	Traveller	b	23.38
+O81488	NOT Traveller	b	27.75
+Q12107	Traveller	s	26.49
+Q26635	NOT Traveller	b	39.88
+B0ZBD0	NOT Traveller	b	99.12
+B4DW78	NOT Traveller	b	97.88
+Q3UK10	Traveller	s	70.2
+O15155	Traveller	s	48.34
+Q9M9L6	NOT Traveller	s	0
+Q08004	NOT Traveller	b	27.75
+Q8CIL4	NOT Traveller	s	0
+P07858	Traveller	b	19.12
+P14724	Traveller	s	45.7
+Q9CXL3	NOT Traveller	s	0
+Q96HJ9	Traveller	s	25.17
+Q8WUH1	Traveller	s	43.71
+Q96S95	Traveller	b	98.38
+Q7Z4G1	Traveller	s	57.62
+P51985	NOT Traveller	b	93.5
+P02741	Traveller	b	40.37
+P68352	Traveller	b	100
+P68356	Traveller	s	33.77
+Q9NV44	Traveller	s	46.36
+Q03375	Traveller	s	19.21
+P69851	Traveller	s	44.37
+Q9P805	Traveller	s	58.28
+O43583	Traveller	s	10.6
+Q9XF62	Traveller	s	10.6
+O01352	Traveller	s	3.97
+Q95Y72	Traveller	s	30.46
+P51808	Traveller	s	62.25
+Q9D4C5	NOT Traveller	b	47.13
+P35195	Traveller	s	54.3
+Q6K1L7	NOT Traveller	b	58.38
+O08579	NOT Traveller	b	92.25
+Q9CR98	Traveller	s	19.87
+O95633	NOT Traveller	b	17.25
+Q9CQQ4	NOT Traveller	b	96.25
+O74790	Traveller	b	12.88
+P15871	Traveller	s	11.92
+P15868	NOT Traveller	b	66.13
+Q8SSG3	NOT Traveller	b	23.88
+P02260	NOT Traveller	s	0
+Q01239	NOT Traveller	b	70.25
+Q03937	Traveller	s	22.52
+P40622	NOT Traveller	b	75.38
+Q23794	NOT Traveller	s	0
+P49775	Traveller	b	25.62
+O14368	NOT Traveller	b	26.12
+Q9GLP9	NOT Traveller	s	0
+P42132	NOT Traveller	s	0
+Q9GLQ9	NOT Traveller	b	98
+P67836	NOT Traveller	s	0
+Q9GLQ7	NOT Traveller	b	98
+P42148	NOT Traveller	s	0
+P42152	NOT Traveller	s	0
+P83215	NOT Traveller	s	0
+Q9URQ5	Traveller	s	29.14
+P46695	NOT Traveller	s	0
+Q6ZWX6	Traveller	b	98.75
+Q6U949	NOT Traveller	s	0
+Q9P305	Traveller	b	51.88
+Q9C010	Traveller	b	25.75
+O77460	Traveller	s	60.93
+P47119	Traveller	b	29.75
+Q6NYC1	NOT Traveller	b	52.75
+O04479	NOT Traveller	b	50
+Q9H008	Traveller	s	78.15
+Q52LA3	NOT Traveller	b	100
+P38801	NOT Traveller	s	0
+P62310	Traveller	b	33.5
+O42978	Traveller	b	47.62
+Q10474	Traveller	s	43.05
+Q07016	Traveller	b	92.12
+P02686	Traveller	s	1.32
+Q13465	NOT Traveller	b	51
+P87310	NOT Traveller	b	13.25
+Q9CQ39	Traveller	s	35.1
+Q9NWA0	NOT Traveller	s	0
+P41005	NOT Traveller	s	0
+P33441	NOT Traveller	b	12.75
+Q04341	Traveller	s	37.75
+Q9P6M3	NOT Traveller	b	10
+Q9QWV4	Traveller	b	76.13
+Q9D1Q1	NOT Traveller	s	0
+Q23973	Traveller	s	46.36
+O14015	Traveller	s	24.5
+O94664	Traveller	s	39.07
+P50541	NOT Traveller	b	63.87
+Q60817	Traveller	b	90.12
+Q3E7Y6	Traveller	s	33.11
+P01185	Traveller	s	53.64
+Q9CXK8	Traveller	s	49.01
+Q9CQS2	Traveller	s	15.23
+O42913	Traveller	s	17.22
+Q9QZV9	Traveller	b	15.62
+O74796	Traveller	s	22.52
+P39877	Traveller	s	57.62
+O14737	Traveller	s	10.6
+Q06608	Traveller	b	10.13
+Q03958	NOT Traveller	b	31.75
+O15173	NOT Traveller	b	51.75
+Q6P1K2	Traveller	s	28.48
+Q07930	Traveller	b	24.75
+P28005	Traveller	s	43.71
+Q9DCH2	Traveller	s	14.57
+Q91VJ5	NOT Traveller	b	96.62
+Q28337	NOT Traveller	b	82.5
+Q9NZ81	Traveller	s	4.64
+P12819	NOT Traveller	s	0
+P80001	NOT Traveller	s	0
+P83265	NOT Traveller	s	0
+P08130	NOT Traveller	s	0
+P30259	NOT Traveller	s	0
+P30258	NOT Traveller	s	0
+Q91185	NOT Traveller	s	0
+O00233	Traveller	b	20.37
+Q12318	Traveller	s	66.23
+Q05CG6	Traveller	b	99.62
+Q05D65	NOT Traveller	b	100
+Q14820	NOT Traveller	b	87.88
+Q1PSW9	Traveller	b	100
+Q3TR16	NOT Traveller	b	66
+Q498B9	NOT Traveller	b	100
+Q5VZ77	Traveller	s	21.85
+Q68DD6	NOT Traveller	b	100
+Q6IBA9	Traveller	s	75.5
+Q71RB4	Traveller	s	52.98
+Q76LA1	Traveller	s	45.7
+Q8AZ04	Traveller	s	58.28
+Q8IYH0	NOT Traveller	b	100
+Q8TAW8	Traveller	b	99.5
+Q8WY48	Traveller	s	32.45
+Q96EE5	Traveller	b	95.38
+Q96G78	Traveller	s	40.4
+Q99K87	Traveller	b	94.12
+Q9BSD8	NOT Traveller	b	75.5
+Q9BWJ8	NOT Traveller	s	0
+Q9H3K0	Traveller	s	76.16
+Q9R205	NOT Traveller	b	100
+Q9UBT1	Traveller	s	43.05
+Q9UNL7	Traveller	b	100
+P25332	Traveller	s	74.83
+P25800	NOT Traveller	b	98.38
+Q02721	Traveller	s	56.29
+Q93VT9	Traveller	s	21.85
+P67984	Traveller	s	3.31
+P61254	NOT Traveller	s	0
+P61355	NOT Traveller	s	0
+P80350	Traveller	b	64
+P97762	NOT Traveller	s	0
+P20435	NOT Traveller	b	55.75
+Q9Y2Y1	NOT Traveller	b	49.38
+P62281	Traveller	s	2.65
+P62301	Traveller	s	6.62
+Q6ZWN5	NOT Traveller	b	15
+Q62376	NOT Traveller	b	25.62
+Q12330	Traveller	b	54.88
+P89114	Traveller	s	35.1
+Q9BY50	Traveller	s	72.85
+P60059	Traveller	s	49.01
+P84101	NOT Traveller	s	0
+P59708	Traveller	b	23.12
+Q9USW9	Traveller	s	51.66
+P38751	Traveller	s	49.01
+Q8S3N1	Traveller	b	20.13
+Q8WVK7	Traveller	s	29.8
+P52286	Traveller	b	52.25
+Q06091	Traveller	s	46.36
+P50278	Traveller	b	26.88
+O14285	Traveller	s	55.63
+Q7Z5L4	Traveller	s	31.79
+P52823	Traveller	s	49.01
+P46977	Traveller	s	83.44
+Q9H061	Traveller	s	59.6
+Q9P7N4	Traveller	s	50.33
+P49906	Traveller	b	21.5
+P07436	Traveller	b	89.12
+Q9BRU2	NOT Traveller	s	0
+Q9NSU2	Traveller	b	64.62
+P22803	Traveller	b	74.25
+P62256	NOT Traveller	b	18.12
+Q8GZA8	Traveller	b	72.12
+Q12208	Traveller	s	48.34
+Q9H322	NOT Traveller	b	90.25
+P43582	Traveller	s	63.58
+Q10214	Traveller	s	37.09
+O94498	Traveller	s	52.32
+O74545	Traveller	s	85.43
+O13727	Traveller	s	58.28
+O14033	Traveller	s	45.03
+O13706	Traveller	b	42
+O42648	NOT Traveller	s	0
+O94612	NOT Traveller	b	16.62
+Q9C0W4	Traveller	s	54.97
+Q9USH6	Traveller	b	18.62
+Q9UT63	Traveller	s	49.01
+Q3E747	NOT Traveller	s	0
+Q9P7L1	Traveller	s	51.66
+Q96NS1	Traveller	b	81.25
+P43587	NOT Traveller	s	0
+P41920	NOT Traveller	b	42.75
+Q96B54	Traveller	s	5.96
+O43257	NOT Traveller	b	96.75
