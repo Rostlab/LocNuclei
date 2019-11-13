@@ -159,7 +159,7 @@ class ExternalFileManager(object):
         self._blast_db = None
         self._psiblast2hssp = None
         self._blast_prediction_printer = None
-        self._amino_file = '/usr/share/fastprofkernel/data/Amino.txt'
+        self._amino_file = 'data/Amino.txt'
 
         self._remove_list = list()
 
