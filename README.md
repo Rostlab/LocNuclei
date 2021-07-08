@@ -33,5 +33,10 @@ The folder **example/** contains three fasta and profiles files to try out LocNu
 
 `python locnuclei.py example/ example/ result.out -t` 
 
+## Cite
+If you are using this method and find it helpful, we would appreciate if you could cite the following publication:
+
+Littmann, M., Goldberg, T., Seitz, S., Bodén, M., Rost, B. Detailed prediction of protein sub-nuclear localization. BMC Bioinformatics 20, 205 (2019). https://doi.org/10.1186/s12859-019-2790-9
+
 
 
